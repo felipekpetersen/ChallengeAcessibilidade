@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F08539F2315AF0D00A64067 /* MyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F08539D2315AF0D00A64067 /* MyListViewController.swift */; };
+		0F0853A02315AF0D00A64067 /* MyListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F08539E2315AF0D00A64067 /* MyListViewController.xib */; };
+		0F0853A22315B09C00A64067 /* MyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0853A12315B09C00A64067 /* MyListViewModel.swift */; };
 		325F502D2304950A004CDCA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325F502C2304950A004CDCA2 /* AppDelegate.swift */; };
 		325F502F2304950A004CDCA2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325F502E2304950A004CDCA2 /* ViewController.swift */; };
 		325F50322304950A004CDCA2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 325F50302304950A004CDCA2 /* Main.storyboard */; };
@@ -28,6 +31,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F08539D2315AF0D00A64067 /* MyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListViewController.swift; sourceTree = "<group>"; };
+		0F08539E2315AF0D00A64067 /* MyListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyListViewController.xib; sourceTree = "<group>"; };
+		0F0853A12315B09C00A64067 /* MyListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListViewModel.swift; sourceTree = "<group>"; };
 		325F50292304950A004CDCA2 /* Acessibilidade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Acessibilidade.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		325F502C2304950A004CDCA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		325F502E2304950A004CDCA2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +67,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F08539C2315AEB800A64067 /* MyList */ = {
+			isa = PBXGroup;
+			children = (
+				0F08539D2315AF0D00A64067 /* MyListViewController.swift */,
+				0F08539E2315AF0D00A64067 /* MyListViewController.xib */,
+				0F0853A12315B09C00A64067 /* MyListViewModel.swift */,
+			);
+			path = MyList;
+			sourceTree = "<group>";
+		};
 		325F50202304950A004CDCA2 = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +121,7 @@
 		D9865DC623144CF000FA6C21 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				0F08539C2315AEB800A64067 /* MyList */,
 				D9865DD82315945400FA6C21 /* Restaurant List */,
 				D9865DC723144D0C00FA6C21 /* Home */,
 			);
@@ -221,6 +238,7 @@
 				325F503A2304950B004CDCA2 /* LaunchScreen.storyboard in Resources */,
 				D9865DDC2315949300FA6C21 /* RestaurantListViewController.xib in Resources */,
 				D9865DD323144FDE00FA6C21 /* NearRestaurantsTableViewCell.xib in Resources */,
+				0F0853A02315AF0D00A64067 /* MyListViewController.xib in Resources */,
 				325F50372304950B004CDCA2 /* Assets.xcassets in Resources */,
 				D9007D81231595EF00090140 /* RestaurantCellTableViewCell.xib in Resources */,
 				D9865DD723145B0F00FA6C21 /* CategoriesRestaurantsCollectionViewCell.xib in Resources */,
@@ -261,6 +279,8 @@
 				D9007D80231595EF00090140 /* RestaurantCellTableViewCell.swift in Sources */,
 				325F502D2304950A004CDCA2 /* AppDelegate.swift in Sources */,
 				D9865DD223144FDE00FA6C21 /* NearRestaurantsTableViewCell.swift in Sources */,
+				0F08539F2315AF0D00A64067 /* MyListViewController.swift in Sources */,
+				0F0853A22315B09C00A64067 /* MyListViewModel.swift in Sources */,
 				D9865DDE231594D900FA6C21 /* RestaurantListViewModel.swift in Sources */,
 				325F50352304950A004CDCA2 /* Acessibilidade.xcdatamodeld in Sources */,
 				D9865DDB2315949300FA6C21 /* RestaurantListViewController.swift in Sources */,
