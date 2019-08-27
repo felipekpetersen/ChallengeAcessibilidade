@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+
+class RestaurantListViewModel{
+    
+    func numberOfRows() -> Int {
+        return 12
+    }
+    
+}

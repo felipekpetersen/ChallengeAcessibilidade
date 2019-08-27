@@ -13,29 +13,40 @@ class RestaurantListViewController: UIViewController {
     @IBOutlet weak var testeLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
-    
+    let viewModel = RestaurantListViewModel()
+    let pratoCell = "RestaurantCellTableViewCell"
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTableView()
+        setupLabel()
     }
     
     func setupTableView(){
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        tableView.register(UINib(nibName: pratoCell, bundle: nil), forCellReuseIdentifier: pratoCell)
+        self.tableView.separatorStyle = .none
+    }
+    
+    func setupLabel(){
+        self.testeLabel.text = "Nome do categora"
     }
  
 }
 
 extension RestaurantListViewController: UITableViewDelegate, UITableViewDataSource{
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return self.viewModel.numberOfRows()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: pratoCell, for: indexPath) as! RestaurantCellTableViewCell
+        cell.setup(color: .gray, text: "Nome do restaurante")
+        return cell
     }
-    
-    
 }

@@ -19,7 +19,7 @@ class HomeViewController: UIViewController {
     let viewModel = HomeViewModel()
     let restaurantCell = "NearRestaurantsTableViewCell"
     let categoriesCell = "CategoriesRestaurantsCollectionViewCell"
-    private var sectionInsets = UIEdgeInsets(top: 2.0, left: 20.0, bottom: 2.0, right: 20.0)
+    private var sectionInsets = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 20.0)
     private let itemsPerRow: CGFloat = 4
 
     
@@ -65,6 +65,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.navigationController?.pushViewController(RestaurantListViewController(), animated: true)
+    }
+    
 }
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -92,10 +96,6 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return sectionInsets.left
     }
-
-    
-    
-    
 }
 
 

@@ -10,10 +10,18 @@ import UIKit
 
 class RestaurantCellTableViewCell: UITableViewCell {
 
+    
+    @IBOutlet weak var testeView: UIView!
+    @IBOutlet weak var testeLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.selectionStyle = .none
         // Initialization code
     }
     
-    
+    func setup(color: UIColor, text: String) {
+        testeView.backgroundColor = color
+        testeLabel.text = text
+    }
 }
