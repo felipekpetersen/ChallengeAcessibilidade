@@ -39,13 +39,13 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XmX-HA-VIb">
-                    <rect key="frame" x="40" y="129.5" width="42" height="21"/>
+                    <rect key="frame" x="32" y="129.5" width="42" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sb9-Gx-yJ4">
-                    <rect key="frame" x="40" y="384" width="42" height="21"/>
+                    <rect key="frame" x="32" y="384" width="42" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -60,9 +60,9 @@
                 <constraint firstItem="bnX-lk-Od0" firstAttribute="top" secondItem="XmX-HA-VIb" secondAttribute="bottom" constant="45" id="Sf0-kG-8WD"/>
                 <constraint firstItem="qaC-FA-8aB" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="To3-X7-eKx"/>
                 <constraint firstItem="bnX-lk-Od0" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="aGb-kg-Tva"/>
-                <constraint firstItem="sb9-Gx-yJ4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="cmT-mA-BaI"/>
+                <constraint firstItem="sb9-Gx-yJ4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="cmT-mA-BaI"/>
                 <constraint firstItem="bnX-lk-Od0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ge7-eO-axg"/>
-                <constraint firstItem="XmX-HA-VIb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="mgt-7Z-eVm"/>
+                <constraint firstItem="XmX-HA-VIb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="mgt-7Z-eVm"/>
                 <constraint firstItem="qaC-FA-8aB" firstAttribute="top" secondItem="sb9-Gx-yJ4" secondAttribute="bottom" constant="45" id="pBE-39-Dyb"/>
                 <constraint firstItem="qaC-FA-8aB" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.46" id="qrm-d7-aLd"/>
                 <constraint firstItem="qaC-FA-8aB" firstAttribute="top" secondItem="bnX-lk-Od0" secondAttribute="bottom" constant="120" id="v25-sb-9UU"/>
