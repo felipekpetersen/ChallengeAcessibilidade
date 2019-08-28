@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Acessibilidade" customModuleProvider="target">
+            <connections>
+                <outlet property="categoriasTeste" destination="XmX-HA-VIb" id="JBJ-CK-4HW"/>
+                <outlet property="collectionView" destination="bnX-lk-Od0" id="sWY-kE-fpY"/>
+                <outlet property="restaurantesProximosTeste" destination="sb9-Gx-yJ4" id="ZSj-eE-Vgc"/>
+                <outlet property="tableView" destination="qaC-FA-8aB" id="fBb-Am-p3Y"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="bnX-lk-Od0">
+                    <rect key="frame" x="0.0" y="195.5" width="414" height="134.5"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yWQ-P4-ZX7">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qaC-FA-8aB">
+                    <rect key="frame" x="0.0" y="450" width="414" height="412"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XmX-HA-VIb">
+                    <rect key="frame" x="32" y="129.5" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sb9-Gx-yJ4">
+                    <rect key="frame" x="32" y="384" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezO-hk-lPb">
+                    <rect key="frame" x="352" y="52" width="46" height="30"/>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="myListButtonTap:" destination="-1" eventType="touchUpInside" id="PYk-tl-h2s"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="bnX-lk-Od0" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="1gP-JC-bwr"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ezO-hk-lPb" secondAttribute="trailing" constant="16" id="3EK-hX-tgi"/>
+                <constraint firstItem="qaC-FA-8aB" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="5PJ-AG-SeM"/>
+                <constraint firstItem="bnX-lk-Od0" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.15" id="BzW-gz-hah"/>
+                <constraint firstItem="qaC-FA-8aB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="SUo-hX-Wbw"/>
+                <constraint firstItem="bnX-lk-Od0" firstAttribute="top" secondItem="XmX-HA-VIb" secondAttribute="bottom" constant="45" id="Sf0-kG-8WD"/>
+                <constraint firstItem="qaC-FA-8aB" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="To3-X7-eKx"/>
+                <constraint firstItem="bnX-lk-Od0" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="aGb-kg-Tva"/>
+                <constraint firstItem="sb9-Gx-yJ4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="cmT-mA-BaI"/>
+                <constraint firstItem="bnX-lk-Od0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ge7-eO-axg"/>
+                <constraint firstItem="ezO-hk-lPb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="h3j-02-pH4"/>
+                <constraint firstItem="XmX-HA-VIb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="mgt-7Z-eVm"/>
+                <constraint firstItem="qaC-FA-8aB" firstAttribute="top" secondItem="sb9-Gx-yJ4" secondAttribute="bottom" constant="45" id="pBE-39-Dyb"/>
+                <constraint firstItem="qaC-FA-8aB" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.46" id="qrm-d7-aLd"/>
+                <constraint firstItem="qaC-FA-8aB" firstAttribute="top" secondItem="bnX-lk-Od0" secondAttribute="bottom" constant="120" id="v25-sb-9UU"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="47.826086956521742" y="35.491071428571423"/>
+        </view>
+    </objects>
+</document>
