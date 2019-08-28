@@ -16,8 +16,6 @@ class RestaurantListViewController: UIViewController {
     let viewModel = RestaurantListViewModel()
     let pratoCell = "RestaurantCellTableViewCell"
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()

@@ -14,6 +14,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var categoriasTeste: UILabel!
     @IBOutlet weak var restaurantesProximosTeste: UILabel!
+    //@IBOutlet weak var myListButton: UIButton!
     //    private let itemsPerRow
     
     let viewModel = HomeViewModel()
@@ -23,7 +24,6 @@ class HomeViewController: UIViewController {
     private let itemsPerRow: CGFloat = 4
 
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
@@ -32,6 +32,7 @@ class HomeViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    //MARK:- Setups
     func setupTableView() {
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -50,9 +51,15 @@ class HomeViewController: UIViewController {
         self.categoriasTeste.text = "5 Categorias perto de você"
         self.restaurantesProximosTeste.text = "15 restaurantes próximos a você"
     }
+    
+    //MARK:- Actions
+    @IBAction func myListButtonTap(_ sender: UIButton) {
+        navigationController?.pushViewController(MyListViewController(), animated: true)
+    }
 
 }
 
+//MARK:- Table View Delegate
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -66,9 +73,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.navigationController?.pushViewController(RestaurantListViewController(), animated: true)
+        self.navigationController?.pushViewController(RestaurantDetailsViewController(), animated: true)
     }
-    
 }
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -95,6 +101,10 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return sectionInsets.left
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.navigationController?.pushViewController(RestaurantListViewController(), animated: true)
     }
 }
 

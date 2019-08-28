@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RestaurantDetailsViewController" customModule="Acessibilidade" customModuleProvider="target">
+            <connections>
+                <outlet property="tableViewPratos" destination="77d-kg-Jay" id="xOR-U7-8ua"/>
+                <outlet property="testeLabelRest" destination="CZZ-lG-M2V" id="lCJ-3W-PNS"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome do restaurante" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CZZ-lG-M2V">
+                    <rect key="frame" x="16" y="60" width="162" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="77d-kg-Jay">
+                    <rect key="frame" x="0.0" y="427" width="414" height="435"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="77d-kg-Jay" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="26S-l3-TrM"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="77d-kg-Jay" secondAttribute="trailing" id="CVK-1Q-ACc"/>
+                <constraint firstItem="CZZ-lG-M2V" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="OUY-9n-GDM"/>
+                <constraint firstItem="77d-kg-Jay" firstAttribute="top" secondItem="CZZ-lG-M2V" secondAttribute="bottom" constant="346" id="TdC-0z-QqD"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="77d-kg-Jay" secondAttribute="bottom" id="kEz-LB-5JR"/>
+                <constraint firstItem="CZZ-lG-M2V" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="pZa-fG-Dhe"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+</document>

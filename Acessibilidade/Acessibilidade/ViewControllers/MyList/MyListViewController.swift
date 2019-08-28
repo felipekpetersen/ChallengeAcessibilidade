@@ -14,6 +14,7 @@ class MyListViewController: UIViewController {
     @IBOutlet weak var testeTableView: UITableView!
     
     let viewModel = MyListViewModel()
+    let listaCell = "MyListCellTableViewCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +24,8 @@ class MyListViewController: UIViewController {
     func setTableView(){
         self.testeTableView.delegate = self
         self.testeTableView.dataSource = self
+        testeTableView.register(UINib(nibName: listaCell, bundle:  nil), forCellReuseIdentifier: listaCell)
     }
-
 }
 
 extension MyListViewController: UITableViewDelegate, UITableViewDataSource{
@@ -34,6 +35,8 @@ extension MyListViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        return
+        let cell = self.testeTableView.dequeueReusableCell(withIdentifier:
+            listaCell, for: indexPath) as! MyListCellTableViewCell
+        return cell
     }
 }
