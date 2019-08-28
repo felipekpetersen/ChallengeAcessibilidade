@@ -39,4 +39,8 @@ extension RestaurantDetailsViewController: UITableViewDelegate, UITableViewDataS
         let cell = self.tableViewPratos.dequeueReusableCell(withIdentifier: pratosCell, for: indexPath)
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.navigationController?.present(PlatesViewController(), animated: true, completion: nil)
+    }
 }

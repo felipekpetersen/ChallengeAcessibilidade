@@ -32,7 +32,6 @@ class RestaurantListViewController: UIViewController {
     func setupLabel(){
         self.testeLabel.text = "Nome do categora"
     }
- 
 }
 
 extension RestaurantListViewController: UITableViewDelegate, UITableViewDataSource{
@@ -46,5 +45,9 @@ extension RestaurantListViewController: UITableViewDelegate, UITableViewDataSour
         let cell = self.tableView.dequeueReusableCell(withIdentifier: pratoCell, for: indexPath) as! RestaurantCellTableViewCell
         cell.setup(color: .gray, text: "Nome do restaurante")
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.navigationController?.pushViewController(RestaurantDetailsViewController(), animated: true)
     }
 }
