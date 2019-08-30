@@ -7,13 +7,17 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var categoriasTeste: UILabel!
     @IBOutlet weak var restaurantesProximosTeste: UILabel!
+    
+    var locationManager : CLLocationManager = CLLocationManager()
     //@IBOutlet weak var myListButton: UIButton!
     //    private let itemsPerRow
     
@@ -29,6 +33,8 @@ class HomeViewController: UIViewController {
         setupTableView()
         setupCollectionView()
         setupLabels()
+        self.locationManager.requestWhenInUseAuthorization()
+        self.locationManager.delegate = self
         // Do any additional setup after loading the view.
     }
     
@@ -56,6 +62,28 @@ class HomeViewController: UIViewController {
     @IBAction func myListButtonTap(_ sender: UIButton) {
         navigationController?.pushViewController(MyListViewController(), animated: true)
     }
+    
+    //MARK:- Location
+    func setupGeoFence() {
+        let geofenceRegionCenter = CLLocationCoordinate2DMake(-38.028308, -57.531508);
+        let geofenceRegion = CLCircularRegion(center: geofenceRegionCenter, radius: 400, identifier: "CurrentLocation");
+        geofenceRegion.notifyOnExit = true;
+        geofenceRegion.notifyOnEntry = true;
+        
+        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        locationManager.startUpdatingLocation()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if (status == CLAuthorizationStatus.authorizedWhenInUse) {
+            setupGeoFence()
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
+    }
 
 }
 
@@ -67,9 +95,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: restaurantCell, for: indexPath) as! NearRestaurantsTableViewCell
-        cell.setup(title: "nome do restaurante", color: .gray)
-        return cell
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: restaurantCell, for: indexPath) as? NearRestaurantsTableViewCell
+//        cell.setup(rest: "nome do restaurante", color: .gray)
+        return cell ?? UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -85,9 +113,9 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: categoriesCell, for: indexPath) as! CategoriesRestaurantsCollectionViewCell
-        cell.setup(color: .blue)
-        return cell
+        let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: categoriesCell, for: indexPath) as? CategoriesRestaurantsCollectionViewCell
+        cell?.setup(color: .blue)
+        return cell ?? UICollectionViewCell()
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

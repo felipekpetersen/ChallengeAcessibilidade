@@ -10,8 +10,20 @@ import Foundation
 
 class HomeViewModel {
     
-    func numberOfRows() -> Int {
-        return 10
+    var restaurants: [RestaurantCodable] = []
+    
+    func getRestaurants() {
+        restaurants = InternRestaurant.getRestaurant()
     }
+    
+    func numberOfRows() -> Int {
+        return restaurants.count
+    }
+    
+    func getRestaurantForRow(row: Int) -> RestaurantCodable {
+        return restaurants[row]
+    }
+    
+    
     
 }
