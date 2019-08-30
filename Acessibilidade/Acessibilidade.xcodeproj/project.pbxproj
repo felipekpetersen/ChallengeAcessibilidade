@@ -19,6 +19,7 @@
 		0F3199302316F1750078BBBE /* RestaurantDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F31992E2316F1750078BBBE /* RestaurantDetailsTableViewCell.xib */; };
 		0F3199352316F55E0078BBBE /* PlatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3199332316F55E0078BBBE /* PlatesViewController.swift */; };
 		0F3199362316F55E0078BBBE /* PlatesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F3199342316F55E0078BBBE /* PlatesViewController.xib */; };
+		0FAA8CC62319A1F800859E69 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAA8CC52319A1F800859E69 /* RoundedView.swift */; };
 		325F502D2304950A004CDCA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325F502C2304950A004CDCA2 /* AppDelegate.swift */; };
 		325F502F2304950A004CDCA2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325F502E2304950A004CDCA2 /* ViewController.swift */; };
 		325F50322304950A004CDCA2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 325F50302304950A004CDCA2 /* Main.storyboard */; };
@@ -52,6 +53,7 @@
 		0F31992E2316F1750078BBBE /* RestaurantDetailsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantDetailsTableViewCell.xib; sourceTree = "<group>"; };
 		0F3199332316F55E0078BBBE /* PlatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatesViewController.swift; sourceTree = "<group>"; };
 		0F3199342316F55E0078BBBE /* PlatesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlatesViewController.xib; sourceTree = "<group>"; };
+		0FAA8CC52319A1F800859E69 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		325F50292304950A004CDCA2 /* Acessibilidade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Acessibilidade.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		325F502C2304950A004CDCA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		325F502E2304950A004CDCA2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +134,14 @@
 			path = Plates;
 			sourceTree = "<group>";
 		};
+		0FAA8CC42319A1BE00859E69 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				0FAA8CC52319A1F800859E69 /* RoundedView.swift */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		325F50202304950A004CDCA2 = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +161,7 @@
 		325F502B2304950A004CDCA2 /* Acessibilidade */ = {
 			isa = PBXGroup;
 			children = (
+				0FAA8CC42319A1BE00859E69 /* New Group */,
 				D9865DCF23144F9F00FA6C21 /* View */,
 				D9865DC623144CF000FA6C21 /* ViewControllers */,
 				325F502C2304950A004CDCA2 /* AppDelegate.swift */,
@@ -245,7 +256,7 @@
 				325F50252304950A004CDCA2 /* Sources */,
 				325F50262304950A004CDCA2 /* Frameworks */,
 				325F50272304950A004CDCA2 /* Resources */,
-				325F504123049566004CDCA2 /* ShellScript */,
+				325F504123049566004CDCA2 /* Run Script Swift Lint */,
 			);
 			buildRules = (
 			);
@@ -313,7 +324,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		325F504123049566004CDCA2 /* ShellScript */ = {
+		325F504123049566004CDCA2 /* Run Script Swift Lint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -322,6 +333,7 @@
 			);
 			inputPaths = (
 			);
+			name = "Run Script Swift Lint";
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -339,6 +351,7 @@
 			files = (
 				D9865DD623145B0F00FA6C21 /* CategoriesRestaurantsCollectionViewCell.swift in Sources */,
 				0F31992F2316F1750078BBBE /* RestaurantDetailsTableViewCell.swift in Sources */,
+				0FAA8CC62319A1F800859E69 /* RoundedView.swift in Sources */,
 				0F31992B2316EE6B0078BBBE /* RestaurantDetailsViewModel.swift in Sources */,
 				325F502F2304950A004CDCA2 /* ViewController.swift in Sources */,
 				0F0853A62315B9D500A64067 /* MyListCellTableViewCell.swift in Sources */,

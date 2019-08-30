@@ -36,7 +36,7 @@ extension MyListViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.testeTableView.dequeueReusableCell(withIdentifier:
-            listaCell, for: indexPath) as! MyListCellTableViewCell
-        return cell
+            listaCell, for: indexPath) as? MyListCellTableViewCell
+        return cell ?? UITableViewCell()
     }
 }

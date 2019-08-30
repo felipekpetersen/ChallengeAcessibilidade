@@ -15,6 +15,7 @@ class PlatesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view?.backgroundColor = UIColor(white: 1, alpha: 0.5)
     }
     
     @IBAction func addPlateButton(_ sender: Any) {

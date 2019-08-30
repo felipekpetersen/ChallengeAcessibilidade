@@ -10,9 +10,6 @@ import UIKit
 
 class NearRestaurantsTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var TestView: UIView!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
@@ -20,9 +17,10 @@ class NearRestaurantsTableViewCell: UITableViewCell {
     }
 
     func setup(title: String, color: UIColor) {
-        self.titleLabel.text = title
-        self.TestView.backgroundColor = color
-        self.TestView.layer.cornerRadius = 8
+        
+//        self.titleLabel.text = title
+//        self.TestView.backgroundColor = color
+//        self.TestView.layer.cornerRadius = 8
     }
     
 }
