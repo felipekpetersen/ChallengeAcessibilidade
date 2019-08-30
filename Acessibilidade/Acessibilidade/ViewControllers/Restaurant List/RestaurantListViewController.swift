@@ -42,9 +42,9 @@ extension RestaurantListViewController: UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: pratoCell, for: indexPath) as! RestaurantCellTableViewCell
-        cell.setup(color: .gray, text: "Nome do restaurante")
-        return cell
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: pratoCell, for: indexPath) as? RestaurantCellTableViewCell
+        cell?.setup(color: .gray, text: "Nome do restaurante")
+        return cell ?? UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
