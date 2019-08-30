@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        window?.rootViewController = HomeViewController()
 //        window?.makeKeyAndVisible()
         let navigationController = UINavigationController()
-        navigationController.viewControllers = [HomeViewController()]
+        navigationController.viewControllers = [NearRestaurantViewController()]
         let bounds = UIScreen.main.bounds
         self.window = UIWindow(frame: bounds)
         self.window?.rootViewController = navigationController
