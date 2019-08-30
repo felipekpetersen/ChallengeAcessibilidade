@@ -114,12 +114,12 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: categoriesCell, for: indexPath) as? CategoriesRestaurantsCollectionViewCell
-        cell?.setup(color: .blue)
+        cell?.setup(color: #colorLiteral(red: 0.7529411765, green: 0.831372549, blue: 0.9098039216, alpha: 1), titulo: "nome")
         return cell ?? UICollectionViewCell()
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.view.frame.width/4 - sectionInsets.left, height: self.view.frame.width/4 - sectionInsets.left)
+        return CGSize(width: self.view.frame.width/3.5 - sectionInsets.left, height: self.view.frame.width/4 - sectionInsets.left)
 //       return CGSize(width: 90, height: 90)
     }
     

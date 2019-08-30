@@ -11,16 +11,18 @@ import UIKit
 class CategoriesRestaurantsCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var viewTeste: UIView!
+    @IBOutlet weak var iconeCategoriaImage: UIImageView!    
+    @IBOutlet weak var nomeCategoriaLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
     
-    func setup(color:UIColor) {
-        self.viewTeste.layer.cornerRadius = 10
+    func setup(color:UIColor, titulo: String) {
+//        self.viewTeste.layer.cornerRadius = 10
         self.viewTeste.backgroundColor = color
-
+        self.nomeCategoriaLabel.text = titulo
     }
 
 }

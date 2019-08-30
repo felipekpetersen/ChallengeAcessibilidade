@@ -40,8 +40,8 @@ class NearRestaurantViewController: UIViewController {
     }
     
     func setupCornerView(){
-        cornerView.backgroundColor = #colorLiteral(red: 0.9529411765, green: 0.9607843137, blue: 0.9725490196, alpha: 1)
-        cornerView.layer.cornerRadius = 22
+//        cornerView.backgroundColor = #colorLiteral(red: 0.3098039329, green: 0.01568627544, blue: 0.1294117719, alpha: 1)
+//        cornerView.layer.cornerRadius = 22
         cornerView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
 //        roundCorners(cornerRadius: 22, view: cornerView)
     }
