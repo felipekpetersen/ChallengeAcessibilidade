@@ -11,6 +11,7 @@ import Foundation
 class HomeViewModel {
     
     var restaurants: [RestaurantCodable] = []
+    var categories: [String] = []
     
     func getRestaurants() {
         restaurants = InternRestaurant.getRestaurant()
@@ -24,5 +25,22 @@ class HomeViewModel {
         return restaurants[row]
     }
     
+    func getCategoriesNumberOfRows() -> Int{
+        return categories.count
+    }
+    
+    func getCategoriesForRow(index: Int) -> String{
+        return categories[index]
+    }
+    
+    func separateCategories() {
+        for restaurant in restaurants {
+            for category in restaurant.category ?? [] {
+                if categories.contains(category) == false{
+                    categories.append(category)
+                }
+            }
+        }
+    }
     
 }
