@@ -12,7 +12,15 @@ class RestaurantDetailsViewController: UIViewController {
 
     @IBOutlet weak var testeLabelRest: UILabel!
     
+    @IBOutlet weak var restauranteImgView: UIImageView!
+    
     @IBOutlet weak var tableViewPratos: UITableView!
+    
+    @IBOutlet weak var listaButton: UIButton!
+    
+    @IBOutlet weak var subtituloLabel: UILabel!
+    
+    @IBOutlet weak var backStubtituloView: RoundedView!
     
     let viewModel = RestaurantDetailsViewModel()
     let pratosCell = "RestaurantDetailsTableViewCell"
@@ -27,6 +35,7 @@ class RestaurantDetailsViewController: UIViewController {
         tableViewPratos.delegate = self 
         tableViewPratos.dataSource = self
         tableViewPratos.register(UINib(nibName: pratosCell, bundle: nil), forCellReuseIdentifier: pratosCell)
+        backStubtituloView.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9607843137, blue: 0.9725490196, alpha: 1)
     }
 }
 
