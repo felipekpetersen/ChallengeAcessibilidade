@@ -15,6 +15,7 @@
                 <outlet property="categoriasTeste" destination="XmX-HA-VIb" id="JBJ-CK-4HW"/>
                 <outlet property="collectionView" destination="bnX-lk-Od0" id="sWY-kE-fpY"/>
                 <outlet property="restaurantesProximosTeste" destination="sb9-Gx-yJ4" id="ZSj-eE-Vgc"/>
+                <outlet property="searchView" destination="bOH-hp-uAj" id="sdr-FU-HHU"/>
                 <outlet property="tableView" destination="qaC-FA-8aB" id="fBb-Am-p3Y"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -24,7 +25,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bOH-hp-uAj" userLabel="SearchView">
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bOH-hp-uAj" userLabel="SearchView">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="114"/>
                     <subviews>
                         <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="wW6-Fd-Tkt">

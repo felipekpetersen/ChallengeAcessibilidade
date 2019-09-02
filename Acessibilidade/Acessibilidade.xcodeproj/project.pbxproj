@@ -12,6 +12,7 @@
 		0F0853A22315B09C00A64067 /* MyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0853A12315B09C00A64067 /* MyListViewModel.swift */; };
 		0F0853A62315B9D500A64067 /* MyListCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0853A42315B9D500A64067 /* MyListCellTableViewCell.swift */; };
 		0F0853A72315B9D500A64067 /* MyListCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F0853A52315B9D500A64067 /* MyListCellTableViewCell.xib */; };
+		0F28EE86231DA28700B14C07 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F28EE85231DA28700B14C07 /* ShadowView.swift */; };
 		0F3199282316EE390078BBBE /* RestaurantDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3199262316EE390078BBBE /* RestaurantDetailsViewController.swift */; };
 		0F3199292316EE390078BBBE /* RestaurantDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F3199272316EE390078BBBE /* RestaurantDetailsViewController.xib */; };
 		0F31992B2316EE6B0078BBBE /* RestaurantDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F31992A2316EE6B0078BBBE /* RestaurantDetailsViewModel.swift */; };
@@ -54,6 +55,7 @@
 		0F0853A12315B09C00A64067 /* MyListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListViewModel.swift; sourceTree = "<group>"; };
 		0F0853A42315B9D500A64067 /* MyListCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListCellTableViewCell.swift; sourceTree = "<group>"; };
 		0F0853A52315B9D500A64067 /* MyListCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyListCellTableViewCell.xib; sourceTree = "<group>"; };
+		0F28EE85231DA28700B14C07 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		0F3199262316EE390078BBBE /* RestaurantDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailsViewController.swift; sourceTree = "<group>"; };
 		0F3199272316EE390078BBBE /* RestaurantDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantDetailsViewController.xib; sourceTree = "<group>"; };
 		0F31992A2316EE6B0078BBBE /* RestaurantDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailsViewModel.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				0FAA8CC52319A1F800859E69 /* RoundedView.swift */,
+				0F28EE85231DA28700B14C07 /* ShadowView.swift */,
 			);
 			path = "New Group";
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 				0F3199282316EE390078BBBE /* RestaurantDetailsViewController.swift in Sources */,
 				0F08539F2315AF0D00A64067 /* MyListViewController.swift in Sources */,
 				0F0853A22315B09C00A64067 /* MyListViewModel.swift in Sources */,
+				0F28EE86231DA28700B14C07 /* ShadowView.swift in Sources */,
 				32F864D823198B7A0008B7B5 /* MenuCodable.swift in Sources */,
 				D9865DDE231594D900FA6C21 /* RestaurantListViewModel.swift in Sources */,
 				0F3199352316F55E0078BBBE /* PlatesViewController.swift in Sources */,
@@ -595,6 +599,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+
 				DEVELOPMENT_TEAM = Q9Y63W6Q4X;
 				INFOPLIST_FILE = Acessibilidade/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
