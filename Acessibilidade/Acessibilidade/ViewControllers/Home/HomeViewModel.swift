@@ -32,7 +32,7 @@ class HomeViewModel {
     func getCategoriesForRow(index: Int) -> String{
         return categories[index]
     }
-    
+
     func separateCategories() {
         for restaurant in restaurants {
             for category in restaurant.category ?? [] {
@@ -42,5 +42,5 @@ class HomeViewModel {
             }
         }
     }
-    
+
 }

@@ -21,6 +21,7 @@ class RestaurantDetailsViewController: UIViewController {
     let viewModel = RestaurantDetailsViewModel()
     let pratosCell = "RestaurantDetailsTableViewCell"
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setTableView()

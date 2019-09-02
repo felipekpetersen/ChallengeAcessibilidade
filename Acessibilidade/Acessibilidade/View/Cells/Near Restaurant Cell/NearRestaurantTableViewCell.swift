@@ -24,6 +24,7 @@ class NearRestaurantTableViewCell: UITableViewCell {
     
     @IBAction func addressButton(_ sender: Any) {
     }
+    
     func setup(restaurant: RestaurantCodable) {
 //        self.restaurantImage.image = restaurant.
         self.restaurantNameLabel.text = restaurant.name

@@ -11,8 +11,14 @@ import Foundation
 
 class RestaurantListViewModel{
     
+    var restaurants: [RestaurantCodable] = []
+    
     func numberOfRows() -> Int {
-        return 12
+        return self.restaurants.count
+    }
+    
+    func restaurantForRow(index: Int) -> RestaurantCodable {
+        return restaurants[index]
     }
     
 }

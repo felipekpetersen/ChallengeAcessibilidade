@@ -20,13 +20,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pKZ-z2-hub">
-                        <rect key="frame" x="8" y="8" width="336" height="94"/>
+                        <rect key="frame" x="16" y="8" width="288" height="94"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xeL-vc-ca6">
-                                <rect key="frame" x="8" y="14" width="67" height="66"/>
+                                <rect key="frame" x="8" y="14" width="57.5" height="66"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1vf-uf-8UR">
-                                <rect key="frame" x="91" y="16" width="100" height="21"/>
+                                <rect key="frame" x="81.5" y="16" width="100" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="L4W-K5-x62"/>
                                 </constraints>
@@ -34,15 +34,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fjj-3A-8My">
-                                <rect key="frame" x="207" y="27" width="46" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fjj-3A-8My">
+                                <rect key="frame" x="204" y="27" width="46" height="40"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="menuButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="6gJ-S7-E0a"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xOv-my-41G">
-                                <rect key="frame" x="261" y="27" width="46" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xOv-my-41G">
+                                <rect key="frame" x="258" y="27" width="46" height="40"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="addressButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="eWO-N3-d8T"/>
@@ -65,14 +65,15 @@
                             <constraint firstItem="Fjj-3A-8My" firstAttribute="leading" secondItem="1vf-uf-8UR" secondAttribute="trailing" constant="16" id="cau-MP-7Us"/>
                             <constraint firstItem="xeL-vc-ca6" firstAttribute="leading" secondItem="pKZ-z2-hub" secondAttribute="leading" constant="8" id="iKj-qb-lys"/>
                             <constraint firstItem="1vf-uf-8UR" firstAttribute="leading" secondItem="xeL-vc-ca6" secondAttribute="trailing" constant="16" id="jjf-aA-D9J"/>
-                            <constraint firstAttribute="width" constant="336" id="oj1-X1-upI"/>
+                            <constraint firstAttribute="trailing" secondItem="xOv-my-41G" secondAttribute="trailing" constant="16" id="qf3-L3-3Vy"/>
                             <constraint firstItem="xOv-my-41G" firstAttribute="leading" secondItem="Fjj-3A-8My" secondAttribute="trailing" constant="8" id="xV3-oN-Glx"/>
                         </constraints>
                     </view>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="pKZ-z2-hub" secondAttribute="bottom" constant="8" id="2q3-cL-tyL"/>
-                    <constraint firstItem="pKZ-z2-hub" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="8VE-L4-CWn"/>
+                    <constraint firstItem="pKZ-z2-hub" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="8VE-L4-CWn"/>
+                    <constraint firstAttribute="trailing" secondItem="pKZ-z2-hub" secondAttribute="trailing" constant="16" id="FNy-m4-ekL"/>
                     <constraint firstItem="pKZ-z2-hub" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="ONz-te-vbD"/>
                 </constraints>
             </tableViewCellContentView>

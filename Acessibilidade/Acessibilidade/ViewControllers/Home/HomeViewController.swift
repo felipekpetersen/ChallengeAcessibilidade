@@ -113,9 +113,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = RestaurantDetailsViewController()
+//        vc.restaurants = self.viewModel.restaurants
         
-        
-        self.navigationController?.pushViewController(RestaurantDetailsViewController(), animated: true)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -146,7 +147,10 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.navigationController?.pushViewController(RestaurantListViewController(), animated: true)
+        let vc = NearRestaurantViewController()
+        vc.restaurants = self.viewModel.restaurants
+        vc.categoryName = self.viewModel.getCategoriesForRow(index: indexPath.row)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
