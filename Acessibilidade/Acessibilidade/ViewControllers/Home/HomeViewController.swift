@@ -12,6 +12,7 @@ import CoreLocation
 
 class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
+    @IBOutlet weak var searchView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var categoriasTeste: UILabel!

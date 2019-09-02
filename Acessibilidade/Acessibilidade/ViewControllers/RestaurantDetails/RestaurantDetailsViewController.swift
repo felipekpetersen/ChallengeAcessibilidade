@@ -11,16 +11,12 @@ import UIKit
 class RestaurantDetailsViewController: UIViewController {
 
     @IBOutlet weak var testeLabelRest: UILabel!
-    
     @IBOutlet weak var restauranteImgView: UIImageView!
-    
     @IBOutlet weak var tableViewPratos: UITableView!
-    
     @IBOutlet weak var listaButton: UIButton!
-    
     @IBOutlet weak var subtituloLabel: UILabel!
-    
     @IBOutlet weak var backStubtituloView: RoundedView!
+    @IBOutlet weak var smallTitleLabel: UILabel!
     
     let viewModel = RestaurantDetailsViewModel()
     let pratosCell = "RestaurantDetailsTableViewCell"
@@ -28,6 +24,14 @@ class RestaurantDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setTableView()
+        setViews()
+        setLabels()
+//        setNavigationBar()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setViews()
     }
     
     //MARK: - Setar table view
@@ -35,8 +39,27 @@ class RestaurantDetailsViewController: UIViewController {
         tableViewPratos.delegate = self 
         tableViewPratos.dataSource = self
         tableViewPratos.register(UINib(nibName: pratosCell, bundle: nil), forCellReuseIdentifier: pratosCell)
-        backStubtituloView.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9607843137, blue: 0.9725490196, alpha: 1)
     }
+    
+    func setViews(){
+        backStubtituloView.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9607843137, blue: 0.9725490196, alpha: 1)
+        backStubtituloView.addShadow(color: #colorLiteral(red: 0.3098039329, green: 0.01568627544, blue: 0.1294117719, alpha: 1), opacity: 1, offSet: CGSize(width: 10, height: 10), radius: 13, scale: true)
+        restauranteImgView.image = UIImage(named: "pizzaPlaceholder")
+    }
+    
+    func setLabels(){
+        testeLabelRest.textColor = #colorLiteral(red: 0.9490196078, green: 0.9607843137, blue: 0.9725490196, alpha: 1)
+        testeLabelRest.font = UIFont.boldSystemFont(ofSize: 28.0)
+        smallTitleLabel.textColor = #colorLiteral(red: 0.9490196078, green: 0.9607843137, blue: 0.9725490196, alpha: 1)
+        smallTitleLabel.font = UIFont.boldSystemFont(ofSize: 15.0)
+    }
+    
+//    func setNavigationBar(){
+//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+//        self.navigationController?.navigationBar.shadowImage = UIImage()
+//        self.navigationController?.navigationBar.isTranslucent = true
+//        self.navigationController?.view.backgroundColor = .clear
+//    }
 }
 
 extension RestaurantDetailsViewController: UITableViewDelegate, UITableViewDataSource{
