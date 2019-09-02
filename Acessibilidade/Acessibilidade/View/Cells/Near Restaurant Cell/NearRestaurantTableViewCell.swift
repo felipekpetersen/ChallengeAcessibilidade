@@ -10,7 +10,6 @@ import UIKit
 
 class NearRestaurantTableViewCell: UITableViewCell {
 
-    
     @IBOutlet weak var restaurantImage: UIImageView!
     @IBOutlet weak var restaurantNameLabel: UILabel!
     
@@ -19,12 +18,14 @@ class NearRestaurantTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-  
     @IBAction func menuButton(_ sender: Any) {
+        
     }
-    
     
     @IBAction func addressButton(_ sender: Any) {
     }
-    
+    func setup(restaurant: RestaurantCodable) {
+//        self.restaurantImage.image = restaurant.
+        self.restaurantNameLabel.text = restaurant.name
+    }
 }

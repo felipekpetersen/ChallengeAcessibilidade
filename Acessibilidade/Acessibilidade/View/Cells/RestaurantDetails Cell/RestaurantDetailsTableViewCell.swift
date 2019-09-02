@@ -16,7 +16,7 @@ class RestaurantDetailsTableViewCell: UITableViewCell {
         super.awakeFromNib()
     }
 
-    func setUpCell(title: String){
+    func setUpCell(title: String) {
         testeLabel.text = title
     }
 }
