@@ -9,6 +9,10 @@
 import Foundation
 import UIKit
 
+struct ResponseCodable: Codable {
+    var response: [RestaurantCodable]?
+}
+
 struct RestaurantCodable: Codable {
     var name: String?
     var place: String?
@@ -40,15 +44,15 @@ struct PlateCodable:Codable {
 
 class InternRestaurant: NSObject {
     static func getRestaurant() -> [RestaurantCodable] {
-        var restaurant: [RestaurantCodable] = []
+        var response: ResponseCodable?
         do {
-            let path = "https://br-clube-ju.herokuapp.com/api/getLetters/"
+            let path = "https://guekavi-app.herokuapp.com/api/getRestaurants"
             
             let url = URL(string: path)
             if let url = url as? URL {
                 let restaurantData = try Data(contentsOf: url)
-                restaurant = try JSONDecoder().decode([RestaurantCodable].self, from: restaurantData)
-                return restaurant
+                response = try JSONDecoder().decode(ResponseCodable.self, from: restaurantData)
+                return response?.response ?? [RestaurantCodable]()
             }
             
            
@@ -56,7 +60,7 @@ class InternRestaurant: NSObject {
         } catch {
             print("\(error.localizedDescription)")
         }
-        return restaurant
+        return response?.response ?? [RestaurantCodable]()
         
     }
     

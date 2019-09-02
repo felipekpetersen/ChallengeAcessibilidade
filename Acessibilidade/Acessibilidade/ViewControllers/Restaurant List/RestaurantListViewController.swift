@@ -14,12 +14,14 @@ class RestaurantListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     let viewModel = RestaurantListViewModel()
-    let pratoCell = "RestaurantCellTableViewCell"
+    let pratoCell = "NearRestaurantCellTableViewCell"
+    var restaurants: [RestaurantCodable] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
         setupLabel()
+        self.viewModel.restaurants = self.restaurants
     }
     
     func setupTableView(){
@@ -42,8 +44,8 @@ extension RestaurantListViewController: UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: pratoCell, for: indexPath) as? RestaurantCellTableViewCell
-        cell?.setup(color: .gray, text: "Nome do restaurante")
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: pratoCell, for: indexPath) as? NearRestaurantTableViewCell
+        cell?.setup(restaurant: self.viewModel.restaurantForRow(index: indexPath.row))
         return cell ?? UITableViewCell()
     }
     

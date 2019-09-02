@@ -23,7 +23,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     //    private let itemsPerRow
     
     let viewModel = HomeViewModel()
-    let restaurantCell = "NearRestaurantsTableViewCell"
+    let restaurantCell = "HomeRestaurantTableViewCell"
     let categoriesCell = "CategoriesRestaurantsCollectionViewCell"
     private var sectionInsets = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 20.0)
     private let itemsPerRow: CGFloat = 4
@@ -36,7 +36,14 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         setupLabels()
         self.locationManager.requestWhenInUseAuthorization()
         self.locationManager.delegate = self
+        self.getRestaurants()
         // Do any additional setup after loading the view.
+    }
+    
+    func getRestaurants() {
+        self.viewModel.getRestaurants()
+        self.viewModel.separateCategories()
+        self.tableView.reloadData()
     }
     
     //MARK:- Setups
@@ -95,14 +102,21 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return self.viewModel.numberOfRows()
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: restaurantCell, for: indexPath) as? NearRestaurantsTableViewCell
-//        cell.setup(rest: "nome do restaurante", color: .gray)
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: restaurantCell, for: indexPath) as? HomeRestaurantTableViewCell
+        cell?.setup(restaurant: self.viewModel.getRestaurantForRow(row: indexPath.row))
         return cell ?? UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.navigationController?.pushViewController(RestaurantDetailsViewController(), animated: true)
+        let vc = RestaurantDetailsViewController()
+//        vc.restaurants = self.viewModel.restaurants
+        
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -110,12 +124,12 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return viewModel.getCategoriesNumberOfRows()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: categoriesCell, for: indexPath) as? CategoriesRestaurantsCollectionViewCell
-        cell?.setup(color: #colorLiteral(red: 0.7529411765, green: 0.831372549, blue: 0.9098039216, alpha: 1), titulo: "nome")
+        cell?.setup(color: #colorLiteral(red: 0.7529411765, green: 0.831372549, blue: 0.9098039216, alpha: 1), titulo: self.viewModel.getCategoriesForRow(index: indexPath.row))
         return cell ?? UICollectionViewCell()
     }
     
@@ -133,7 +147,10 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.navigationController?.pushViewController(RestaurantListViewController(), animated: true)
+        let vc = NearRestaurantViewController()
+        vc.restaurants = self.viewModel.restaurants
+        vc.categoryName = self.viewModel.getCategoriesForRow(index: indexPath.row)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

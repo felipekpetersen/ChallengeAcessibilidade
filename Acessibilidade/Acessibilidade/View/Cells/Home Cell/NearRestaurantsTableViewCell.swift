@@ -10,9 +10,9 @@ import UIKit
 
 class NearRestaurantsTableViewCell: UITableViewCell {
 
-
+    @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var testView: UIView!
+    @IBOutlet weak var descLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,8 +20,9 @@ class NearRestaurantsTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    func setup(title: String, color: UIColor) {
-
+    func setup(restaurant: RestaurantCodable?) {
+        self.titleLabel.text = restaurant?.name
+        self.descLabel.text = restaurant?.place
     }
     
 }

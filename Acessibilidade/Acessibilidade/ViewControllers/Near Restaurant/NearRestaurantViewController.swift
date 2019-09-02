@@ -20,9 +20,13 @@ class NearRestaurantViewController: UIViewController {
     
     let nearRestaurantCell = "NearRestaurantTableViewCell"
     let viewModel = NearRestaurantViewModel()
+    var categoryName = ""
+    var restaurants: [RestaurantCodable] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.viewModel.categoryName = self.categoryName
+        self.viewModel.restaurants = self.restaurants
         setupTableView()
         setupCategorytLabel()
         setupCategoryPhoto()
