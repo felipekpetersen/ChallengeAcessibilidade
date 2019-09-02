@@ -36,7 +36,13 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         setupLabels()
         self.locationManager.requestWhenInUseAuthorization()
         self.locationManager.delegate = self
+        self.getRestaurants()
         // Do any additional setup after loading the view.
+    }
+    
+    func getRestaurants() {
+        self.viewModel.getRestaurants()
+        self.tableView.reloadData()
     }
     
     //MARK:- Setups
@@ -66,7 +72,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     
     //MARK:- Location
     func setupGeoFence() {
-        let geofenceRegionCenter = CLLocationCoordinate2DMake(-38.028308, -57.531508);
+//        let geofenceRegionCenter = CLLocationCoordinate2DMake(-38.028308, -57.531508);
         let geofenceRegion = CLCircularRegion(center: geofenceRegionCenter, radius: 400, identifier: "CurrentLocation");
         geofenceRegion.notifyOnExit = true;
         geofenceRegion.notifyOnEntry = true;
