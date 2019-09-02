@@ -45,6 +45,8 @@
 		D994B1B9231996B100F30DD7 /* NearRestaurantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D994B1B8231996B100F30DD7 /* NearRestaurantViewModel.swift */; };
 		D994B1BD23199DCE00F30DD7 /* NearRestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D994B1BB23199DCE00F30DD7 /* NearRestaurantTableViewCell.swift */; };
 		D994B1BE23199DCE00F30DD7 /* NearRestaurantTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D994B1BC23199DCE00F30DD7 /* NearRestaurantTableViewCell.xib */; };
+		D994B1C2231D2E1C00F30DD7 /* RestaurantMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D994B1C0231D2E1C00F30DD7 /* RestaurantMapViewController.swift */; };
+		D994B1C3231D2E1C00F30DD7 /* RestaurantMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D994B1C1231D2E1C00F30DD7 /* RestaurantMapViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +90,8 @@
 		D994B1B8231996B100F30DD7 /* NearRestaurantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearRestaurantViewModel.swift; sourceTree = "<group>"; };
 		D994B1BB23199DCE00F30DD7 /* NearRestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearRestaurantTableViewCell.swift; sourceTree = "<group>"; };
 		D994B1BC23199DCE00F30DD7 /* NearRestaurantTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NearRestaurantTableViewCell.xib; sourceTree = "<group>"; };
+		D994B1C0231D2E1C00F30DD7 /* RestaurantMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantMapViewController.swift; sourceTree = "<group>"; };
+		D994B1C1231D2E1C00F30DD7 /* RestaurantMapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantMapViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +215,7 @@
 		D9865DC623144CF000FA6C21 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D994B1BF231D2DEC00F30DD7 /* Restaurant Map */,
 				D994B1B3231993E200F30DD7 /* Near Restaurant */,
 				0F3199322316F4C70078BBBE /* Plates */,
 				0F3199252316EE190078BBBE /* RestaurantDetails */,
@@ -291,6 +296,15 @@
 			path = "Near Restaurant Cell";
 			sourceTree = "<group>";
 		};
+		D994B1BF231D2DEC00F30DD7 /* Restaurant Map */ = {
+			isa = PBXGroup;
+			children = (
+				D994B1C0231D2E1C00F30DD7 /* RestaurantMapViewController.swift */,
+				D994B1C1231D2E1C00F30DD7 /* RestaurantMapViewController.xib */,
+			);
+			path = "Restaurant Map";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -356,6 +370,7 @@
 				0F0853A72315B9D500A64067 /* MyListCellTableViewCell.xib in Resources */,
 				0F0853A02315AF0D00A64067 /* MyListViewController.xib in Resources */,
 				325F50372304950B004CDCA2 /* Assets.xcassets in Resources */,
+				D994B1C3231D2E1C00F30DD7 /* RestaurantMapViewController.xib in Resources */,
 				D9007D81231595EF00090140 /* RestaurantCellTableViewCell.xib in Resources */,
 				D994B1BE23199DCE00F30DD7 /* NearRestaurantTableViewCell.xib in Resources */,
 				D9865DD723145B0F00FA6C21 /* CategoriesRestaurantsCollectionViewCell.xib in Resources */,
@@ -415,6 +430,7 @@
 				0F3199352316F55E0078BBBE /* PlatesViewController.swift in Sources */,
 				D994B1B9231996B100F30DD7 /* NearRestaurantViewModel.swift in Sources */,
 				325F50352304950A004CDCA2 /* Acessibilidade.xcdatamodeld in Sources */,
+				D994B1C2231D2E1C00F30DD7 /* RestaurantMapViewController.swift in Sources */,
 				D9865DDB2315949300FA6C21 /* RestaurantListViewController.swift in Sources */,
 				D9865DCD23144E4A00FA6C21 /* HomeViewModel.swift in Sources */,
 				D994B1BD23199DCE00F30DD7 /* NearRestaurantTableViewCell.swift in Sources */,
@@ -565,7 +581,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DHAN829484;
+				DEVELOPMENT_TEAM = Q9Y63W6Q4X;
 				INFOPLIST_FILE = Acessibilidade/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -583,7 +599,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DHAN829484;
+
+				DEVELOPMENT_TEAM = Q9Y63W6Q4X;
 				INFOPLIST_FILE = Acessibilidade/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

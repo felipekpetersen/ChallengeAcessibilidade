@@ -11,9 +11,20 @@ import Foundation
 
 class NearRestaurantViewModel{
     
+    var restaurants: [RestaurantCodable] = []
+    var categoryName: String?
+    
+    func getRestaurants(index: Int) -> RestaurantCodable {
+        return restaurants[index]
+    }
+    
+    func getRestaurantsCategory(index: Int) -> String {
+        return categoryName ?? ""
+    }
     
     func numberOfRows() -> Int {
-        return 10
+        return restaurants.count
     }
     
 }
+

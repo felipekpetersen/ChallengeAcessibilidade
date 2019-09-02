@@ -18,67 +18,38 @@ class NearRestaurantViewController: UIViewController {
     @IBOutlet weak var defaultCategoryLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
     
-    
     let nearRestaurantCell = "NearRestaurantTableViewCell"
     let viewModel = NearRestaurantViewModel()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        setupCornerView()
-        setupNearRestaurantLabel()
+        setupCategorytLabel()
         setupCategoryPhoto()
     }
-    
-    
+    @IBAction func myListButton(_ sender: Any) {
+    }
     func setupTableView() {
         self.nearRestaurantTableView.delegate = self
         self.nearRestaurantTableView.dataSource = self
         self.nearRestaurantTableView.separatorStyle = .none
         nearRestaurantTableView.register(UINib(nibName: nearRestaurantCell, bundle: nil), forCellReuseIdentifier: nearRestaurantCell)
     }
-    
-    func setupCornerView(){
-//        cornerView.backgroundColor = #colorLiteral(red: 0.3098039329, green: 0.01568627544, blue: 0.1294117719, alpha: 1)
-//        cornerView.layer.cornerRadius = 22
-        cornerView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-//        roundCorners(cornerRadius: 22, view: cornerView)
-    }
 
-//    func roundCorners(cornerRadius: Double, view: UIView) {
-//        view.layer.cornerRadius = CGFloat(cornerRadius)
-//        view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-//    }
-//
-    func setupNearRestaurantLabel(){
-        
-        
+    func setupCategorytLabel() {
+        categoryLabel.text = self.viewModel.getRestaurantsCategory(index: 0)
     }
-    
-    func setupCategoryPhoto(){
-        
-        
+    func setupCategoryPhoto() {
     }
-    
-    
- 
 }
 
-
 extension NearRestaurantViewController: UITableViewDataSource, UITableViewDelegate{
-    
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.viewModel.numberOfRows()
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.nearRestaurantTableView.dequeueReusableCell(withIdentifier: nearRestaurantCell, for: indexPath) as? NearRestaurantTableViewCell
+        cell?.setup(restaurant: self.viewModel.getRestaurants(index: indexPath.row))
         return cell ?? UITableViewCell()
     }
-    
-    
 }
-
-
