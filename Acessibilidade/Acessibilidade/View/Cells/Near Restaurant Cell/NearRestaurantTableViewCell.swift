@@ -12,6 +12,7 @@ class NearRestaurantTableViewCell: UITableViewCell {
 
     @IBOutlet weak var restaurantImage: UIImageView!
     @IBOutlet weak var restaurantNameLabel: UILabel!
+    @IBOutlet weak var cornerView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,5 +29,9 @@ class NearRestaurantTableViewCell: UITableViewCell {
     func setup(restaurant: RestaurantCodable) {
 //        self.restaurantImage.image = restaurant.
         self.restaurantNameLabel.text = restaurant.name
+    }
+    
+    func setupCorner(cornerRadius: CGFloat) {
+        self.cornerView.layer.cornerRadius =  cornerRadius
     }
 }

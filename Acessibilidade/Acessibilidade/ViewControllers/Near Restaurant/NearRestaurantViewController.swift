@@ -10,7 +10,7 @@ import UIKit
 
 class NearRestaurantViewController: UIViewController {
 
- 
+
     @IBOutlet weak var nearRestaurantLabel: UILabel!
     @IBOutlet weak var nearRestaurantTableView: UITableView!
     @IBOutlet weak var cornerView: UIView!
@@ -30,9 +30,11 @@ class NearRestaurantViewController: UIViewController {
         setupTableView()
         setupCategorytLabel()
         setupCategoryPhoto()
+        setupCornerView()
     }
-    @IBAction func myListButton(_ sender: Any) {
-    }
+
+    
+
     func setupTableView() {
         self.nearRestaurantTableView.delegate = self
         self.nearRestaurantTableView.dataSource = self
@@ -42,8 +44,18 @@ class NearRestaurantViewController: UIViewController {
 
     func setupCategorytLabel() {
         categoryLabel.text = self.viewModel.getRestaurantsCategory(index: 0)
+        defaultCategoryLabel.text = "Categoria"
+        nearRestaurantLabel.text = "\(self.viewModel.restaurants.count) restaurantes próximos"
     }
+    
+    
     func setupCategoryPhoto() {
+    }
+    
+    func setupCornerView() {
+        cornerView.layer.cornerRadius = 22
+        cornerView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        
     }
 }
 
@@ -54,6 +66,7 @@ extension NearRestaurantViewController: UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.nearRestaurantTableView.dequeueReusableCell(withIdentifier: nearRestaurantCell, for: indexPath) as? NearRestaurantTableViewCell
         cell?.setup(restaurant: self.viewModel.getRestaurants(index: indexPath.row))
+        cell?.setupCorner(cornerRadius: 5)
         return cell ?? UITableViewCell()
     }
 }
