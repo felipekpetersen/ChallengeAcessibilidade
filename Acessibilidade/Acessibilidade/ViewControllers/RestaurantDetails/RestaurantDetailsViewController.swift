@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RestaurantDetailsViewController: UIViewController {
+class RestaurantDetailsViewController: UIViewController{
 
     @IBOutlet weak var testeLabelRest: UILabel!
     @IBOutlet weak var restauranteImgView: UIImageView!
@@ -21,6 +21,7 @@ class RestaurantDetailsViewController: UIViewController {
     let viewModel = RestaurantDetailsViewModel()
     let pratosCell = "RestaurantDetailsTableViewCell"
     
+    var restaurant = RestaurantCodable()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,7 @@ class RestaurantDetailsViewController: UIViewController {
         setViews()
         setLabels()
         setNavigationBar()
+        viewModel.restaurant = self.restaurant 
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -40,11 +42,15 @@ class RestaurantDetailsViewController: UIViewController {
         tableViewPratos.delegate = self 
         tableViewPratos.dataSource = self
         tableViewPratos.register(UINib(nibName: pratosCell, bundle: nil), forCellReuseIdentifier: pratosCell)
+        tableViewPratos.separatorStyle = .none
+        
     }
     
     func setViews(){
+        self.view.backgroundColor = #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)
         backStubtituloView.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9607843137, blue: 0.9725490196, alpha: 1)
-        backStubtituloView.addShadow(color: #colorLiteral(red: 0.05490196078, green: 0.1254901961, blue: 0.2705882353, alpha: 1), opacity: 1.0, offSet: CGSize.zero, radius: 16)
+        backStubtituloView.addShadowWithBezier(color: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), opacity: 1, offSet: .zero, radius: 100)
+//        backStubtituloView.addShadowWithBezier(color: #colorLiteral(red: 0.05490196078, green: 0.1254901961, blue: 0.2705882353, alpha: 1), opacity: 0.3, offSet: CGSize(width: 10, height: -10), radius: 20)
         restauranteImgView.image = UIImage(named: "pizzaPlaceholder")
     }
     
@@ -60,6 +66,8 @@ class RestaurantDetailsViewController: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = .clear
+        
+        // alterar botao back da navigation bar
     }
 }
 
@@ -75,5 +83,6 @@ extension RestaurantDetailsViewController: UITableViewDelegate, UITableViewDataS
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.navigationController?.present(PlatesViewController(), animated: true, completion: nil)
+//        self.navigationController?.present()
     }
 }

@@ -10,7 +10,16 @@ import Foundation
 import UIKit
 
 extension UIView {
-    func addShadow(color: UIColor, opacity: Float, offSet: CGSize, radius: CGFloat){
+    func addShadow(color: UIColor, opacity: Float, offSet: CGSize, radius: CGFloat) {
+//        self.layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
+        self.layer.shadowColor = color.cgColor
+        self.layer.shadowOpacity = opacity
+        self.layer.masksToBounds = false
+        self.layer.shadowOffset = offSet
+        self.layer.shadowRadius = radius
+    }
+    
+    func addShadowWithBezier(color: UIColor, opacity: Float, offSet: CGSize, radius: CGFloat) {
         self.layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
         self.layer.shadowColor = color.cgColor
         self.layer.shadowOpacity = opacity
