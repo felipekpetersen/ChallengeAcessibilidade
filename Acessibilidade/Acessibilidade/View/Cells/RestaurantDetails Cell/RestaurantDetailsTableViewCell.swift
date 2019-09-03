@@ -20,8 +20,8 @@ class RestaurantDetailsTableViewCell: UITableViewCell {
         cardapioBackView.addShadow(color: #colorLiteral(red: 0.05490196078, green: 0.1254901961, blue: 0.2705882353, alpha: 1), opacity: 0.2, offSet: CGSize(width: 0, height: 4), radius: 4)
     }
 
-    func setUpCell(title: String) {
-        testeLabel.text = title
-//        cardapioSetaImage.image = UIImage(named: "Back")
+    func setUpCell(menu: MenuCodable) {
+        testeLabel.text = menu.name
+//        testeLabel.text = title
     }
 }

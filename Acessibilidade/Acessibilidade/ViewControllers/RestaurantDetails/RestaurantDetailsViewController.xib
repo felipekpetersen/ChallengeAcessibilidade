@@ -13,11 +13,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RestaurantDetailsViewController" customModule="Acessibilidade" customModuleProvider="target">
             <connections>
                 <outlet property="backStubtituloView" destination="Ssf-Ds-Zpo" id="cY8-5B-euK"/>
+                <outlet property="cardapiosTableView" destination="77d-kg-Jay" id="xOR-U7-8ua"/>
                 <outlet property="listaButton" destination="RwN-f5-EAK" id="Ajs-A6-Z2k"/>
                 <outlet property="restauranteImgView" destination="KZ7-kp-0VQ" id="iTN-lK-Z2Y"/>
                 <outlet property="smallTitleLabel" destination="X2J-Fk-t5W" id="wVx-jp-b6e"/>
                 <outlet property="subtituloLabel" destination="d7g-zY-o7C" id="11s-AF-gnT"/>
-                <outlet property="tableViewPratos" destination="77d-kg-Jay" id="xOR-U7-8ua"/>
                 <outlet property="testeLabelRest" destination="CZZ-lG-M2V" id="lCJ-3W-PNS"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -28,9 +28,9 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KZ7-kp-0VQ">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="282"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="KZ7-kp-0VQ" secondAttribute="height" multiplier="69:47" id="3w2-Qp-fv8"/>
+                        <constraint firstAttribute="width" secondItem="KZ7-kp-0VQ" secondAttribute="height" multiplier="69:47" constant="-26.425531914893611" id="3w2-Qp-fv8"/>
                     </constraints>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ssf-Ds-Zpo" customClass="RoundedView" customModule="Acessibilidade" customModuleProvider="target">
@@ -76,7 +76,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RwN-f5-EAK">
-                    <rect key="frame" x="372" y="68" width="26" height="31"/>
+                    <rect key="frame" x="372" y="54" width="26" height="31"/>
                     <state key="normal" image="Rectangle 4.5"/>
                 </button>
             </subviews>
@@ -90,7 +90,7 @@
                 <constraint firstItem="Ssf-Ds-Zpo" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="GCq-vX-dVm"/>
                 <constraint firstItem="CZZ-lG-M2V" firstAttribute="top" secondItem="X2J-Fk-t5W" secondAttribute="bottom" constant="8.5" id="If1-B1-EZt"/>
                 <constraint firstItem="CZZ-lG-M2V" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="IoY-BL-56G"/>
-                <constraint firstItem="RwN-f5-EAK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="68" id="KUf-aN-pFJ"/>
+                <constraint firstItem="RwN-f5-EAK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="54" id="KUf-aN-pFJ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="KZ7-kp-0VQ" secondAttribute="trailing" id="LOK-kU-z9w"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="X2J-Fk-t5W" secondAttribute="trailing" constant="305" id="Wd7-aJ-neQ"/>
                 <constraint firstItem="KZ7-kp-0VQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="YlN-ff-LMf"/>
