@@ -3,7 +3,7 @@ opt_in_rules:
   - closure_spacing
   - force_unwrapping
 
-disabled_rules:
+disabled_rules: # rule identifiers to exclude from running
   - trailing_whitespace
   - weak_delegate
 

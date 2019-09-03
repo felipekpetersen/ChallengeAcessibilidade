@@ -4,34 +4,57 @@
 //
 //  Created by Pedro Henrique Guedes Silveira on 30/08/19.
 //  Copyright © 2019 Felipe Petersen. All rights reserved.
-//
+//  swiftlint:disable trailing_whitespace
 
 import UIKit
+
+
+protocol NearRestaurantCellDelegate {
+    func receiveMenu(restaurant: RestaurantCodable)
+    func receiveDetail(restaurant: RestaurantCodable)
+}
 
 class NearRestaurantTableViewCell: UITableViewCell {
 
     @IBOutlet weak var restaurantImage: UIImageView!
     @IBOutlet weak var restaurantNameLabel: UILabel!
     @IBOutlet weak var cornerView: UIView!
+    @IBOutlet weak var openMenuView: UIView!
+    @IBOutlet weak var openDetailsView: UIView!
+    var restaurant: RestaurantCodable?
+    var delegate: NearRestaurantCellDelegate?
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        setupTapGesture()
         // Initialization code
     }
 
-    @IBAction func menuButton(_ sender: Any) {
-        
-    }
-    
-    @IBAction func addressButton(_ sender: Any) {
-    }
-    
     func setup(restaurant: RestaurantCodable) {
 //        self.restaurantImage.image = restaurant.
         self.restaurantNameLabel.text = restaurant.name
+        self.restaurant = restaurant
     }
     
     func setupCorner(cornerRadius: CGFloat) {
         self.cornerView.layer.cornerRadius =  cornerRadius
     }
+    
+    func setupTapGesture() {
+        let menuTap = UITapGestureRecognizer(target: self, action: #selector(openMenu))
+        openMenuView.addGestureRecognizer(menuTap)
+        let detailTap = UITapGestureRecognizer(target: self, action: #selector(openDetails))
+        openDetailsView.addGestureRecognizer(detailTap)
+    }
+    
+    @objc func openMenu() {
+        
+    }
+    
+    @objc func openDetails() {
+        guard let restaurant = restaurant else {return}
+        delegate?.receiveDetail(restaurant: restaurant)
+    }
+    
 }

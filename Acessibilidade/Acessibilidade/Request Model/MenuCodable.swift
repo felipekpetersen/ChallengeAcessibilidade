@@ -4,7 +4,7 @@
 //
 //  Created by Felipe Petersen on 30/08/19.
 //  Copyright © 2019 Felipe Petersen. All rights reserved.
-//
+//  swiftlint:disable trailing_whitespace
 
 import Foundation
 import UIKit
