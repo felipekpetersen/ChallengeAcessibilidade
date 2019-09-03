@@ -27,7 +27,7 @@ class RestaurantDetailsViewController: UIViewController {
         setTableView()
         setViews()
         setLabels()
-//        setNavigationBar()
+        setNavigationBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,7 +44,7 @@ class RestaurantDetailsViewController: UIViewController {
     
     func setViews(){
         backStubtituloView.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9607843137, blue: 0.9725490196, alpha: 1)
-        backStubtituloView.addShadow(color: #colorLiteral(red: 0.3098039329, green: 0.01568627544, blue: 0.1294117719, alpha: 1), opacity: 1, offSet: CGSize(width: 10, height: 10), radius: 13, scale: true)
+        backStubtituloView.addShadow(color: #colorLiteral(red: 0.05490196078, green: 0.1254901961, blue: 0.2705882353, alpha: 1), opacity: 1.0, offSet: CGSize.zero, radius: 16)
         restauranteImgView.image = UIImage(named: "pizzaPlaceholder")
     }
     
@@ -55,12 +55,12 @@ class RestaurantDetailsViewController: UIViewController {
         smallTitleLabel.font = UIFont.boldSystemFont(ofSize: 15.0)
     }
     
-//    func setNavigationBar(){
-//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-//        self.navigationController?.navigationBar.shadowImage = UIImage()
-//        self.navigationController?.navigationBar.isTranslucent = true
-//        self.navigationController?.view.backgroundColor = .clear
-//    }
+    func setNavigationBar(){
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
+    }
 }
 
 extension RestaurantDetailsViewController: UITableViewDelegate, UITableViewDataSource{
