@@ -29,6 +29,8 @@
 		325F50352304950A004CDCA2 /* Acessibilidade.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 325F50332304950A004CDCA2 /* Acessibilidade.xcdatamodeld */; };
 		325F50372304950B004CDCA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 325F50362304950B004CDCA2 /* Assets.xcassets */; };
 		325F503A2304950B004CDCA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 325F50382304950B004CDCA2 /* LaunchScreen.storyboard */; };
+		32B80AB9231EDA3600E3EE5F /* SelectPlateModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B80AB7231EDA3600E3EE5F /* SelectPlateModalViewController.swift */; };
+		32B80ABA231EDA3600E3EE5F /* SelectPlateModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32B80AB8231EDA3600E3EE5F /* SelectPlateModalViewController.xib */; };
 		32F864D823198B7A0008B7B5 /* MenuCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F864D723198B7A0008B7B5 /* MenuCodable.swift */; };
 		D9007D80231595EF00090140 /* RestaurantCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9007D7E231595EF00090140 /* RestaurantCellTableViewCell.swift */; };
 		D9007D81231595EF00090140 /* RestaurantCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9007D7F231595EF00090140 /* RestaurantCellTableViewCell.xib */; };
@@ -77,6 +79,8 @@
 		325F50362304950B004CDCA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		325F50392304950B004CDCA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		325F503B2304950B004CDCA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32B80AB7231EDA3600E3EE5F /* SelectPlateModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlateModalViewController.swift; sourceTree = "<group>"; };
+		32B80AB8231EDA3600E3EE5F /* SelectPlateModalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectPlateModalViewController.xib; sourceTree = "<group>"; };
 		32F864D723198B7A0008B7B5 /* MenuCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCodable.swift; sourceTree = "<group>"; };
 		D9007D7E231595EF00090140 /* RestaurantCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCellTableViewCell.swift; sourceTree = "<group>"; };
 		D9007D7F231595EF00090140 /* RestaurantCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantCellTableViewCell.xib; sourceTree = "<group>"; };
@@ -201,6 +205,15 @@
 			path = Acessibilidade;
 			sourceTree = "<group>";
 		};
+		32B80AB6231ED8C800E3EE5F /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				32B80AB7231EDA3600E3EE5F /* SelectPlateModalViewController.swift */,
+				32B80AB8231EDA3600E3EE5F /* SelectPlateModalViewController.xib */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		32F864D623198A9F0008B7B5 /* Request Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +234,7 @@
 		D9865DC623144CF000FA6C21 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				32B80AB6231ED8C800E3EE5F /* New Group */,
 				D994B1BF231D2DEC00F30DD7 /* Restaurant Map */,
 				D994B1B3231993E200F30DD7 /* Near Restaurant */,
 				0F3199322316F4C70078BBBE /* Plates */,
@@ -382,6 +396,7 @@
 				325F50372304950B004CDCA2 /* Assets.xcassets in Resources */,
 				D994B1C3231D2E1C00F30DD7 /* RestaurantMapViewController.xib in Resources */,
 				D9007D81231595EF00090140 /* RestaurantCellTableViewCell.xib in Resources */,
+				32B80ABA231EDA3600E3EE5F /* SelectPlateModalViewController.xib in Resources */,
 				D994B1BE23199DCE00F30DD7 /* NearRestaurantTableViewCell.xib in Resources */,
 				D9865DD723145B0F00FA6C21 /* CategoriesRestaurantsCollectionViewCell.xib in Resources */,
 				D994B1B72319942300F30DD7 /* NearRestaurantViewController.xib in Resources */,
@@ -429,6 +444,7 @@
 				325F502F2304950A004CDCA2 /* ViewController.swift in Sources */,
 				0F0853A62315B9D500A64067 /* MyListCellTableViewCell.swift in Sources */,
 				D9007D80231595EF00090140 /* RestaurantCellTableViewCell.swift in Sources */,
+				32B80AB9231EDA3600E3EE5F /* SelectPlateModalViewController.swift in Sources */,
 				325F502D2304950A004CDCA2 /* AppDelegate.swift in Sources */,
 				D994B1B62319942300F30DD7 /* NearRestaurantViewController.swift in Sources */,
 				D9865DD223144FDE00FA6C21 /* NearRestaurantsTableViewCell.swift in Sources */,
@@ -593,7 +609,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BSH4XC9RT9;
+
+				DEVELOPMENT_TEAM = DHAN829484;
 				INFOPLIST_FILE = Acessibilidade/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -612,6 +629,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BSH4XC9RT9;
+
 				INFOPLIST_FILE = Acessibilidade/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -70,13 +70,13 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XmX-HA-VIb">
-                    <rect key="frame" x="16" y="152" width="62" height="29"/>
+                    <rect key="frame" x="16" y="152" width="382" height="29"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                     <color key="textColor" red="0.054901960784313725" green="0.12549019607843137" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sb9-Gx-yJ4">
-                    <rect key="frame" x="16" y="363.5" width="62" height="29"/>
+                    <rect key="frame" x="16" y="363.5" width="382" height="29"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                     <color key="textColor" red="0.054901960784313725" green="0.12549019607843137" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <nil key="highlightedColor"/>
@@ -93,6 +93,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9hN-Md-MM7" secondAttribute="trailing" id="8iw-pX-pnY"/>
                 <constraint firstItem="bnX-lk-Od0" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.15" id="BzW-gz-hah"/>
                 <constraint firstItem="bOH-hp-uAj" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="FWN-c9-aOk"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sb9-Gx-yJ4" secondAttribute="trailing" constant="16" id="Kuq-ys-m4K"/>
                 <constraint firstItem="bOH-hp-uAj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="LjT-te-rkF"/>
                 <constraint firstItem="9hN-Md-MM7" firstAttribute="top" secondItem="sb9-Gx-yJ4" secondAttribute="bottom" constant="16" id="YwI-7u-bXm"/>
                 <constraint firstItem="bnX-lk-Od0" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="aGb-kg-Tva"/>
@@ -101,6 +102,7 @@
                 <constraint firstItem="bnX-lk-Od0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ge7-eO-axg"/>
                 <constraint firstItem="sb9-Gx-yJ4" firstAttribute="top" secondItem="bnX-lk-Od0" secondAttribute="bottom" constant="32" id="ivE-WE-y7D"/>
                 <constraint firstItem="XmX-HA-VIb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="mgt-7Z-eVm"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="XmX-HA-VIb" secondAttribute="trailing" constant="16" id="uKr-AG-OKx"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="9hN-Md-MM7" secondAttribute="bottom" id="vg8-SN-Jts"/>
                 <constraint firstItem="9hN-Md-MM7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="whr-ah-LA7"/>
                 <constraint firstItem="XmX-HA-VIb" firstAttribute="top" secondItem="bOH-hp-uAj" secondAttribute="bottom" constant="16" id="zsa-z6-84g"/>
