@@ -8,26 +8,27 @@
 
 import UIKit
 
-class RestaurantDetailsViewController: UIViewController {
+class RestaurantDetailsViewController: UIViewController{
 
     @IBOutlet weak var testeLabelRest: UILabel!
     @IBOutlet weak var restauranteImgView: UIImageView!
-    @IBOutlet weak var tableViewPratos: UITableView!
+    @IBOutlet weak var cardapiosTableView: UITableView!
     @IBOutlet weak var listaButton: UIButton!
     @IBOutlet weak var subtituloLabel: UILabel!
     @IBOutlet weak var backStubtituloView: RoundedView!
     @IBOutlet weak var smallTitleLabel: UILabel!
     
     let viewModel = RestaurantDetailsViewModel()
-    let pratosCell = "RestaurantDetailsTableViewCell"
-    
+    let cardapiosCell = "RestaurantDetailsTableViewCell"
+    var restaurant = RestaurantCodable()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setTableView()
         setViews()
         setLabels()
-//        setNavigationBar()
+        setNavigationBar()
+        viewModel.restaurant = self.restaurant 
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,14 +38,17 @@ class RestaurantDetailsViewController: UIViewController {
     
     //MARK: - Setar table view
     func setTableView(){
-        tableViewPratos.delegate = self 
-        tableViewPratos.dataSource = self
-        tableViewPratos.register(UINib(nibName: pratosCell, bundle: nil), forCellReuseIdentifier: pratosCell)
+        cardapiosTableView.delegate = self 
+        cardapiosTableView.dataSource = self
+        cardapiosTableView.register(UINib(nibName: cardapiosCell, bundle: nil), forCellReuseIdentifier: cardapiosCell)
+        cardapiosTableView.separatorStyle = .none
+        
     }
     
     func setViews(){
+        self.view.backgroundColor = #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)
         backStubtituloView.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9607843137, blue: 0.9725490196, alpha: 1)
-        backStubtituloView.addShadow(color: #colorLiteral(red: 0.3098039329, green: 0.01568627544, blue: 0.1294117719, alpha: 1), opacity: 1, offSet: CGSize(width: 10, height: 10), radius: 13, scale: true)
+        backStubtituloView.addShadowWithBezier(color: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), opacity: 1, offSet: .zero, radius: 100)
         restauranteImgView.image = UIImage(named: "pizzaPlaceholder")
     }
     
@@ -55,12 +59,14 @@ class RestaurantDetailsViewController: UIViewController {
         smallTitleLabel.font = UIFont.boldSystemFont(ofSize: 15.0)
     }
     
-//    func setNavigationBar(){
-//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-//        self.navigationController?.navigationBar.shadowImage = UIImage()
-//        self.navigationController?.navigationBar.isTranslucent = true
-//        self.navigationController?.view.backgroundColor = .clear
-//    }
+    func setNavigationBar(){
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
+        
+        // alterar botao back da navigation bar
+    }
 }
 
 extension RestaurantDetailsViewController: UITableViewDelegate, UITableViewDataSource{
@@ -69,8 +75,10 @@ extension RestaurantDetailsViewController: UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableViewPratos.dequeueReusableCell(withIdentifier: pratosCell, for: indexPath)
-        return cell
+        let cell = self.cardapiosTableView.dequeueReusableCell(withIdentifier: cardapiosCell, for: indexPath) as? RestaurantDetailsTableViewCell
+        var menu = self.viewModel.getMenu(row: indexPath.row)
+        cell?.setUpCell(menu: menu)
+        return cell ?? UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

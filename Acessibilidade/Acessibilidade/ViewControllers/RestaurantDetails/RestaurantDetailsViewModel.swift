@@ -9,7 +9,14 @@
 import Foundation
 
 class RestaurantDetailsViewModel{
+
+    var restaurant = RestaurantCodable()
+
     func numberOfRows() -> Int{
-        return 4
+        return restaurant.menus?.count ?? 0
+    }
+    
+    func getMenu(row: Int) -> MenuCodable{
+        return restaurant.menus?[row] ?? MenuCodable()
     }
 }
