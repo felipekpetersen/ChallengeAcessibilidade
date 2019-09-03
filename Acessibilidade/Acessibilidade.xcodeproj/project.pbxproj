@@ -49,6 +49,7 @@
 		D994B1BE23199DCE00F30DD7 /* NearRestaurantTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D994B1BC23199DCE00F30DD7 /* NearRestaurantTableViewCell.xib */; };
 		D994B1C2231D2E1C00F30DD7 /* RestaurantMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D994B1C0231D2E1C00F30DD7 /* RestaurantMapViewController.swift */; };
 		D994B1C3231D2E1C00F30DD7 /* RestaurantMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D994B1C1231D2E1C00F30DD7 /* RestaurantMapViewController.xib */; };
+		D996F8D2231EDA420002F0A9 /* RestaurantMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D996F8D1231EDA420002F0A9 /* RestaurantMapViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +97,7 @@
 		D994B1BC23199DCE00F30DD7 /* NearRestaurantTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NearRestaurantTableViewCell.xib; sourceTree = "<group>"; };
 		D994B1C0231D2E1C00F30DD7 /* RestaurantMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantMapViewController.swift; sourceTree = "<group>"; };
 		D994B1C1231D2E1C00F30DD7 /* RestaurantMapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantMapViewController.xib; sourceTree = "<group>"; };
+		D996F8D1231EDA420002F0A9 /* RestaurantMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantMapViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -307,6 +309,7 @@
 			children = (
 				D994B1C0231D2E1C00F30DD7 /* RestaurantMapViewController.swift */,
 				D994B1C1231D2E1C00F30DD7 /* RestaurantMapViewController.xib */,
+				D996F8D1231EDA420002F0A9 /* RestaurantMapViewModel.swift */,
 			);
 			path = "Restaurant Map";
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 			files = (
 				D9865DD623145B0F00FA6C21 /* CategoriesRestaurantsCollectionViewCell.swift in Sources */,
 				0F31992F2316F1750078BBBE /* RestaurantDetailsTableViewCell.swift in Sources */,
+				D996F8D2231EDA420002F0A9 /* RestaurantMapViewModel.swift in Sources */,
 				0FAA8CC62319A1F800859E69 /* RoundedView.swift in Sources */,
 				0F31992B2316EE6B0078BBBE /* RestaurantDetailsViewModel.swift in Sources */,
 				325F502F2304950A004CDCA2 /* ViewController.swift in Sources */,

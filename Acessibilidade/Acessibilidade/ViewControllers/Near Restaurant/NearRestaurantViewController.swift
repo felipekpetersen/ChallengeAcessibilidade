@@ -4,7 +4,7 @@
 //
 //  Created by Pedro Henrique Guedes Silveira on 30/08/19.
 //  Copyright © 2019 Felipe Petersen. All rights reserved.
-//
+//  swiftlint:disable trailing_whitespace
 
 import UIKit
 
@@ -63,10 +63,29 @@ extension NearRestaurantViewController: UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.viewModel.numberOfRows()
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.nearRestaurantTableView.dequeueReusableCell(withIdentifier: nearRestaurantCell, for: indexPath) as? NearRestaurantTableViewCell
         cell?.setup(restaurant: self.viewModel.getRestaurants(index: indexPath.row))
         cell?.setupCorner(cornerRadius: 5)
+        cell?.delegate = self
         return cell ?? UITableViewCell()
+        
     }
+    
+    
+}
+
+extension NearRestaurantViewController: NearRestaurantCellDelegate{
+    func receiveMenu(restaurant: RestaurantCodable) {
+        //TODO:- Push to Menu
+    }
+    
+    func receiveDetail(restaurant: RestaurantCodable) {
+        let vc = RestaurantMapViewController()
+        vc.restaurantCodable = restaurant
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
 }
