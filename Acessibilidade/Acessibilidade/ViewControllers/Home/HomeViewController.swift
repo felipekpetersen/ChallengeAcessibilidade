@@ -117,6 +117,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         vc.restaurant = self.viewModel.getRestaurantForRow(row: indexPath.row)
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
 }
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {

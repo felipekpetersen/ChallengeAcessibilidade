@@ -29,6 +29,7 @@
 		325F50352304950A004CDCA2 /* Acessibilidade.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 325F50332304950A004CDCA2 /* Acessibilidade.xcdatamodeld */; };
 		325F50372304950B004CDCA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 325F50362304950B004CDCA2 /* Assets.xcassets */; };
 		325F503A2304950B004CDCA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 325F50382304950B004CDCA2 /* LaunchScreen.storyboard */; };
+		32AB017323202F8D005187D8 /* RGBtoColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB017223202F8D005187D8 /* RGBtoColor.swift */; };
 		32B80AB9231EDA3600E3EE5F /* SelectPlateModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B80AB7231EDA3600E3EE5F /* SelectPlateModalViewController.swift */; };
 		32B80ABA231EDA3600E3EE5F /* SelectPlateModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32B80AB8231EDA3600E3EE5F /* SelectPlateModalViewController.xib */; };
 		32F864D823198B7A0008B7B5 /* MenuCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F864D723198B7A0008B7B5 /* MenuCodable.swift */; };
@@ -84,6 +85,7 @@
 		325F50362304950B004CDCA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		325F50392304950B004CDCA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		325F503B2304950B004CDCA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32AB017223202F8D005187D8 /* RGBtoColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBtoColor.swift; sourceTree = "<group>"; };
 		32B80AB7231EDA3600E3EE5F /* SelectPlateModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlateModalViewController.swift; sourceTree = "<group>"; };
 		32B80AB8231EDA3600E3EE5F /* SelectPlateModalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectPlateModalViewController.xib; sourceTree = "<group>"; };
 		32F864D723198B7A0008B7B5 /* MenuCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCodable.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 			children = (
 				0FAA8CC52319A1F800859E69 /* RoundedView.swift */,
 				0F28EE85231DA28700B14C07 /* ShadowView.swift */,
+				32AB017223202F8D005187D8 /* RGBtoColor.swift */,
 			);
 			path = "New Group";
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 				D996F8D2231EDA420002F0A9 /* RestaurantMapViewModel.swift in Sources */,
 				D97169BD2320247E0033A7BF /* MenuViewController.swift in Sources */,
 				0FAA8CC62319A1F800859E69 /* RoundedView.swift in Sources */,
+				32AB017323202F8D005187D8 /* RGBtoColor.swift in Sources */,
 				0F31992B2316EE6B0078BBBE /* RestaurantDetailsViewModel.swift in Sources */,
 				325F502F2304950A004CDCA2 /* ViewController.swift in Sources */,
 				0F0853A62315B9D500A64067 /* MyListCellTableViewCell.swift in Sources */,
@@ -646,6 +650,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q9Y63W6Q4X;
+
 				INFOPLIST_FILE = Acessibilidade/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -664,6 +669,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q9Y63W6Q4X;
+
 				INFOPLIST_FILE = Acessibilidade/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
