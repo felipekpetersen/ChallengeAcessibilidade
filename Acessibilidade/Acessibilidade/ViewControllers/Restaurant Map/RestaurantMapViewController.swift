@@ -25,6 +25,7 @@ class RestaurantMapViewController: UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
         setupCategoryLabels()
         setupCornerView()
+        setupShadow()
         setupDescriptionLabel()
         setupMap()
     }
@@ -44,6 +45,10 @@ class RestaurantMapViewController: UIViewController, MKMapViewDelegate {
         buttonCornerView.layer.cornerRadius = 8
     }
     
+    func setupShadow() {
+        cornerView.addShadowWithBezier(color: .black, opacity: 0.4, offSet: .zero, radius: 20)
+    }
+    
     func setupDescriptionLabel() {
         
     }
@@ -53,11 +58,9 @@ class RestaurantMapViewController: UIViewController, MKMapViewDelegate {
         let annotation = MKPointAnnotation()
         annotation.coordinate = CLLocationCoordinate2D(latitude: -23.547432, longitude: -46.651825)
         restaurantMap.addAnnotation(annotation)
-        let region = MKCoordinateRegion(center: annotation.coordinate, latitudinalMeters: CLLocationDistance(exactly: 5000)!, longitudinalMeters: CLLocationDistance(exactly: 5000)!)
+        let region = MKCoordinateRegion(center: annotation.coordinate, latitudinalMeters: CLLocationDistance(exactly: 700)!, longitudinalMeters: CLLocationDistance(exactly: 700)!)
         restaurantMap.region = region
 //        restaurantMap.setRegion(mapView.regionThatFits(region), animated: true)
-        
-        
         
     }
     

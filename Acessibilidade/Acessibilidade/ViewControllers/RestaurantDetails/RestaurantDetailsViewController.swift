@@ -27,8 +27,7 @@ class RestaurantDetailsViewController: UIViewController{
         setTableView()
         setViews()
         setLabels()
-        setNavigationBar()
-        viewModel.restaurant = self.restaurant 
+        viewModel.restaurant = self.restaurant
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -59,14 +58,6 @@ class RestaurantDetailsViewController: UIViewController{
         smallTitleLabel.font = UIFont.boldSystemFont(ofSize: 15.0)
     }
     
-    func setNavigationBar(){
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.view.backgroundColor = .clear
-        
-        // alterar botao back da navigation bar
-    }
 }
 
 extension RestaurantDetailsViewController: UITableViewDelegate, UITableViewDataSource{
