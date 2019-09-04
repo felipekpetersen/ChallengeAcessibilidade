@@ -15,10 +15,10 @@
                 <outlet property="backStubtituloView" destination="Ssf-Ds-Zpo" id="cY8-5B-euK"/>
                 <outlet property="cardapiosTableView" destination="77d-kg-Jay" id="xOR-U7-8ua"/>
                 <outlet property="listaButton" destination="RwN-f5-EAK" id="Ajs-A6-Z2k"/>
+                <outlet property="numberOfMenusLabel" destination="d7g-zY-o7C" id="11s-AF-gnT"/>
+                <outlet property="restaurantNameLabel" destination="CZZ-lG-M2V" id="lCJ-3W-PNS"/>
                 <outlet property="restauranteImgView" destination="KZ7-kp-0VQ" id="iTN-lK-Z2Y"/>
                 <outlet property="smallTitleLabel" destination="X2J-Fk-t5W" id="wVx-jp-b6e"/>
-                <outlet property="subtituloLabel" destination="d7g-zY-o7C" id="11s-AF-gnT"/>
-                <outlet property="testeLabelRest" destination="CZZ-lG-M2V" id="lCJ-3W-PNS"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

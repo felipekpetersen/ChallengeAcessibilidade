@@ -11,6 +11,7 @@ import Foundation
 class RestaurantDetailsViewModel{
 
     var restaurant = RestaurantCodable()
+    
 
     func numberOfRows() -> Int{
         return restaurant.menus?.count ?? 0
@@ -18,5 +19,9 @@ class RestaurantDetailsViewModel{
     
     func getMenu(row: Int) -> MenuCodable{
         return restaurant.menus?[row] ?? MenuCodable()
+    }
+    
+    func getRestaurant(restaurant: RestaurantCodable) -> RestaurantCodable{
+        return restaurant
     }
 }

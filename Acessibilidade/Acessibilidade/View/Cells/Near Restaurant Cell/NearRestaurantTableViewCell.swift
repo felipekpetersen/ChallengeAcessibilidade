@@ -49,7 +49,8 @@ class NearRestaurantTableViewCell: UITableViewCell {
     }
     
     @objc func openMenu() {
-        
+        guard let restaurant = restaurant else {return}
+        delegate?.receiveMenu(restaurant: restaurant)
     }
     
     @objc func openDetails() {
