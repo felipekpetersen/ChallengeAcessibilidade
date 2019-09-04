@@ -33,7 +33,7 @@
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WZA-1U-1vu">
-                    <rect key="frame" x="356" y="64" width="26" height="31"/>
+                    <rect key="frame" x="372" y="54" width="26" height="31"/>
                     <state key="normal" image="Rectangle 4.5"/>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I5c-N9-VNI">
@@ -86,9 +86,9 @@
                 <constraint firstItem="vWm-xZ-NXg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="CO3-2y-ynB"/>
                 <constraint firstItem="UQc-Dz-MVu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="EKy-lL-KEV"/>
                 <constraint firstItem="I5c-N9-VNI" firstAttribute="top" secondItem="vWm-xZ-NXg" secondAttribute="bottom" constant="24" id="F85-zQ-F93"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="WZA-1U-1vu" secondAttribute="trailing" constant="32" id="FQt-Mm-jiG"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="WZA-1U-1vu" secondAttribute="trailing" constant="16" id="FQt-Mm-jiG"/>
                 <constraint firstItem="vWm-xZ-NXg" firstAttribute="top" secondItem="UQc-Dz-MVu" secondAttribute="bottom" constant="8" id="GtK-kX-bgZ"/>
-                <constraint firstItem="WZA-1U-1vu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="J5W-gd-ffQ"/>
+                <constraint firstItem="WZA-1U-1vu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="54" id="J5W-gd-ffQ"/>
                 <constraint firstItem="ma7-2o-Rgm" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="QUR-6G-CDO"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="I5c-N9-VNI" secondAttribute="trailing" id="U80-cL-R5F"/>
                 <constraint firstItem="I5c-N9-VNI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="hxR-n7-G9M"/>

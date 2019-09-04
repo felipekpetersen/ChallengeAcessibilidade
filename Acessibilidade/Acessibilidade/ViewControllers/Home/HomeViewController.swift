@@ -146,13 +146,14 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let vc = NearRestaurantViewController()
-//        vc.restaurants = self.viewModel.restaurants
-//        vc.categoryName = self.viewModel.getCategoriesForRow(index: indexPath.row)
-        let vc = SelectPlateModalViewController()
-        vc.modalTransitionStyle = .coverVertical
-        vc.modalPresentationStyle = .overCurrentContext
-        self.present(vc, animated: true, completion: nil)
+        let vc = NearRestaurantViewController()
+        vc.restaurants = self.viewModel.restaurants
+        vc.categoryName = self.viewModel.getCategoriesForRow(index: indexPath.row)
+        self.navigationController?.pushViewController(vc, animated: true)
+//        let vc = SelectPlateModalViewController()
+//        vc.modalTransitionStyle = .coverVertical
+//        vc.modalPresentationStyle = .overCurrentContext
+//        self.present(vc, animated: true, completion: nil)
     }
 }
 
