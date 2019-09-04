@@ -78,7 +78,9 @@ extension NearRestaurantViewController: UITableViewDataSource, UITableViewDelega
 
 extension NearRestaurantViewController: NearRestaurantCellDelegate{
     func receiveMenu(restaurant: RestaurantCodable) {
-        //TODO:- Push to Menu
+        let vc = RestaurantDetailsViewController()
+        vc.restaurant = restaurant
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func receiveDetail(restaurant: RestaurantCodable) {

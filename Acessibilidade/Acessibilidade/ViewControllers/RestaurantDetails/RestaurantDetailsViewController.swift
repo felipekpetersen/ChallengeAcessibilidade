@@ -10,14 +10,15 @@ import UIKit
 
 class RestaurantDetailsViewController: UIViewController{
 
-    @IBOutlet weak var testeLabelRest: UILabel!
+    @IBOutlet weak var restaurantNameLabel: UILabel!
     @IBOutlet weak var restauranteImgView: UIImageView!
     @IBOutlet weak var cardapiosTableView: UITableView!
     @IBOutlet weak var listaButton: UIButton!
-    @IBOutlet weak var subtituloLabel: UILabel!
+    @IBOutlet weak var numberOfMenusLabel: UILabel!
     @IBOutlet weak var backStubtituloView: RoundedView!
     @IBOutlet weak var smallTitleLabel: UILabel!
     
+
     let viewModel = RestaurantDetailsViewModel()
     let cardapiosCell = "RestaurantDetailsTableViewCell"
     var restaurant = RestaurantCodable()
@@ -52,10 +53,14 @@ class RestaurantDetailsViewController: UIViewController{
     }
     
     func setLabels(){
-        testeLabelRest.textColor = #colorLiteral(red: 0.9490196078, green: 0.9607843137, blue: 0.9725490196, alpha: 1)
-        testeLabelRest.font = UIFont.boldSystemFont(ofSize: 28.0)
-        smallTitleLabel.textColor = #colorLiteral(red: 0.9490196078, green: 0.9607843137, blue: 0.9725490196, alpha: 1)
+        restaurantNameLabel.textColor = #colorLiteral(red: 0.9490196078, green: 0.9607843137, blue: 0.9725490196, alpha: 1)
+        restaurantNameLabel.font = UIFont.boldSystemFont(ofSize: 28.0)
+        restaurantNameLabel.text = restaurant.name
+        smallTitleLabel.textColor = #colorLiteral(red: 0.6588235294, green: 0.6588235294, blue: 0.6588235294, alpha: 1)
         smallTitleLabel.font = UIFont.boldSystemFont(ofSize: 15.0)
+        guard let restaurantsCount = restaurant.menus?.count else {return}
+        numberOfMenusLabel.text = "Há \(restaurantsCount) tipos de cárdapios"
+        numberOfMenusLabel.font = UIFont.boldSystemFont(ofSize: 20)
     }
     
 }
@@ -73,6 +78,10 @@ extension RestaurantDetailsViewController: UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.navigationController?.present(PlatesViewController(), animated: true, completion: nil)
+        let vc = MenuViewController()
+        vc.menu = self.viewModel.getMenu(row: indexPath.row)
+        vc.restaurant = self.viewModel.getRestaurant(restaurant: restaurant)
+        self.navigationController?.pushViewController(vc, animated: true)
+//        self.navigationController?.present(MenuViewController(), animated: true, completion: nil)
     }
 }
