@@ -55,6 +55,7 @@ class NearRestaurantViewController: UIViewController {
     func setupCornerView() {
         cornerView.layer.cornerRadius = 22
         cornerView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        cornerView.addShadow(color: .black, opacity: 1, offSet: .zero, radius: 30)
         
     }
 }

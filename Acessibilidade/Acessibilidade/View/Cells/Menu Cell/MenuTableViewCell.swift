@@ -26,6 +26,7 @@ class MenuTableViewCell: UITableViewCell {
     
     func setupCornerView(cornerRadius: CGFloat){
         cornerView.layer.cornerRadius = cornerRadius
+        cornerView.addShadow(color: .black, opacity: 0.2, offSet: CGSize(width: 0, height: 4), radius: 4)
     }
 
 }

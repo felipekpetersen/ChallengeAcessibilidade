@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationController.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController.navigationBar.shadowImage = UIImage()
         navigationController.navigationBar.isTranslucent = true
-        navigationController.viewControllers = [MyListViewController()]
+        navigationController.viewControllers = [HomeViewController()]
         let bounds = UIScreen.main.bounds
         self.window = UIWindow(frame: bounds)
         self.window?.rootViewController = navigationController
