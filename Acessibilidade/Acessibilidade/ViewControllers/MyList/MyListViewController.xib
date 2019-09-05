@@ -34,7 +34,7 @@
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qff-5Q-OLo">
-                    <rect key="frame" x="379" y="54" width="19" height="22"/>
+                    <rect key="frame" x="379" y="64" width="19" height="22"/>
                     <state key="normal" image="trash"/>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vrq-lq-gyA" customClass="RoundedView" customModule="Acessibilidade" customModuleProvider="target">
@@ -93,7 +93,7 @@
                 <constraint firstItem="yGH-zi-UG4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="EJj-pq-j0V"/>
                 <constraint firstItem="DZZ-2R-yVy" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Ijz-IL-VIf"/>
                 <constraint firstItem="DZZ-2R-yVy" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="abJ-jb-voQ"/>
-                <constraint firstItem="qff-5Q-OLo" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="54" id="rc1-cv-urr"/>
+                <constraint firstItem="qff-5Q-OLo" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="rc1-cv-urr"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qff-5Q-OLo" secondAttribute="trailing" constant="16" id="tpo-LX-rsA"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="yGH-zi-UG4" secondAttribute="trailing" constant="16" id="y8P-vO-HTe"/>
                 <constraint firstItem="Vrq-lq-gyA" firstAttribute="top" secondItem="yGH-zi-UG4" secondAttribute="bottom" constant="25" id="ysF-2q-HTy"/>

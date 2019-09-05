@@ -37,6 +37,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         self.locationManager.requestWhenInUseAuthorization()
         self.locationManager.delegate = self
         self.getRestaurants()
+        navigationController?.navigationBar.isUserInteractionEnabled = false
         // Do any additional setup after loading the view.
     }
     
