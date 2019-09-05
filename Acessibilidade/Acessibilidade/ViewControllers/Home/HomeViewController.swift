@@ -66,6 +66,10 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         self.restaurantesProximosTeste.text = "15 restaurantes próximos a você"
     }
     
+    func setupShadow() {
+        searchView.addShadow(color: .black, opacity: 1, offSet: .zero, radius: 30)
+    }
+    
     //MARK:- Actions
     @IBAction func myListButtonTap(_ sender: UIButton) {
         navigationController?.pushViewController(MyListViewController(), animated: true)

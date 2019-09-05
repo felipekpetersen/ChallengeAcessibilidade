@@ -36,7 +36,7 @@ class MyListViewController: UIViewController {
     }
     
     func setViews(){
-        subtotalView.addShadowWithBezier(color: .black, opacity: 1, offSet: .zero, radius: 100)
+        subtotalView.addShadowWithBezier(color: .black, opacity: 1, offSet: .zero, radius: 30)
         myListImageView.image = UIImage(named: "pizzaPlaceholder")
         subtotalView.backgroundColor = #colorLiteral(red: 0.7529411765, green: 0.831372549, blue: 0.9098039216, alpha: 1)
     }

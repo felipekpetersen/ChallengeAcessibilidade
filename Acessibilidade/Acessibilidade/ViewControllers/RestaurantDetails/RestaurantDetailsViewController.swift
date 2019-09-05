@@ -48,8 +48,8 @@ class RestaurantDetailsViewController: UIViewController{
     func setViews(){
         self.view.backgroundColor = #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)
         backStubtituloView.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9607843137, blue: 0.9725490196, alpha: 1)
-        backStubtituloView.addShadowWithBezier(color: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), opacity: 1, offSet: .zero, radius: 100)
-        restauranteImgView.image = UIImage(named: "pizzaPlaceholder")
+        backStubtituloView.addShadowWithBezier(color: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), opacity: 1, offSet: .zero, radius: 30)
+//        restauranteImgView.image = UIImage(named: "pizzaPlaceholder")
     }
     
     func setLabels(){

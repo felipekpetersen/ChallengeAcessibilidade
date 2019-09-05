@@ -46,7 +46,8 @@ class RestaurantMapViewController: UIViewController, MKMapViewDelegate {
     }
     
     func setupShadow() {
-        cornerView.addShadowWithBezier(color: .black, opacity: 0.4, offSet: .zero, radius: 20)
+        cornerView.addShadowWithBezier(color: .black, opacity: 0.4, offSet: .zero, radius: 30)
+        buttonCornerView.addShadow(color: .black, opacity: 0.2, offSet: CGSize(width: 0, height: 4), radius: 4)
     }
     
     func setupDescriptionLabel() {
