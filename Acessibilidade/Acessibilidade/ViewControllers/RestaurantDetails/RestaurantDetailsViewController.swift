@@ -62,7 +62,6 @@ class RestaurantDetailsViewController: UIViewController{
         numberOfMenusLabel.text = "Há \(restaurantsCount) tipos de cárdapios"
         numberOfMenusLabel.font = UIFont.boldSystemFont(ofSize: 20)
     }
-    
 }
 
 extension RestaurantDetailsViewController: UITableViewDelegate, UITableViewDataSource{

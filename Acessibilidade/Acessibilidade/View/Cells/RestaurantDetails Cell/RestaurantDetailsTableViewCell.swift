@@ -17,7 +17,7 @@ class RestaurantDetailsTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        cardapioBackView.addShadow(color: #colorLiteral(red: 0.05490196078, green: 0.1254901961, blue: 0.2705882353, alpha: 1), opacity: 0.2, offSet: CGSize(width: 0, height: 4), radius: 4)
+        cardapioBackView.addShadow(color: .black, opacity: 0.2, offSet: CGSize(width: 0, height: 4), radius: 4)
     }
 
     func setUpCell(menu: MenuCodable) {
