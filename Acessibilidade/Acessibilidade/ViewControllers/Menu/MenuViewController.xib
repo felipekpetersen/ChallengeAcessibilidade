@@ -13,11 +13,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MenuViewController" customModule="Acessibilidade" customModuleProvider="target">
             <connections>
                 <outlet property="categoryNameLabel" destination="Oaw-c2-s0C" id="SAs-Yc-ftM"/>
-                <outlet property="categorysTableView" destination="eiO-Ha-8g5" id="hys-we-lBU"/>
                 <outlet property="cornerView" destination="SAl-bu-Euf" id="wSB-KJ-kUJ"/>
                 <outlet property="numberOfCategorysLabel" destination="tNU-8N-DfL" id="KZ4-ia-sDw"/>
                 <outlet property="restaurantImageView" destination="wne-fW-2GQ" id="FWJ-og-CPF"/>
                 <outlet property="restaurantNameLabel" destination="0Iv-PA-10m" id="LNf-eB-I6k"/>
+                <outlet property="tableView" destination="eiO-Ha-8g5" id="hys-we-lBU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -26,7 +26,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pizzaPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="wne-fW-2GQ">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wne-fW-2GQ">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="wne-fW-2GQ" secondAttribute="height" multiplier="69:50" id="BAb-4u-Jva"/>
@@ -95,6 +95,5 @@
     </objects>
     <resources>
         <image name="Rectangle 4.5" width="26" height="31"/>
-        <image name="pizzaPlaceholder" width="375" height="233"/>
     </resources>
 </document>

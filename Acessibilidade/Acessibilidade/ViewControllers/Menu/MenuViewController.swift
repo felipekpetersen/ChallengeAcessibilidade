@@ -13,15 +13,16 @@ class MenuViewController: UIViewController {
     
     @IBOutlet weak var restaurantImageView: UIImageView!
     @IBOutlet weak var cornerView: UIView!
-    @IBOutlet weak var categorysTableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var numberOfCategorysLabel: UILabel!
     @IBOutlet weak var categoryNameLabel: UILabel!
     @IBOutlet weak var restaurantNameLabel: UILabel!
+    
     public var restaurant = RestaurantCodable()
     public var menu = MenuCodable()
     var viewModel = MenuViewModel()
     let menuCell = "MenuTableViewCell"
-    
+    var selectedIndex: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,14 +30,17 @@ class MenuViewController: UIViewController {
         setupCornerView()
         setupLabels()
         viewModel.menu = menu
-        
+    }
+    
+    override func viewDidLayoutSubviews() {
+        self.tableView.layoutIfNeeded()
     }
     
     func setupTableView() {
-        self.categorysTableView.delegate = self
-        self.categorysTableView.dataSource = self
-        self.categorysTableView.separatorStyle = .none
-        categorysTableView.register(UINib(nibName: menuCell, bundle: nil), forCellReuseIdentifier: menuCell)
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.tableView.separatorStyle = .none
+        tableView.register(UINib(nibName: menuCell, bundle: nil), forCellReuseIdentifier: menuCell)
     }
     
     func setupCornerView() {
@@ -60,11 +64,24 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.categorysTableView.dequeueReusableCell(withIdentifier: menuCell, for: indexPath) as? MenuTableViewCell
-        var category = self.viewModel.getCategory(row: indexPath.row)
-        cell?.setupCell(category: category)
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: menuCell, for: indexPath) as? MenuTableViewCell
+        let category = self.viewModel.getCategory(row: indexPath.row)
+        cell?.setupCell(category: category, isOpen: self.selectedIndex == indexPath.row ? true : false)
         cell?.setupCornerView(cornerRadius: 5)
+        cell?.layoutSubviews()
+        cell?.layoutIfNeeded()
         cell?.selectionStyle = .none
         return cell ?? UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if self.selectedIndex == indexPath.row {
+            self.selectedIndex = nil
+        } else {
+            self.selectedIndex = indexPath.row
+        }
+        self.tableView.beginUpdates()
+        self.tableView.reloadRows(at: [indexPath], with: .fade)
+        self.tableView.endUpdates()
     }
 }
