@@ -17,6 +17,7 @@ class MyListViewController: UIViewController {
     @IBOutlet weak var valueSubtotalLabel: UILabel!
     @IBOutlet weak var myListImageView: UIImageView!
     @IBOutlet weak var subtotalView: RoundedView!
+    @IBOutlet weak var degradeView: UIView!
     
     let viewModel = MyListViewModel()
     let listaCell = "MyListCellTableViewCell"
@@ -36,7 +37,9 @@ class MyListViewController: UIViewController {
     }
     
     func setViews(){
-        subtotalView.addShadowWithBezier(color: .black, opacity: 1, offSet: .zero, radius: 30)
+//        subtotalView.addShadowWithBezier(color: .black, opacity: 1, offSet: .zero, radius: 30)
+        degradeView.backgroundColor = #colorLiteral(red: 0.05490196078, green: 0.1254901961, blue: 0.2705882353, alpha: 1)
+        degradeView.degrade(view: degradeView)
         myListImageView.image = UIImage(named: "pizzaPlaceholder")
         subtotalView.backgroundColor = #colorLiteral(red: 0.7529411765, green: 0.831372549, blue: 0.9098039216, alpha: 1)
     }

@@ -27,4 +27,16 @@ extension UIView {
         self.layer.shadowOffset = offSet
         self.layer.shadowRadius = radius
     }
+    
+    func degrade(view: UIView){
+        let gradient = CAGradientLayer()
+        gradient.startPoint = CGPoint(x: 0.5, y: 0.0)
+        gradient.endPoint = CGPoint(x: 0.5, y: 0.9)
+        let gradientColor = UIColor.white
+        gradient.colors = [gradientColor.withAlphaComponent(0.0).cgColor,
+                           gradientColor.withAlphaComponent(1.0).cgColor]
+        gradient.locations = [NSNumber(value: 0.5), NSNumber(value: 1.0), NSNumber(value: 1.0)]
+        gradient.frame = view.bounds
+        view.layer.mask = gradient
+    }
 }
