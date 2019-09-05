@@ -12,11 +12,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="88" id="KGk-i7-Jjw" customClass="MenuTableViewCell" customModule="Acessibilidade" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="368" height="88"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="269" id="KGk-i7-Jjw" customClass="MenuTableViewCell" customModule="Acessibilidade" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="368" height="269"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="368" height="87.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="368" height="268.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QZT-bo-Cm2">
@@ -47,12 +47,22 @@
                             <constraint firstItem="Fx8-yr-9NS" firstAttribute="leading" secondItem="QZT-bo-Cm2" secondAttribute="leading" constant="16" id="zer-Mm-T3v"/>
                         </constraints>
                     </view>
+                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3jk-kI-9UA">
+                        <rect key="frame" x="20" y="75" width="328" height="100"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="100" id="hZX-SD-5el"/>
+                        </constraints>
+                    </tableView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="QZT-bo-Cm2" secondAttribute="bottom" constant="8" id="T9o-t4-vRU"/>
+                    <constraint firstItem="3jk-kI-9UA" firstAttribute="top" secondItem="QZT-bo-Cm2" secondAttribute="bottom" id="C1f-b5-4w7"/>
                     <constraint firstItem="QZT-bo-Cm2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="c3B-d6-5fb"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="3jk-kI-9UA" secondAttribute="trailing" id="dtr-Sv-jNh"/>
                     <constraint firstAttribute="trailing" secondItem="QZT-bo-Cm2" secondAttribute="trailing" constant="16" id="hVh-zj-r6k"/>
+                    <constraint firstItem="3jk-kI-9UA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="vs2-DP-ZdP"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="3jk-kI-9UA" secondAttribute="bottom" id="xHw-ER-1WC"/>
                     <constraint firstItem="QZT-bo-Cm2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="yb9-gc-Itq"/>
                 </constraints>
             </tableViewCellContentView>
@@ -61,8 +71,10 @@
             <connections>
                 <outlet property="categoryNameLabel" destination="Fx8-yr-9NS" id="ohB-JZ-PQf"/>
                 <outlet property="cornerView" destination="QZT-bo-Cm2" id="mt1-Ic-NNR"/>
+                <outlet property="tableView" destination="3jk-kI-9UA" id="SHc-Ks-Ygx"/>
+                <outlet property="tableViewHeight" destination="hZX-SD-5el" id="HXO-1j-XPy"/>
             </connections>
-            <point key="canvasLocation" x="130.43478260869566" y="174.10714285714286"/>
+            <point key="canvasLocation" x="130.43478260869566" y="234.70982142857142"/>
         </tableViewCell>
     </objects>
 </document>
