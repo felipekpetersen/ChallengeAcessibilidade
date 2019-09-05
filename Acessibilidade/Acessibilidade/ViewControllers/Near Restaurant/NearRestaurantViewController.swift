@@ -31,7 +31,8 @@ class NearRestaurantViewController: UIViewController {
         setupCategorytLabel()
         setupCategoryPhoto()
         setupCornerView()
-        self.navigationController?.navigationBar.isUserInteractionEnabled = false
+        tabBarButton()
+
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -60,6 +61,17 @@ class NearRestaurantViewController: UIViewController {
         cornerView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         cornerView.addShadow(color: .black, opacity: 1, offSet: .zero, radius: 30)
         
+    }
+    
+    func tabBarButton() {
+        let myListButton = UIBarButtonItem(image: UIImage(named: "Rectangle 4.5.png"), style: .plain, target: self, action: #selector(myListSender))
+        myListButton.tintColor = .white
+        self.navigationItem.rightBarButtonItem = myListButton
+    }
+    
+    @objc func myListSender() {
+        let vc = MyListViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
