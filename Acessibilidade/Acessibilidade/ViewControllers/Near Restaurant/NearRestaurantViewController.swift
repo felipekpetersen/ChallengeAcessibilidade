@@ -31,9 +31,12 @@ class NearRestaurantViewController: UIViewController {
         setupCategorytLabel()
         setupCategoryPhoto()
         setupCornerView()
+        self.navigationController?.navigationBar.isUserInteractionEnabled = false
     }
 
-    
+    override func viewWillDisappear(_ animated: Bool) {
+        
+    }
 
     func setupTableView() {
         self.nearRestaurantTableView.delegate = self
