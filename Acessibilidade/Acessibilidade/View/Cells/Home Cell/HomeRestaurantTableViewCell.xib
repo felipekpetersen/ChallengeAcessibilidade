@@ -47,11 +47,9 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.031372549020000001" green="0.078431372550000003" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="AL7-Ox-9RM" firstAttribute="top" secondItem="ypc-CF-2ru" secondAttribute="bottom" constant="4" id="48W-iC-srR"/>
                                     <constraint firstAttribute="height" constant="64" id="CuL-3M-cJD"/>
                                     <constraint firstItem="AL7-Ox-9RM" firstAttribute="top" secondItem="ypc-CF-2ru" secondAttribute="bottom" constant="4" id="LtW-ay-l6a"/>
                                     <constraint firstItem="ypc-CF-2ru" firstAttribute="top" secondItem="BiK-rR-Zcm" secondAttribute="top" constant="8" id="QMu-A2-koK"/>
-                                    <constraint firstItem="AL7-Ox-9RM" firstAttribute="top" secondItem="ypc-CF-2ru" secondAttribute="bottom" constant="4" id="Rz7-Cw-zgP"/>
                                     <constraint firstAttribute="bottom" secondItem="AL7-Ox-9RM" secondAttribute="bottom" constant="7" id="kR2-HK-aKt"/>
                                     <constraint firstItem="AL7-Ox-9RM" firstAttribute="leading" secondItem="BiK-rR-Zcm" secondAttribute="leading" constant="8" id="s1x-vf-cTx"/>
                                     <constraint firstItem="ypc-CF-2ru" firstAttribute="leading" secondItem="BiK-rR-Zcm" secondAttribute="leading" constant="8" id="sXA-Mm-23O"/>
