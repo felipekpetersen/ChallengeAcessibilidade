@@ -13,11 +13,10 @@ class RestaurantDetailsViewController: UIViewController{
     @IBOutlet weak var restaurantNameLabel: UILabel!
     @IBOutlet weak var restauranteImgView: UIImageView!
     @IBOutlet weak var cardapiosTableView: UITableView!
-    @IBOutlet weak var listaButton: UIButton!
     @IBOutlet weak var numberOfMenusLabel: UILabel!
-    @IBOutlet weak var backStubtituloView: RoundedView!
+    @IBOutlet weak var degardeView: UIView!
     @IBOutlet weak var smallTitleLabel: UILabel!
-    
+    @IBOutlet weak var backView: RoundedView!
 
     let viewModel = RestaurantDetailsViewModel()
     let cardapiosCell = "RestaurantDetailsTableViewCell"
@@ -28,6 +27,7 @@ class RestaurantDetailsViewController: UIViewController{
         setTableView()
         setViews()
         setLabels()
+        tabBarButton()
         viewModel.restaurant = self.restaurant
     }
     
@@ -36,51 +36,59 @@ class RestaurantDetailsViewController: UIViewController{
         setViews()
     }
     
-    //MARK: - Setar table view
-    func setTableView(){
+    // MARK: - Setar table view
+    func setTableView() {
         cardapiosTableView.delegate = self 
         cardapiosTableView.dataSource = self
         cardapiosTableView.register(UINib(nibName: cardapiosCell, bundle: nil), forCellReuseIdentifier: cardapiosCell)
         cardapiosTableView.separatorStyle = .none
-        
     }
     
-    func setViews(){
-        self.view.backgroundColor = #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)
-        backStubtituloView.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9607843137, blue: 0.9725490196, alpha: 1)
-        backStubtituloView.addShadowWithBezier(color: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), opacity: 1, offSet: .zero, radius: 30)
-//        restauranteImgView.image = UIImage(named: "pizzaPlaceholder")
+    func setViews() {
+        degardeView.backgroundColor = #colorLiteral(red: 0.05490196078, green: 0.1254901961, blue: 0.2705882353, alpha: 1)
+        degardeView.degrade(view: degardeView)
+        backView.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9607843137, blue: 0.9725490196, alpha: 1)
     }
     
-    func setLabels(){
+    func setLabels() {
         restaurantNameLabel.textColor = #colorLiteral(red: 0.9490196078, green: 0.9607843137, blue: 0.9725490196, alpha: 1)
         restaurantNameLabel.font = UIFont.boldSystemFont(ofSize: 28.0)
         restaurantNameLabel.text = restaurant.name
-        smallTitleLabel.textColor = #colorLiteral(red: 0.6588235294, green: 0.6588235294, blue: 0.6588235294, alpha: 1)
+        smallTitleLabel.textColor = #colorLiteral(red: 0.9058823529, green: 0.9137254902, blue: 0.9215686275, alpha: 1)
         smallTitleLabel.font = UIFont.boldSystemFont(ofSize: 15.0)
         guard let restaurantsCount = restaurant.menus?.count else {return}
         numberOfMenusLabel.text = "Há \(restaurantsCount) tipos de cárdapios"
         numberOfMenusLabel.font = UIFont.boldSystemFont(ofSize: 20)
     }
+    
+    func tabBarButton() {
+        let myListButton = UIBarButtonItem(image: UIImage(named: "Rectangle 4.5.png"), style: .plain, target: self, action: #selector(myListSender))
+        myListButton.tintColor = .white
+        self.navigationItem.rightBarButtonItem = myListButton
+    }
+    
+    @objc func myListSender() {
+        let myListVC = MyListViewController()
+        self.navigationController?.pushViewController(myListVC, animated: true)
+    }
 }
 
-extension RestaurantDetailsViewController: UITableViewDelegate, UITableViewDataSource{
+extension RestaurantDetailsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.viewModel.numberOfRows()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.cardapiosTableView.dequeueReusableCell(withIdentifier: cardapiosCell, for: indexPath) as? RestaurantDetailsTableViewCell
-        var menu = self.viewModel.getMenu(row: indexPath.row)
+        let menu = self.viewModel.getMenu(row: indexPath.row)
         cell?.setUpCell(menu: menu)
         return cell ?? UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = MenuViewController()
-        vc.menu = self.viewModel.getMenu(row: indexPath.row)
-        vc.restaurant = self.viewModel.getRestaurant(restaurant: restaurant)
-        self.navigationController?.pushViewController(vc, animated: true)
-//        self.navigationController?.present(MenuViewController(), animated: true, completion: nil)
+        let menuVC = MenuViewController()
+        menuVC.menu = self.viewModel.getMenu(row: indexPath.row)
+        menuVC.restaurant = self.viewModel.getRestaurant(restaurant: restaurant)
+        self.navigationController?.pushViewController(menuVC, animated: true)
     }
 }

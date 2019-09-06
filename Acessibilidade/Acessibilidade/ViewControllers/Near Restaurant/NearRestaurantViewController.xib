@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NearRestaurantViewController" customModule="Acessibilidade" customModuleProvider="target">
             <connections>
+                <outlet property="backView" destination="GtX-7f-Lra" id="0JA-af-DQV"/>
                 <outlet property="categoryLabel" destination="vWm-xZ-NXg" id="f8X-eG-Udq"/>
                 <outlet property="categoryPhoto" destination="ma7-2o-Rgm" id="ajA-Sc-ct7"/>
                 <outlet property="cornerView" destination="I5c-N9-VNI" id="14b-nS-v8b"/>
@@ -26,12 +27,16 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pizzaPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="ma7-2o-Rgm">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ma7-2o-Rgm">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="ma7-2o-Rgm" secondAttribute="height" multiplier="69:50" id="vOI-yY-pRr"/>
                     </constraints>
                 </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GtX-7f-Lra">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I5c-N9-VNI">
                     <rect key="frame" x="0.0" y="276" width="414" height="620"/>
                     <subviews>
@@ -40,7 +45,7 @@
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </tableView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfw-Jj-dDq">
-                            <rect key="frame" x="16" y="16" width="52.5" height="24"/>
+                            <rect key="frame" x="16" y="16" width="382" height="24"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -53,6 +58,7 @@
                         <constraint firstItem="dfw-Jj-dDq" firstAttribute="top" secondItem="I5c-N9-VNI" secondAttribute="top" constant="16" id="f03-9H-iXs"/>
                         <constraint firstAttribute="bottom" secondItem="4CJ-MS-As8" secondAttribute="bottom" id="gPx-Mb-dy7"/>
                         <constraint firstAttribute="trailing" secondItem="4CJ-MS-As8" secondAttribute="trailing" id="jfr-wC-zW9"/>
+                        <constraint firstAttribute="trailing" secondItem="dfw-Jj-dDq" secondAttribute="trailing" constant="16" id="kgk-Pm-285"/>
                         <constraint firstItem="dfw-Jj-dDq" firstAttribute="leading" secondItem="I5c-N9-VNI" secondAttribute="leading" constant="16" id="wZT-0B-LI8"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
@@ -62,27 +68,32 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vWm-xZ-NXg">
-                    <rect key="frame" x="16" y="218.5" width="73.5" height="33.5"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="28"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <rect key="frame" x="16" y="218.5" width="71.5" height="33.5"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                    <color key="textColor" red="0.90588235294117647" green="0.9137254901960784" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQc-Dz-MVu">
-                    <rect key="frame" x="16" y="192.5" width="39.5" height="18"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
-                    <color key="textColor" red="0.6588235294117647" green="0.6588235294117647" blue="0.6588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <rect key="frame" x="16" y="196.5" width="40" height="18"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <color key="textColor" red="0.90588235294117647" green="0.9137254901960784" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="GtX-7f-Lra" firstAttribute="top" secondItem="ma7-2o-Rgm" secondAttribute="top" id="32s-Fa-fq0"/>
                 <constraint firstAttribute="bottom" secondItem="I5c-N9-VNI" secondAttribute="bottom" id="4Gy-Jk-H22"/>
+                <constraint firstItem="GtX-7f-Lra" firstAttribute="leading" secondItem="ma7-2o-Rgm" secondAttribute="trailing" constant="-414" id="62M-4l-vTr"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="GtX-7f-Lra" secondAttribute="trailing" id="9Fc-kH-1u5"/>
                 <constraint firstItem="ma7-2o-Rgm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="9bf-AV-gRc"/>
                 <constraint firstItem="vWm-xZ-NXg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="CO3-2y-ynB"/>
+                <constraint firstItem="ma7-2o-Rgm" firstAttribute="bottom" secondItem="GtX-7f-Lra" secondAttribute="bottom" id="CpY-Dk-oBc"/>
                 <constraint firstItem="UQc-Dz-MVu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="EKy-lL-KEV"/>
                 <constraint firstItem="I5c-N9-VNI" firstAttribute="top" secondItem="vWm-xZ-NXg" secondAttribute="bottom" constant="24" id="F85-zQ-F93"/>
-                <constraint firstItem="vWm-xZ-NXg" firstAttribute="top" secondItem="UQc-Dz-MVu" secondAttribute="bottom" constant="8" id="GtK-kX-bgZ"/>
+                <constraint firstItem="vWm-xZ-NXg" firstAttribute="top" secondItem="UQc-Dz-MVu" secondAttribute="bottom" constant="4" id="GtK-kX-bgZ"/>
                 <constraint firstItem="ma7-2o-Rgm" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="QUR-6G-CDO"/>
+                <constraint firstItem="GtX-7f-Lra" firstAttribute="height" secondItem="ma7-2o-Rgm" secondAttribute="height" id="TWR-TB-AKX"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="I5c-N9-VNI" secondAttribute="trailing" id="U80-cL-R5F"/>
                 <constraint firstItem="I5c-N9-VNI" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="276" id="ZXZ-fy-dAl"/>
                 <constraint firstItem="I5c-N9-VNI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="hxR-n7-G9M"/>
@@ -92,7 +103,4 @@
             <point key="canvasLocation" x="47.826086956521742" y="35.491071428571423"/>
         </view>
     </objects>
-    <resources>
-        <image name="pizzaPlaceholder" width="375" height="233"/>
-    </resources>
 </document>

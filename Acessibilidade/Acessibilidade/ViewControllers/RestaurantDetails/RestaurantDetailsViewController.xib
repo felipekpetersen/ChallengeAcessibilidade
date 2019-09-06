@@ -12,11 +12,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RestaurantDetailsViewController" customModule="Acessibilidade" customModuleProvider="target">
             <connections>
-                <outlet property="backStubtituloView" destination="Ssf-Ds-Zpo" id="cY8-5B-euK"/>
+                <outlet property="backView" destination="Ssf-Ds-Zpo" id="kSZ-yZ-COy"/>
                 <outlet property="cardapiosTableView" destination="77d-kg-Jay" id="xOR-U7-8ua"/>
-                <outlet property="listaButton" destination="RwN-f5-EAK" id="Ajs-A6-Z2k"/>
+                <outlet property="degardeView" destination="8df-QH-hPp" id="neB-H3-1Qb"/>
                 <outlet property="numberOfMenusLabel" destination="d7g-zY-o7C" id="11s-AF-gnT"/>
                 <outlet property="restaurantNameLabel" destination="CZZ-lG-M2V" id="lCJ-3W-PNS"/>
+                <outlet property="restauranteImgView" destination="Hdk-bs-RLc" id="wF5-mT-IxF"/>
                 <outlet property="smallTitleLabel" destination="X2J-Fk-t5W" id="wVx-jp-b6e"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -26,18 +27,22 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pizzaPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="Hdk-bs-RLc">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hdk-bs-RLc">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="Hdk-bs-RLc" secondAttribute="height" multiplier="69:50" id="6uo-y3-ibb"/>
                     </constraints>
                 </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8df-QH-hPp">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ssf-Ds-Zpo" customClass="RoundedView" customModule="Acessibilidade" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="276" width="414" height="620"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d7g-zY-o7C">
-                            <rect key="frame" x="16" y="24" width="48" height="24"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <rect key="frame" x="16" y="24" width="52" height="24"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -64,20 +69,16 @@
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome do restaurante" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CZZ-lG-M2V">
                     <rect key="frame" x="16" y="218.5" width="382" height="33.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cardápios" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X2J-Fk-t5W">
-                    <rect key="frame" x="16" y="192" width="93" height="18"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <rect key="frame" x="16" y="196.5" width="93" height="18"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RwN-f5-EAK">
-                    <rect key="frame" x="372" y="64" width="26" height="31"/>
-                    <state key="normal" image="Rectangle 4.5"/>
-                </button>
             </subviews>
             <color key="backgroundColor" red="0.94901960784313721" green="0.96078431372549022" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -87,22 +88,21 @@
                 <constraint firstItem="Ssf-Ds-Zpo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="4LP-a2-gY3"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="CZZ-lG-M2V" secondAttribute="trailing" constant="16" id="5xW-7E-h60"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Hdk-bs-RLc" secondAttribute="trailing" id="87X-4T-mSq"/>
+                <constraint firstItem="8df-QH-hPp" firstAttribute="width" secondItem="Hdk-bs-RLc" secondAttribute="width" id="8ox-SU-fcl"/>
                 <constraint firstItem="Ssf-Ds-Zpo" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="276" id="Dl6-LA-vR6"/>
                 <constraint firstItem="Ssf-Ds-Zpo" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="GCq-vX-dVm"/>
-                <constraint firstItem="CZZ-lG-M2V" firstAttribute="top" secondItem="X2J-Fk-t5W" secondAttribute="bottom" constant="8.5" id="If1-B1-EZt"/>
+                <constraint firstItem="CZZ-lG-M2V" firstAttribute="top" secondItem="X2J-Fk-t5W" secondAttribute="bottom" constant="4" id="If1-B1-EZt"/>
                 <constraint firstItem="CZZ-lG-M2V" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="IoY-BL-56G"/>
-                <constraint firstItem="RwN-f5-EAK" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="KUf-aN-pFJ"/>
+                <constraint firstItem="8df-QH-hPp" firstAttribute="top" secondItem="Hdk-bs-RLc" secondAttribute="top" id="NRs-E8-ei3"/>
                 <constraint firstItem="Hdk-bs-RLc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="SSd-8T-ewN"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="X2J-Fk-t5W" secondAttribute="trailing" constant="305" id="Wd7-aJ-neQ"/>
+                <constraint firstItem="8df-QH-hPp" firstAttribute="leading" secondItem="Hdk-bs-RLc" secondAttribute="leading" id="cC0-Gb-jdo"/>
+                <constraint firstItem="Hdk-bs-RLc" firstAttribute="bottom" secondItem="8df-QH-hPp" secondAttribute="bottom" id="fHL-mf-1ng"/>
                 <constraint firstItem="Ssf-Ds-Zpo" firstAttribute="top" secondItem="CZZ-lG-M2V" secondAttribute="bottom" constant="24" id="iMQ-PT-apv"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="RwN-f5-EAK" secondAttribute="trailing" constant="16" id="kqO-Cw-ed1"/>
+                <constraint firstItem="Hdk-bs-RLc" firstAttribute="trailing" secondItem="8df-QH-hPp" secondAttribute="trailing" id="z8U-Fj-AvF"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="137.68115942028987" y="125.89285714285714"/>
         </view>
     </objects>
-    <resources>
-        <image name="Rectangle 4.5" width="26" height="31"/>
-        <image name="pizzaPlaceholder" width="375" height="233"/>
-    </resources>
 </document>
