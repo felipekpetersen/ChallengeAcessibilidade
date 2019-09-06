@@ -25,7 +25,7 @@ class HomeViewModel {
         return restaurants[row]
     }
     
-    func getCategoriesNumberOfRows() -> Int{
+    func getCategoriesNumberOfRows() -> Int {
         return categories.count
     }
     
@@ -42,5 +42,4 @@ class HomeViewModel {
             }
         }
     }
-
 }
