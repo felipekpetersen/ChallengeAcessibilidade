@@ -13,7 +13,6 @@ class RestaurantDetailsViewController: UIViewController{
     @IBOutlet weak var restaurantNameLabel: UILabel!
     @IBOutlet weak var restauranteImgView: UIImageView!
     @IBOutlet weak var cardapiosTableView: UITableView!
-    @IBOutlet weak var listaButton: UIButton!
     @IBOutlet weak var numberOfMenusLabel: UILabel!
     @IBOutlet weak var degardeView: UIView!
     @IBOutlet weak var smallTitleLabel: UILabel!

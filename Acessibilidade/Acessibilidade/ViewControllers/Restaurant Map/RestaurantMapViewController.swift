@@ -26,11 +26,8 @@ class RestaurantMapViewController: UIViewController, MKMapViewDelegate {
         setupCategoryLabels()
         setupCornerView()
         setupShadow()
-        setupDescriptionLabel()
+        tabBarButton()
         setupMap()
-    }
-    
-    @IBAction func myListButton(_ sender: Any) {
     }
     
     func setupCategoryLabels() {
@@ -47,31 +44,37 @@ class RestaurantMapViewController: UIViewController, MKMapViewDelegate {
     
     func setupShadow() {
         cornerView.addShadowWithBezier(color: .black, opacity: 0.4, offSet: .zero, radius: 30)
-        buttonCornerView.addShadow(color: .black, opacity: 0.2, offSet: CGSize(width: 0, height: 4), radius: 4)
-    }
-    
-    func setupDescriptionLabel() {
-        
+        buttonCornerView.addShadow(color: .black, opacity: 0.25, offSet: CGSize(width: 0, height: 4), radius: 4)
     }
     
     func setupMap() {
-        
         let annotation = MKPointAnnotation()
         annotation.coordinate = CLLocationCoordinate2D(latitude: -23.547432, longitude: -46.651825)
         restaurantMap.addAnnotation(annotation)
         let region = MKCoordinateRegion(center: annotation.coordinate, latitudinalMeters: CLLocationDistance(exactly: 700)!, longitudinalMeters: CLLocationDistance(exactly: 700)!)
         restaurantMap.region = region
 //        restaurantMap.setRegion(mapView.regionThatFits(region), animated: true)
-        
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations.last
         let center = CLLocationCoordinate2D(latitude: location!.coordinate.latitude, longitude: location!.coordinate.longitude)
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02))
-
         self.locationManager.stopUpdatingLocation()
-
     }
     
+    func tabBarButton() {
+        let myListButton = UIBarButtonItem(image: UIImage(named: "Rectangle 4.5.png"), style: .plain, target: self, action: #selector(myListSender))
+        myListButton.tintColor = .white
+        self.navigationItem.rightBarButtonItem = myListButton
+    }
+    
+    @objc func myListSender() {
+        let myListVC = MyListViewController()
+        self.navigationController?.pushViewController(myListVC, animated: true)
+    }
+    
+    func setUpNavigationBar() {
+        
+    }
 }

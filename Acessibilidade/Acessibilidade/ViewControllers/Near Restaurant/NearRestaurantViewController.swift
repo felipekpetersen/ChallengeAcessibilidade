@@ -48,9 +48,7 @@ class NearRestaurantViewController: UIViewController {
     }
 
     func setUpLabels() {
-        categoryLabel.tintColor = #colorLiteral(red: 0.9490196078, green: 0.9607843137, blue: 0.9725490196, alpha: 1)
         categoryLabel.text = self.viewModel.getRestaurantsCategory(index: 0)
-        defaultCategoryLabel.tintColor = #colorLiteral(red: 0.9058823529, green: 0.9137254902, blue: 0.9215686275, alpha: 1)
         defaultCategoryLabel.text = "Categoria"
         nearRestaurantLabel.text = "\(self.viewModel.restaurants.count) restaurantes próximos"
     }
