@@ -14,6 +14,7 @@ class HomeRestaurantTableViewCell: UITableViewCell {
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var backShadowView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,6 +25,7 @@ class HomeRestaurantTableViewCell: UITableViewCell {
     func setup(restaurant: RestaurantCodable?) {
         self.nameLabel.text = restaurant?.name
         self.addressLabel.text = restaurant?.place
+        backShadowView.addShadow(color: .black, opacity: 0.25, offSet: .zero, radius: 6)
     }
     
 }
