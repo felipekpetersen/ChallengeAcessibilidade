@@ -11,7 +11,6 @@ import UIKit
 
 extension UIView {
     func addShadow(color: UIColor, opacity: Float, offSet: CGSize, radius: CGFloat) {
-//        self.layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
         self.layer.shadowColor = color.cgColor
         self.layer.shadowOpacity = opacity
         self.layer.masksToBounds = false
@@ -28,7 +27,7 @@ extension UIView {
         self.layer.shadowRadius = radius
     }
     
-    func degrade(view: UIView){
+    func degrade(view: UIView) {
         let gradient = CAGradientLayer()
         gradient.startPoint = CGPoint(x: 0.5, y: 0.0)
         gradient.endPoint = CGPoint(x: 0.5, y: 0.9)

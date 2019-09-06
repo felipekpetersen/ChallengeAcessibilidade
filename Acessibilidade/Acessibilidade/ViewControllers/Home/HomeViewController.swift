@@ -28,12 +28,12 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     private var sectionInsets = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 20.0)
     private let itemsPerRow: CGFloat = 4
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
         setupCollectionView()
         setupLabels()
+        setupShadow()
         self.locationManager.requestWhenInUseAuthorization()
         self.locationManager.delegate = self
         self.getRestaurants()
@@ -47,7 +47,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         self.tableView.reloadData()
     }
     
-    //MARK:- Setups
+    // MARK: - Setups
     func setupTableView() {
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -62,22 +62,22 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         collectionView.register(UINib(nibName: categoriesCell, bundle: nil), forCellWithReuseIdentifier: categoriesCell)
     }
     
-    func setupLabels(){
+    func setupLabels() {
         self.categoriasTeste.text = "5 Categorias perto de você"
         self.restaurantesProximosTeste.text = "15 restaurantes próximos a você"
     }
     
     func setupShadow() {
-        searchView.addShadowWithBezier(color: .black, opacity: 1, offSet: CGSize.zero, radius: 30)
-//        searchView.addShadow(color: .black, opacity: 1, offSet: .zero, radius: 30)
+        searchView.addShadowWithBezier(color: .black, opacity: 0.25, offSet: CGSize.zero, radius: 8)
+//        searchView.addShadow(color: .black, opacity: 1, offSet: CGSize(width: 10, height: 10), radius: 30)
     }
     
-    //MARK:- Actions
+    // MARK: - Actions
     @IBAction func myListButtonTap(_ sender: UIButton) {
         navigationController?.pushViewController(MyListViewController(), animated: true)
     }
     
-    //MARK:- Location
+    // MARK: - Location
     func setupGeoFence() {
         let geofenceRegionCenter = CLLocationCoordinate2DMake(-38.028308, -57.531508);
         let geofenceRegion = CLCircularRegion(center: geofenceRegionCenter, radius: 400, identifier: "CurrentLocation");
@@ -101,7 +101,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
 
 }
 
-//MARK:- Table View Delegate
+// MARK: - Table View Delegate
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -123,12 +123,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         vc.restaurant = self.viewModel.getRestaurantForRow(row: indexPath.row)
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
 }
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.getCategoriesNumberOfRows()
     }
@@ -163,7 +161,3 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 //        self.present(vc, animated: true, completion: nil)
     }
 }
-
-
-
-
