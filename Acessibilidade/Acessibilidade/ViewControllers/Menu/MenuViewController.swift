@@ -66,11 +66,12 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: menuCell, for: indexPath) as? MenuTableViewCell
         let category = self.viewModel.getCategory(row: indexPath.row)
-        cell?.setupCell(category: category, isOpen: self.selectedIndex == indexPath.row ? true : false)
+        cell?.setupCell(category: category, isOpen: self.selectedIndex == indexPath.row ? true : false, restaurantName: restaurant.name ?? String())
         cell?.setupCornerView(cornerRadius: 5)
         cell?.layoutSubviews()
         cell?.layoutIfNeeded()
         cell?.selectionStyle = .none
+        cell?.delegate = self
         return cell ?? UITableViewCell()
     }
     
@@ -85,3 +86,17 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
         self.tableView.endUpdates()
     }
 }
+
+extension MenuViewController:  MenuTableViewCellDelegate {
+    func receivePlate(restaurantName: String, plate: PlateCodable) {
+        let vc = SelectPlateModalViewController()
+        guard let plateName = plate.name else {return}
+        guard let platePrice = plate.price else {return}
+        guard let plateDesc = plate.description else {return}
+//        vc.nameLabel.text = plateName
+//        vc.priceLabel.text = platePrice
+//        vc.descLabel.text = plateDesc
+        present(vc, animated: true, completion: nil)
+    }
+}
+
