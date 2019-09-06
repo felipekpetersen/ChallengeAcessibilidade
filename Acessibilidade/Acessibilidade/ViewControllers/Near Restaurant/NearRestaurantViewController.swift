@@ -17,6 +17,7 @@ class NearRestaurantViewController: UIViewController {
     @IBOutlet weak var categoryPhoto: UIImageView!
     @IBOutlet weak var defaultCategoryLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var backView: UIView!
     
     let nearRestaurantCell = "NearRestaurantTableViewCell"
     let viewModel = NearRestaurantViewModel()
@@ -27,12 +28,12 @@ class NearRestaurantViewController: UIViewController {
         super.viewDidLoad()
         self.viewModel.categoryName = self.categoryName
         self.viewModel.restaurants = self.restaurants
+        setUpLabels()
         setupTableView()
-        setupCategorytLabel()
         setupCategoryPhoto()
         setupCornerView()
+        setUpViews()
         tabBarButton()
-
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -46,20 +47,24 @@ class NearRestaurantViewController: UIViewController {
         nearRestaurantTableView.register(UINib(nibName: nearRestaurantCell, bundle: nil), forCellReuseIdentifier: nearRestaurantCell)
     }
 
-    func setupCategorytLabel() {
+    func setUpLabels() {
+        categoryLabel.tintColor = #colorLiteral(red: 0.9490196078, green: 0.9607843137, blue: 0.9725490196, alpha: 1)
         categoryLabel.text = self.viewModel.getRestaurantsCategory(index: 0)
+        defaultCategoryLabel.tintColor = #colorLiteral(red: 0.9058823529, green: 0.9137254902, blue: 0.9215686275, alpha: 1)
         defaultCategoryLabel.text = "Categoria"
         nearRestaurantLabel.text = "\(self.viewModel.restaurants.count) restaurantes próximos"
     }
     
+    func setUpViews() {
+        backView.degrade(view: backView)
+        backView.backgroundColor = #colorLiteral(red: 0.05490196078, green: 0.1254901961, blue: 0.2705882353, alpha: 1)
+    }
     
     func setupCategoryPhoto() {
     }
     
     func setupCornerView() {
         cornerView.layer.cornerRadius = 22
-        cornerView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        cornerView.addShadow(color: .black, opacity: 1, offSet: .zero, radius: 30)
     }
     
     func tabBarButton() {
@@ -69,12 +74,12 @@ class NearRestaurantViewController: UIViewController {
     }
     
     @objc func myListSender() {
-        let vc = MyListViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
+        let myListVC = MyListViewController()
+        self.navigationController?.pushViewController(myListVC, animated: true)
     }
 }
 
-extension NearRestaurantViewController: UITableViewDataSource, UITableViewDelegate{
+extension NearRestaurantViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.viewModel.numberOfRows()
     }
@@ -85,24 +90,19 @@ extension NearRestaurantViewController: UITableViewDataSource, UITableViewDelega
         cell?.setupCorner(cornerRadius: 5)
         cell?.delegate = self
         return cell ?? UITableViewCell()
-        
     }
-    
-    
 }
 
-extension NearRestaurantViewController: NearRestaurantCellDelegate{
+extension NearRestaurantViewController: NearRestaurantCellDelegate {
     func receiveMenu(restaurant: RestaurantCodable) {
-        let vc = RestaurantDetailsViewController()
-        vc.restaurant = restaurant
-        navigationController?.pushViewController(vc, animated: true)
+        let restaurantDetailsVC = RestaurantDetailsViewController()
+        restaurantDetailsVC.restaurant = restaurant
+        navigationController?.pushViewController(restaurantDetailsVC, animated: true)
     }
     
     func receiveDetail(restaurant: RestaurantCodable) {
-        let vc = RestaurantMapViewController()
-        vc.restaurantCodable = restaurant
-        navigationController?.pushViewController(vc, animated: true)
+        let restaurantMapVC = RestaurantMapViewController()
+        restaurantMapVC.restaurantCodable = restaurant
+        navigationController?.pushViewController(restaurantMapVC, animated: true)
     }
-    
-    
 }

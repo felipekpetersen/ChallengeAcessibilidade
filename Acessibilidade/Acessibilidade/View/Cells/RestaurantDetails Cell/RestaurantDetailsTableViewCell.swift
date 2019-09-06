@@ -17,11 +17,10 @@ class RestaurantDetailsTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        cardapioBackView.addShadow(color: .black, opacity: 0.2, offSet: CGSize(width: 0, height: 4), radius: 4)
+        cardapioBackView.addShadow(color: .black, opacity: 0.25, offSet: CGSize(width: 0, height: 4), radius: 4)
     }
 
     func setUpCell(menu: MenuCodable) {
         testeLabel.text = menu.name
-//        testeLabel.text = title
     }
 }

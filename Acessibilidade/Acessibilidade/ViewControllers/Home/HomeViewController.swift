@@ -69,7 +69,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     
     func setupShadow() {
         searchView.addShadowWithBezier(color: .black, opacity: 0.25, offSet: CGSize.zero, radius: 8)
-//        searchView.addShadow(color: .black, opacity: 1, offSet: CGSize(width: 10, height: 10), radius: 30)
     }
     
     // MARK: - Actions

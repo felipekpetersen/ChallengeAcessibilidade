@@ -22,8 +22,8 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g2O-EE-mEy" customClass="RoundedView" customModule="Acessibilidade" customModuleProvider="target">
                         <rect key="frame" x="14" y="7" width="310" height="67.5"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dft-4z-BdC">
-                                <rect key="frame" x="16" y="15" width="52" height="37.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dft-4z-BdC">
+                                <rect key="frame" x="16" y="15" width="235" height="37.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -43,6 +43,7 @@
                             <constraint firstAttribute="bottom" secondItem="OMJ-da-LTb" secondAttribute="bottom" constant="20" id="Gk0-bc-SJR"/>
                             <constraint firstAttribute="trailing" secondItem="OMJ-da-LTb" secondAttribute="trailing" id="PXf-he-kkX"/>
                             <constraint firstItem="Dft-4z-BdC" firstAttribute="top" secondItem="g2O-EE-mEy" secondAttribute="top" constant="15" id="RGa-NR-faB"/>
+                            <constraint firstItem="OMJ-da-LTb" firstAttribute="leading" secondItem="Dft-4z-BdC" secondAttribute="trailing" constant="4" id="Roh-eI-zT5"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">

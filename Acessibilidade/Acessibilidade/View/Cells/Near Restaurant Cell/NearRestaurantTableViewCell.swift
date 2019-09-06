@@ -28,18 +28,16 @@ class NearRestaurantTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setupTapGesture()
-        // Initialization code
     }
 
     func setup(restaurant: RestaurantCodable) {
-//        self.restaurantImage.image = restaurant.
         self.restaurantNameLabel.text = restaurant.name
         self.restaurant = restaurant
     }
     
     func setupCorner(cornerRadius: CGFloat) {
         self.cornerView.layer.cornerRadius =  cornerRadius
-        self.cornerView.addShadow(color: .black, opacity: 0.2, offSet: CGSize(width: 0, height: 4), radius: 4)
+        self.cornerView.addShadow(color: .black, opacity: 0.25, offSet: CGSize(width: 0, height: 4), radius: 4)
     }
     
     func setupTapGesture() {
