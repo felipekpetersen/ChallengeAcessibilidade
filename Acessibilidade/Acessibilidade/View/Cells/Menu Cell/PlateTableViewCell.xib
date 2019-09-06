@@ -82,6 +82,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="addPlateView" destination="MNy-QK-MqS" id="pVX-Zc-Vcv"/>
                 <outlet property="plateNameLabel" destination="Ots-57-GXh" id="VUO-9r-RDL"/>
                 <outlet property="priceLabel" destination="LzR-Qt-vuk" id="Xui-rv-e5f"/>
             </connections>

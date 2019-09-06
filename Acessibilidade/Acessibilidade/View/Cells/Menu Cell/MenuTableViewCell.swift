@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol MenuTableViewCellDelegate {
+    func receivePlate(restaurantName: String, plate: PlateCodable)
+}
+
 class MenuTableViewCell: UITableViewCell {
     
     @IBOutlet weak var categoryNameLabel: UILabel!
@@ -18,6 +22,8 @@ class MenuTableViewCell: UITableViewCell {
     let plateCell = "PlateTableViewCell"
     var category = CategoryCodable()
     var isOpen: Bool?
+    var delegate: MenuTableViewCellDelegate?
+    var restaurantName: String?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,10 +35,11 @@ class MenuTableViewCell: UITableViewCell {
         setupTableView()
     }
     
-    func setupCell(category: CategoryCodable, isOpen: Bool){
+    func setupCell(category: CategoryCodable, isOpen: Bool, restaurantName: String){
         self.isOpen = isOpen
         categoryNameLabel.text = category.name
         self.category = category
+        self.restaurantName = restaurantName
     }
     
     func setupCornerView(cornerRadius: CGFloat) {
@@ -63,10 +70,15 @@ extension MenuTableViewCell: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: plateCell, for: indexPath) as? PlateTableViewCell
         cell?.layoutSubviews()
-        
+        cell?.delegate = self
         cell?.layoutIfNeeded()
-        
-//        cell?.setup(plate: self.category.plates?[indexPath.row] ?? PlateCodable())
+        cell?.setup(plate: self.category.plates?[indexPath.row] ?? PlateCodable(), restaurantName: restaurantName ?? String())
         return cell ?? UITableViewCell()
+    }
+}
+
+extension MenuTableViewCell:  PlateTableViewCellDelegate{
+    func receivePlate(restaurantName: String, plate: PlateCodable) {
+        self.delegate?.receivePlate(restaurantName: restaurantName, plate: plate)
     }
 }

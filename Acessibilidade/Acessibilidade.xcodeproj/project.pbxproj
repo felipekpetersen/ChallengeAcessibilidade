@@ -42,6 +42,7 @@
 		D97169C0232024A70033A7BF /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97169BF232024A70033A7BF /* MenuViewModel.swift */; };
 		D97169C4232028240033A7BF /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97169C2232028240033A7BF /* MenuTableViewCell.swift */; };
 		D97169C5232028240033A7BF /* MenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D97169C3232028240033A7BF /* MenuTableViewCell.xib */; };
+		D97169C7232199300033A7BF /* MyListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97169C6232199300033A7BF /* MyListManager.swift */; };
 		D9865DCA23144DA900FA6C21 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9865DC823144DA900FA6C21 /* HomeViewController.swift */; };
 		D9865DCB23144DA900FA6C21 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9865DC923144DA900FA6C21 /* HomeViewController.xib */; };
 		D9865DCD23144E4A00FA6C21 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9865DCC23144E4A00FA6C21 /* HomeViewModel.swift */; };
@@ -100,6 +101,7 @@
 		D97169BF232024A70033A7BF /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 		D97169C2232028240033A7BF /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		D97169C3232028240033A7BF /* MenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuTableViewCell.xib; sourceTree = "<group>"; };
+		D97169C6232199300033A7BF /* MyListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListManager.swift; sourceTree = "<group>"; };
 		D9865DC823144DA900FA6C21 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D9865DC923144DA900FA6C21 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		D9865DCC23144E4A00FA6C21 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -178,14 +180,15 @@
 			path = Plates;
 			sourceTree = "<group>";
 		};
-		0FAA8CC42319A1BE00859E69 /* New Group */ = {
+		0FAA8CC42319A1BE00859E69 /* Auxiliares */ = {
 			isa = PBXGroup;
 			children = (
 				0FAA8CC52319A1F800859E69 /* RoundedView.swift */,
 				0F28EE85231DA28700B14C07 /* ShadowView.swift */,
 				32AB017223202F8D005187D8 /* RGBtoColor.swift */,
+				D97169C6232199300033A7BF /* MyListManager.swift */,
 			);
-			path = "New Group";
+			path = Auxiliares;
 			sourceTree = "<group>";
 		};
 		325F50202304950A004CDCA2 = {
@@ -207,7 +210,7 @@
 		325F502B2304950A004CDCA2 /* Acessibilidade */ = {
 			isa = PBXGroup;
 			children = (
-				0FAA8CC42319A1BE00859E69 /* New Group */,
+				0FAA8CC42319A1BE00859E69 /* Auxiliares */,
 				32F864D623198A9F0008B7B5 /* Request Model */,
 				D9865DCF23144F9F00FA6C21 /* View */,
 				D9865DC623144CF000FA6C21 /* ViewControllers */,
@@ -507,6 +510,7 @@
 				D994B1B9231996B100F30DD7 /* NearRestaurantViewModel.swift in Sources */,
 				325F50352304950A004CDCA2 /* Acessibilidade.xcdatamodeld in Sources */,
 				D994B1C2231D2E1C00F30DD7 /* RestaurantMapViewController.swift in Sources */,
+				D97169C7232199300033A7BF /* MyListManager.swift in Sources */,
 				D9865DDB2315949300FA6C21 /* RestaurantListViewController.swift in Sources */,
 				D9865DCD23144E4A00FA6C21 /* HomeViewModel.swift in Sources */,
 				D994B1BD23199DCE00F30DD7 /* NearRestaurantTableViewCell.swift in Sources */,
@@ -657,7 +661,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BSH4XC9RT9;
+				DEVELOPMENT_TEAM = Q9Y63W6Q4X;
 				INFOPLIST_FILE = Acessibilidade/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -675,7 +679,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BSH4XC9RT9;
+				DEVELOPMENT_TEAM = Q9Y63W6Q4X;
 				INFOPLIST_FILE = Acessibilidade/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
