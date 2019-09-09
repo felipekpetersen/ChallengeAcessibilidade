@@ -38,17 +38,38 @@ public class MyListManager {
             return copy
         }
     }
-    func addOrder(restaurant: String, plate: PlateCodable) {
-        var newList = MyListDecodable()
-        newList.restaurantName = nil
-        if !(_myLists.contains { (rest) -> Bool in
-             return rest.restaurantName == restaurant
-        }) {
-            newList.restaurantName = restaurant
+    func addOrder(restaurantName: String, plate: PlateCodable) {
+//        var newList = MyListDecodable()
+//        newList.restaurantName = nil
+//        if !(_myLists.contains { (rest) -> Bool in
+//             return rest.restaurantName == restaurant
+//        }) {
+//            newList.restaurantName = restaurant
+//
+//        }
+//
+//        newList.plateCodable = [PlateCodable]()
+//        newList.plateCodable?.append(plate)
+//
+//         _myLists.append(newList)
+        var didCreate = false
+        for index in _myLists.indices {
+            if restaurantName == _myLists[index].restaurantName {
+                _myLists[index].plateCodable?.append(plate)
+                didCreate = true
+            }
         }
-
-        newList.plateCodable?.append(plate)
-
-         _myLists.append(newList)
+        
+        if !didCreate {
+            var newList = MyListDecodable()
+            newList.restaurantName = restaurantName
+            newList.plateCodable = [PlateCodable]()
+            newList.plateCodable?.append(plate)
+            _myLists.append(newList)
+        }
+    }
+    
+    func getOrder() -> [MyListDecodable] {
+        return _myLists
     }
 }
