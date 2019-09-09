@@ -34,10 +34,10 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         setupCollectionView()
         setupLabels()
         setupShadow()
+        tabBarButton()
         self.locationManager.requestWhenInUseAuthorization()
         self.locationManager.delegate = self
         self.getRestaurants()
-        navigationController?.navigationBar.isUserInteractionEnabled = false
         // Do any additional setup after loading the view.
     }
     
@@ -72,8 +72,15 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     }
     
     // MARK: - Actions
-    @IBAction func myListButtonTap(_ sender: UIButton) {
-        navigationController?.pushViewController(MyListViewController(), animated: true)
+    func tabBarButton() {
+        let myListButton = UIBarButtonItem(image: UIImage(named: "Rectangle 4.5.png"), style: .plain, target: self, action: #selector(myListSender))
+        myListButton.tintColor = .white
+        self.navigationItem.rightBarButtonItem = myListButton
+    }
+    
+    @objc func myListSender() {
+        let myListVC = MyListViewController()
+        self.navigationController?.pushViewController(myListVC, animated: true)
     }
     
     // MARK: - Location

@@ -75,13 +75,6 @@
                     <rect key="frame" x="0.0" y="408.5" width="414" height="487.5"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezO-hk-lPb">
-                    <rect key="frame" x="364" y="64.5" width="26" height="31"/>
-                    <state key="normal" image="Rectangle 4.5"/>
-                    <connections>
-                        <action selector="myListButtonTap:" destination="-1" eventType="touchUpInside" id="PYk-tl-h2s"/>
-                    </connections>
-                </button>
             </subviews>
             <color key="backgroundColor" red="0.94901960784313721" green="0.96078431372549022" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -92,8 +85,6 @@
                 <constraint firstItem="bOH-hp-uAj" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="FWN-c9-aOk"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sb9-Gx-yJ4" secondAttribute="trailing" constant="16" id="Kuq-ys-m4K"/>
                 <constraint firstItem="bOH-hp-uAj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="LjT-te-rkF"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ezO-hk-lPb" secondAttribute="trailing" constant="24" id="OFM-2j-JAl"/>
-                <constraint firstItem="ezO-hk-lPb" firstAttribute="centerY" secondItem="wW6-Fd-Tkt" secondAttribute="centerY" id="RGq-tr-XDg"/>
                 <constraint firstItem="9hN-Md-MM7" firstAttribute="top" secondItem="sb9-Gx-yJ4" secondAttribute="bottom" constant="16" id="YwI-7u-bXm"/>
                 <constraint firstItem="bnX-lk-Od0" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="aGb-kg-Tva"/>
                 <constraint firstItem="sb9-Gx-yJ4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="cmT-mA-BaI"/>
@@ -110,7 +101,4 @@
             <point key="canvasLocation" x="47.826086956521742" y="35.491071428571423"/>
         </view>
     </objects>
-    <resources>
-        <image name="Rectangle 4.5" width="26" height="31"/>
-    </resources>
 </document>

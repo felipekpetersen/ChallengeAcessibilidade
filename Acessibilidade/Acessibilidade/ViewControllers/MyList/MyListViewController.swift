@@ -60,9 +60,39 @@ extension MyListViewController: UITableViewDelegate, UITableViewDataSource{
         return self.viewModel.numberOfRows()
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        var restaurants = MyListManager.shared().getOrder()
+        return restaurants.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        var restaurants = MyListManager.shared().getOrder()
+        var restaurantName: String?
+        for inx in restaurants {
+            restaurantName = inx.restaurantName ?? String()
+        }
+        return restaurantName
+
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.myListTableView.dequeueReusableCell(withIdentifier:
             listaCell, for: indexPath) as? MyListCellTableViewCell
+        var restaurants = MyListManager.shared().getOrder()
+        var plates: [PlateCodable] = []
+//        var plateName: String?
+//        var price: String?
+
+        for inx in 0..<restaurants.count {
+            plates = restaurants[inx].plateCodable ?? [PlateCodable()]
+        }
+        
+        guard let plateName = plates[indexPath.row].name else {return UITableViewCell()}
+        guard let price = plates[indexPath.row].price else {return UITableViewCell()}
+        
+        
+        cell?.setUpCell(title: plateName, price: price)
+        
         return cell ?? UITableViewCell()
     }
 }

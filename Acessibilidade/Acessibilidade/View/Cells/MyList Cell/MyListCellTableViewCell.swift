@@ -23,7 +23,8 @@ class MyListCellTableViewCell: UITableViewCell {
         plateView.addShadow(color: .black, opacity: 0.2, offSet: CGSize(width: 0, height: 4), radius: 4)
     }
     
-    func setUpCell(title:String){
+    func setUpCell(title:String, price:String){
         plateNameLabel.text = title
+        priceLabel.text = price
     }
 }

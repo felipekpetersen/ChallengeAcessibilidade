@@ -29,6 +29,7 @@ class MenuViewController: UIViewController {
         setupTableView()
         setupCornerView()
         setupLabels()
+        tabBarButton()
         viewModel.menu = menu
     }
     
@@ -55,6 +56,17 @@ class MenuViewController: UIViewController {
         categoryNameLabel.text = menu.name
         guard let numberOfCategorys = restaurant.menus?.count else {return}
         numberOfCategorysLabel.text = "Há \(numberOfCategorys) categorias de pratos"
+    }
+    
+    func tabBarButton() {
+        let myListButton = UIBarButtonItem(image: UIImage(named: "Rectangle 4.5.png"), style: .plain, target: self, action: #selector(myListSender))
+        myListButton.tintColor = .white
+        self.navigationItem.rightBarButtonItem = myListButton
+    }
+    
+    @objc func myListSender() {
+        let myListVC = MyListViewController()
+        self.navigationController?.pushViewController(myListVC, animated: true)
     }
 }
 

@@ -63,10 +63,6 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x9a-AT-aLO">
-                    <rect key="frame" x="372" y="64" width="26" height="31"/>
-                    <state key="normal" image="Rectangle 4.5"/>
-                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Iv-PA-10m">
                     <rect key="frame" x="16" y="192.5" width="40" height="18"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -80,12 +76,10 @@
                 <constraint firstItem="0Iv-PA-10m" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Dma-zg-iww"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wne-fW-2GQ" secondAttribute="trailing" id="K0V-lE-Fkr"/>
                 <constraint firstItem="wne-fW-2GQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="M6L-8M-h0S"/>
-                <constraint firstItem="x9a-AT-aLO" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="QnQ-S9-dXk"/>
                 <constraint firstItem="SAl-bu-Euf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="276" id="SXV-e7-xFt"/>
                 <constraint firstItem="SAl-bu-Euf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="fUF-l2-9Hb"/>
                 <constraint firstAttribute="bottom" secondItem="SAl-bu-Euf" secondAttribute="bottom" id="hla-vR-u56"/>
                 <constraint firstItem="Oaw-c2-s0C" firstAttribute="top" secondItem="0Iv-PA-10m" secondAttribute="bottom" constant="8" id="i2o-Av-Nzo"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="x9a-AT-aLO" secondAttribute="trailing" constant="16" id="jYr-50-jtn"/>
                 <constraint firstItem="Oaw-c2-s0C" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="uWr-bB-iHp"/>
                 <constraint firstItem="wne-fW-2GQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="wuG-BG-tMq"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="SAl-bu-Euf" secondAttribute="trailing" id="z21-Wu-Kyi"/>
@@ -93,7 +87,4 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>
     </objects>
-    <resources>
-        <image name="Rectangle 4.5" width="26" height="31"/>
-    </resources>
 </document>
