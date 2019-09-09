@@ -12,11 +12,12 @@ class MenuViewController: UIViewController {
     
     
     @IBOutlet weak var restaurantImageView: UIImageView!
-    @IBOutlet weak var cornerView: UIView!
+    @IBOutlet weak var backView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var numberOfCategorysLabel: UILabel!
     @IBOutlet weak var categoryNameLabel: UILabel!
     @IBOutlet weak var restaurantNameLabel: UILabel!
+    @IBOutlet weak var degradeView: UIView!
     
     public var restaurant = RestaurantCodable()
     public var menu = MenuCodable()
@@ -27,9 +28,9 @@ class MenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        setupCornerView()
         setupLabels()
         tabBarButton()
+        setViews()
         viewModel.menu = menu
     }
     
@@ -44,18 +45,17 @@ class MenuViewController: UIViewController {
         tableView.register(UINib(nibName: menuCell, bundle: nil), forCellReuseIdentifier: menuCell)
     }
     
-    func setupCornerView() {
-        cornerView.layer.cornerRadius = 22
-        cornerView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        cornerView.addShadow(color: .black, opacity: 1, offSet: .zero, radius: 30)
-        
-    }
-    
     func setupLabels() {
         restaurantNameLabel.text = restaurant.name
         categoryNameLabel.text = menu.name
         guard let numberOfCategorys = restaurant.menus?.count else {return}
         numberOfCategorysLabel.text = "Há \(numberOfCategorys) categorias de pratos"
+    }
+    
+    func setViews() {
+        degradeView.backgroundColor = #colorLiteral(red: 0.05490196078, green: 0.1254901961, blue: 0.2705882353, alpha: 1)
+        degradeView.degrade(view: degradeView)
+        backView.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9607843137, blue: 0.9725490196, alpha: 1)
     }
     
     func tabBarButton() {
