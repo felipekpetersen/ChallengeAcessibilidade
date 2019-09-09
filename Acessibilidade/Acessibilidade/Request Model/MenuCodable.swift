@@ -14,6 +14,7 @@ struct ResponseCodable: Codable {
 }
 
 struct RestaurantCodable: Codable {
+    var _id: String?
     var name: String?
     var place: String?
     var description: String?

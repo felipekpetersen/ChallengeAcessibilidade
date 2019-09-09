@@ -31,6 +31,7 @@
 		325F503A2304950B004CDCA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 325F50382304950B004CDCA2 /* LaunchScreen.storyboard */; };
 		325F8F402320569E00DA9D9B /* PlateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325F8F3E2320569E00DA9D9B /* PlateTableViewCell.swift */; };
 		325F8F412320569E00DA9D9B /* PlateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 325F8F3F2320569E00DA9D9B /* PlateTableViewCell.xib */; };
+		325F8F432322E75B00DA9D9B /* DownloadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325F8F422322E75B00DA9D9B /* DownloadImage.swift */; };
 		32AB017323202F8D005187D8 /* RGBtoColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB017223202F8D005187D8 /* RGBtoColor.swift */; };
 		32B80AB9231EDA3600E3EE5F /* SelectPlateModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B80AB7231EDA3600E3EE5F /* SelectPlateModalViewController.swift */; };
 		32B80ABA231EDA3600E3EE5F /* SelectPlateModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32B80AB8231EDA3600E3EE5F /* SelectPlateModalViewController.xib */; };
@@ -90,6 +91,7 @@
 		325F503B2304950B004CDCA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		325F8F3E2320569E00DA9D9B /* PlateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateTableViewCell.swift; sourceTree = "<group>"; };
 		325F8F3F2320569E00DA9D9B /* PlateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlateTableViewCell.xib; sourceTree = "<group>"; };
+		325F8F422322E75B00DA9D9B /* DownloadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadImage.swift; sourceTree = "<group>"; };
 		32AB017223202F8D005187D8 /* RGBtoColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBtoColor.swift; sourceTree = "<group>"; };
 		32B80AB7231EDA3600E3EE5F /* SelectPlateModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlateModalViewController.swift; sourceTree = "<group>"; };
 		32B80AB8231EDA3600E3EE5F /* SelectPlateModalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectPlateModalViewController.xib; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				0F28EE85231DA28700B14C07 /* ShadowView.swift */,
 				32AB017223202F8D005187D8 /* RGBtoColor.swift */,
 				D97169C6232199300033A7BF /* MyListManager.swift */,
+				325F8F422322E75B00DA9D9B /* DownloadImage.swift */,
 			);
 			path = Auxiliares;
 			sourceTree = "<group>";
@@ -459,7 +462,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		325F504123049566004CDCA2 /* Run Script Swift Lint */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputFileListPaths = (
@@ -471,7 +474,7 @@
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
@@ -507,6 +510,7 @@
 				D9865DDE231594D900FA6C21 /* RestaurantListViewModel.swift in Sources */,
 				0F3199352316F55E0078BBBE /* PlatesViewController.swift in Sources */,
 				D97169C0232024A70033A7BF /* MenuViewModel.swift in Sources */,
+				325F8F432322E75B00DA9D9B /* DownloadImage.swift in Sources */,
 				D994B1B9231996B100F30DD7 /* NearRestaurantViewModel.swift in Sources */,
 				325F50352304950A004CDCA2 /* Acessibilidade.xcdatamodeld in Sources */,
 				D994B1C2231D2E1C00F30DD7 /* RestaurantMapViewController.swift in Sources */,
