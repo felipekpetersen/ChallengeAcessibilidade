@@ -25,7 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationController.navigationBar.shadowImage = UIImage()
         navigationController.navigationBar.isTranslucent = true
         navigationController.viewControllers = [vc]
-        navigationController.navigationBar.isUserInteractionEnabled = false
         let bounds = UIScreen.main.bounds
         self.window = UIWindow(frame: bounds)
         self.window?.rootViewController = navigationController

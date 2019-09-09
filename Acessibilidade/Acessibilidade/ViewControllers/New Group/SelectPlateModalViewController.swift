@@ -40,6 +40,7 @@ class SelectPlateModalViewController: UIViewController {
     var plate: PlateCodable?
     var restaurantName: String?
     var delegate: SelectPlateModalViewControllerDelegate?
+    
 
     
     override func viewDidLoad() {
@@ -118,6 +119,7 @@ class SelectPlateModalViewController: UIViewController {
     @objc func didSelectPlate() {
         switch viewState {
         case .selectPlate:
+            let vc = MyListViewController()
             guard let restaurantName = restaurantName else {return}
             guard let plate = plate else {return}
             MyListManager.shared().addOrder(restaurantName: restaurantName, plate: plate)

@@ -9,7 +9,18 @@
 import Foundation
 
 class MyListViewModel{
+    
+    
     func numberOfRows() ->  Int{
-        return 4
+        var restaurants = MyListManager.shared().getOrder()
+        var plates:[PlateCodable] = []
+        var numberOfPlates: Int?
+        
+        for inx in 0..<restaurants.count{
+            plates = restaurants[inx].plateCodable ?? [PlateCodable()]
+            numberOfPlates = plates.count
+        }
+        return numberOfPlates ?? 0
     }
+    
 }
