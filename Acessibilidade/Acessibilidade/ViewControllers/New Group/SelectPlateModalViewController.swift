@@ -13,9 +13,13 @@ enum ModalState {
     case changeView
 }
 
+protocol SelectPlateModalViewControllerDelegate {
+    func didTapOpenPlates()
+    func didTapOtherMenu()
+}
+
 class SelectPlateModalViewController: UIViewController {
 
-    
     @IBOutlet weak var outsideView: UIView!
     @IBOutlet weak var modalView: RoundedView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -33,14 +37,18 @@ class SelectPlateModalViewController: UIViewController {
     
     
     var viewState: ModalState = .selectPlate
+    var plate: PlateCodable?
+    var restaurantName: String?
+    var delegate: SelectPlateModalViewControllerDelegate?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.isOpaque = false
         setupTap()
         setupShadow()
+        setupLabels()
         self.setupView(forState: viewState)
-        // Do any additional setup after loading the view.
     }
     
     func setupShadow() {
@@ -57,11 +65,21 @@ class SelectPlateModalViewController: UIViewController {
         swipe.direction = .down
         self.view.addGestureRecognizer(swipe)
         
+        let otherMenuTap = UITapGestureRecognizer(target: self, action: #selector(didTapOtherMenu))
+        self.changeMenuView.addGestureRecognizer(otherMenuTap)
+        
         let selectPlateTap = UITapGestureRecognizer(target: self, action: #selector(didSelectPlate))
         self.selectPlateView.addGestureRecognizer(selectPlateTap)
         
         let cancelTap = UITapGestureRecognizer(target: self, action: #selector(didTapCancel))
         self.cancelView.addGestureRecognizer(cancelTap)
+    }
+    
+    func setupLabels() {
+        nameLabel.text = plate?.name
+        priceLabel.text = plate?.price
+        descLabel.text = plate?.description
+        
     }
     
     func setupView(forState: ModalState) {
@@ -75,6 +93,7 @@ class SelectPlateModalViewController: UIViewController {
                 self.cancelLabel.text = "Ir para pratos selecionados"
                 self.selectPlateLabel.text = "Continuar de onde estava"
                 self.nameLabel.text = "Prato adicionado com sucesso"
+                self.descLabel.text = "Selecione a opção que você deseja para continuar:"
                 self.changeMenuView.alpha = 1
                 self.menuHeightConstraint.constant = 60
             }
@@ -92,9 +111,21 @@ class SelectPlateModalViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    @objc func didTapOtherMenu() {
+        self.delegate?.didTapOtherMenu()
+    }
+    
     @objc func didSelectPlate() {
-        self.viewState = .changeView
-        setupView(forState: self.viewState)
+        switch viewState {
+        case .selectPlate:
+            guard let restaurantName = restaurantName else {return}
+            guard let plate = plate else {return}
+            MyListManager.shared().addOrder(restaurantName: restaurantName, plate: plate)
+            self.viewState = .changeView
+            setupView(forState: self.viewState)
+        case .changeView:
+            self.dismiss(animated: true, completion: nil)
+        }
         //TODO:- selecionar prato
     }
     
@@ -103,7 +134,7 @@ class SelectPlateModalViewController: UIViewController {
         case .selectPlate:
             self.dismiss(animated: true, completion: nil)
         case .changeView:
-            return
+            self.delegate?.didTapOpenPlates()
         }
     }
 }
