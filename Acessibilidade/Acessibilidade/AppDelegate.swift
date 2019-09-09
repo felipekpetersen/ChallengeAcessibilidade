@@ -20,11 +20,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        window?.rootViewController = HomeViewController()
 //        window?.makeKeyAndVisible()
         let navigationController = UINavigationController()
-        let vc = HomeViewController()
+        let homeVC = MenuViewController()
         navigationController.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController.navigationBar.shadowImage = UIImage()
         navigationController.navigationBar.isTranslucent = true
-        navigationController.viewControllers = [vc]
+        navigationController.viewControllers = [homeVC]
         let bounds = UIScreen.main.bounds
         self.window = UIWindow(frame: bounds)
         self.window?.rootViewController = navigationController
