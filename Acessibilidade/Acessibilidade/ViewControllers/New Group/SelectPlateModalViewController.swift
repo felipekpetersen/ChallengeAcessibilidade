@@ -35,13 +35,10 @@ class SelectPlateModalViewController: UIViewController {
     
     @IBOutlet weak var menuHeightConstraint: NSLayoutConstraint!
     
-    
     var viewState: ModalState = .selectPlate
     var plate: PlateCodable?
     var restaurantName: String?
     var delegate: SelectPlateModalViewControllerDelegate?
-    
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,9 +84,11 @@ class SelectPlateModalViewController: UIViewController {
         UIView.animate(withDuration: 1) {
             switch forState {
             case .selectPlate:
+                
                 self.menuHeightConstraint.constant = 0
             case .changeView:
-                
+                UIAccessibility.post(notification: UIAccessibility.Notification.screenChanged, argument: self.nameLabel)
+
                 self.priceLabel.isHidden = true
                 self.cancelLabel.text = "Ir para pratos selecionados"
                 self.selectPlateLabel.text = "Continuar de onde estava"
@@ -113,6 +112,7 @@ class SelectPlateModalViewController: UIViewController {
     }
     
     @objc func didTapOtherMenu() {
+        self.dismiss(animated: true, completion: nil)
         self.delegate?.didTapOtherMenu()
     }
     
@@ -136,6 +136,7 @@ class SelectPlateModalViewController: UIViewController {
         case .selectPlate:
             self.dismiss(animated: true, completion: nil)
         case .changeView:
+            self.dismiss(animated: true, completion: nil)
             self.delegate?.didTapOpenPlates()
         }
     }

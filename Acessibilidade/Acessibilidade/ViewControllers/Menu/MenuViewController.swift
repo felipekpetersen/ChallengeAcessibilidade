@@ -102,11 +102,24 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
 extension MenuViewController:  MenuTableViewCellDelegate {
     func receivePlate(restaurantName: String, plate: PlateCodable) {
         let vc = SelectPlateModalViewController()
-
+        vc.delegate = self
         vc.restaurantName = restaurantName
         vc.plate = plate
         vc.modalPresentationStyle = .overCurrentContext
         present(vc, animated: true, completion: nil)
     }
+}
+
+extension MenuViewController: SelectPlateModalViewControllerDelegate {
+    func didTapOpenPlates() {
+        let myListVC = MyListViewController()
+        self.navigationController?.pushViewController(myListVC, animated: true)
+    }
+    
+    func didTapOtherMenu() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    
 }
 
