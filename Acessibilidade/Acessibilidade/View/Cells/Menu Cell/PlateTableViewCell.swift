@@ -17,6 +17,7 @@ class PlateTableViewCell: UITableViewCell {
     @IBOutlet weak var plateNameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var addPlateView: UIView!
+    
     var delegate: PlateTableViewCellDelegate?
     var restaurant: RestaurantCodable?
     var restaurantName: String?
@@ -25,8 +26,11 @@ class PlateTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setupTapGesture()
-
-        // Initialization code
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        setupAccessibility()
     }
 
     func setup(plate: PlateCodable, restaurantName: String) {
@@ -44,5 +48,19 @@ class PlateTableViewCell: UITableViewCell {
     @objc func addPlate(){
         guard let plate = plate else {return}
         delegate?.receivePlate(restaurantName: restaurantName ?? String(), plate: plate)
+    }
+    
+    func setupAccessibility() {
+        self.plateNameLabel.isAccessibilityElement = true
+        self.plateNameLabel.accessibilityTraits = .staticText
+        self.plateNameLabel.accessibilityLabel = self.plateNameLabel.text
+        
+        self.priceLabel.isAccessibilityElement = true
+        self.priceLabel.accessibilityTraits = .staticText
+        self.priceLabel.accessibilityLabel = self.priceLabel.text
+        
+        self.addPlateView.isAccessibilityElement = true
+        self.addPlateView.accessibilityTraits = .button
+        self.addPlateView.accessibilityLabel = "Adicionar aos pedidos"
     }
 }

@@ -35,7 +35,7 @@ class MenuTableViewCell: UITableViewCell {
         setupTableView()
     }
     
-    func setupCell(category: CategoryCodable, isOpen: Bool, restaurantName: String){
+    func setupCell(category: CategoryCodable, isOpen: Bool, restaurantName: String) {
         self.isOpen = isOpen
         categoryNameLabel.text = category.name
         self.category = category
@@ -54,8 +54,10 @@ class MenuTableViewCell: UITableViewCell {
         
         self.tableView.separatorStyle = .none
         if self.isOpen ?? false {
-            self.tableViewHeight.constant = CGFloat((self.category.plates?.count ?? 0)) * 60
+            self.tableView.isHidden = false
+            self.tableViewHeight.constant = CGFloat((self.category.plates?.count ?? 0)) * 82
         } else {
+            self.tableView.isHidden = true
             self.tableViewHeight.constant = 0
         }
     }
@@ -75,9 +77,13 @@ extension MenuTableViewCell: UITableViewDelegate, UITableViewDataSource {
         cell?.setup(plate: self.category.plates?[indexPath.row] ?? PlateCodable(), restaurantName: restaurantName ?? String())
         return cell ?? UITableViewCell()
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 82
+    }
 }
 
-extension MenuTableViewCell:  PlateTableViewCellDelegate{
+extension MenuTableViewCell:  PlateTableViewCellDelegate {
     func receivePlate(restaurantName: String, plate: PlateCodable) {
         self.delegate?.receivePlate(restaurantName: restaurantName, plate: plate)
     }
