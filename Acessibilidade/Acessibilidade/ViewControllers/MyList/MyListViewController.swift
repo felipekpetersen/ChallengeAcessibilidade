@@ -57,7 +57,8 @@ class MyListViewController: UIViewController {
 extension MyListViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.viewModel.numberOfRows()
+        
+        return MyListManager.shared().getOrder()[section].plateCodable?.count ?? 0
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -67,28 +68,27 @@ extension MyListViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         var restaurants = MyListManager.shared().getOrder()
-        var restaurantName: String?
-        for inx in restaurants {
-            restaurantName = inx.restaurantName ?? String()
-        }
-        return restaurantName
+        
+        return restaurants[section].restaurantName
 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.myListTableView.dequeueReusableCell(withIdentifier:
             listaCell, for: indexPath) as? MyListCellTableViewCell
-        var restaurants = MyListManager.shared().getOrder()
-        var plates: [PlateCodable] = []
+        var orders = MyListManager.shared().getOrder()
+//        var plates: [PlateCodable] = []
 //        var plateName: String?
 //        var price: String?
 
-        for inx in 0..<restaurants.count {
-            plates = restaurants[inx].plateCodable ?? [PlateCodable()]
-        }
+//        for inx in 0..<orders.count {
+//            if let arrPlates = orders[inx].plateCodable{
+//                plates.append(arrPlates[0])
+//            }
+//        }
         
-        guard let plateName = plates[indexPath.row].name else {return UITableViewCell()}
-        guard let price = plates[indexPath.row].price else {return UITableViewCell()}
+        guard let plateName = orders[indexPath.section].plateCodable?[indexPath.row].name else {return UITableViewCell()}
+        guard let price = orders[indexPath.section].plateCodable?[indexPath.row].price else {return UITableViewCell()}
         
         
         cell?.setUpCell(title: plateName, price: price)

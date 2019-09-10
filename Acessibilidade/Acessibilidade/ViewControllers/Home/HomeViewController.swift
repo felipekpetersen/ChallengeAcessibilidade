@@ -32,13 +32,17 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         super.viewDidLoad()
         setupTableView()
         setupCollectionView()
-        setupLabels()
         setupShadow()
         tabBarButton()
         self.locationManager.requestWhenInUseAuthorization()
         self.locationManager.delegate = self
         self.getRestaurants()
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setupLabels()
+
     }
     
     func getRestaurants() {
@@ -63,8 +67,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     }
     
     func setupLabels() {
-        self.categoriasTeste.text = "5 Categorias perto de você"
-        self.restaurantesProximosTeste.text = "15 restaurantes próximos a você"
+        self.categoriasTeste.text = "\(self.viewModel.getCategoriesNumberOfRows()) Categorias perto de você"
+        self.restaurantesProximosTeste.text = "\(self.viewModel.numberOfRows()) restaurantes próximos a você"
     }
     
     func setupShadow() {
@@ -76,6 +80,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         let myListButton = UIBarButtonItem(image: UIImage(named: "Rectangle 4.5.png"), style: .plain, target: self, action: #selector(myListSender))
         myListButton.tintColor = .white
         self.navigationItem.rightBarButtonItem = myListButton
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
+
     }
     
     @objc func myListSender() {
@@ -127,6 +133,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = RestaurantDetailsViewController()
         vc.restaurant = self.viewModel.getRestaurantForRow(row: indexPath.row)
+        
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
@@ -158,6 +165,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = NearRestaurantViewController()
+        var categories = self.viewModel.restaurants 
         vc.restaurants = self.viewModel.restaurants
         vc.categoryName = self.viewModel.getCategoriesForRow(index: indexPath.row)
         self.navigationController?.pushViewController(vc, animated: true)

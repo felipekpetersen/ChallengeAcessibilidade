@@ -11,10 +11,15 @@ import Foundation
 class HomeViewModel {
     
     var restaurants: [RestaurantCodable] = []
+    var restaurant = RestaurantCodable()
     var categories: [String] = []
     
     func getRestaurants() {
         restaurants = InternRestaurant.getRestaurant()
+    }
+    
+    func getMenu(row: Int) -> MenuCodable{
+        return restaurant.menus?[row] ?? MenuCodable()
     }
     
     func numberOfRows() -> Int {

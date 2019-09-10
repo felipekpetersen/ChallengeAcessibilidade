@@ -69,6 +69,8 @@ class NearRestaurantViewController: UIViewController {
         let myListButton = UIBarButtonItem(image: UIImage(named: "Rectangle 4.5.png"), style: .plain, target: self, action: #selector(myListSender))
         myListButton.tintColor = .white
         self.navigationItem.rightBarButtonItem = myListButton
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
+
     }
     
     @objc func myListSender() {
@@ -94,8 +96,17 @@ extension NearRestaurantViewController: UITableViewDataSource, UITableViewDelega
 extension NearRestaurantViewController: NearRestaurantCellDelegate {
     func receiveMenu(restaurant: RestaurantCodable) {
         let restaurantDetailsVC = RestaurantDetailsViewController()
+        let menuVC = MenuViewController()
+        let menu = self.viewModel.getMenu(restaurant: restaurant, row: 0)
         restaurantDetailsVC.restaurant = restaurant
-        navigationController?.pushViewController(restaurantDetailsVC, animated: true)
+        guard let numberOfMenus = restaurant.menus?.count else {return}
+        if numberOfMenus == 1 {
+            menuVC.menu = menu
+            menuVC.restaurant = restaurant
+            navigationController?.pushViewController(menuVC, animated: true)
+        } else {
+            navigationController?.pushViewController(restaurantDetailsVC, animated: true)
+        }
     }
     
     func receiveDetail(restaurant: RestaurantCodable) {

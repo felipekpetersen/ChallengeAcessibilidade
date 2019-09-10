@@ -18,6 +18,10 @@ class NearRestaurantViewModel{
         return restaurants[index]
     }
     
+    func getMenu(restaurant: RestaurantCodable, row: Int) -> MenuCodable{
+        return restaurant.menus?[row] ?? MenuCodable()
+    }
+    
     func getRestaurantsCategory(index: Int) -> String {
         return categoryName ?? ""
     }

@@ -65,6 +65,8 @@ class RestaurantDetailsViewController: UIViewController{
         let myListButton = UIBarButtonItem(image: UIImage(named: "Rectangle 4.5.png"), style: .plain, target: self, action: #selector(myListSender))
         myListButton.tintColor = .white
         self.navigationItem.rightBarButtonItem = myListButton
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
+
     }
     
     @objc func myListSender() {
