@@ -10,17 +10,25 @@ import Foundation
 
 class MyListViewModel{
     
+    var plates:[PlateCodable] = []
+    var numberOfPlates: Int?
     
     func numberOfRows() ->  Int{
         var restaurants = MyListManager.shared().getOrder()
-        var plates:[PlateCodable] = []
-        var numberOfPlates: Int?
         
         for inx in 0..<restaurants.count{
             plates = restaurants[inx].plateCodable ?? [PlateCodable()]
             numberOfPlates = plates.count
         }
         return numberOfPlates ?? 0
+    }
+    
+    func getTotalValue() -> String{
+        var total = 0
+        for plate in plates {
+//            total += plate.priceDouble
+        }
+        return String(total)
     }
     
 }

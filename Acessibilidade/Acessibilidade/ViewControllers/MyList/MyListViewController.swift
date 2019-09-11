@@ -48,7 +48,7 @@ class MyListViewController: UIViewController {
         listTitleLabel.text = "Lista de compras"
         listTitleLabel.font = UIFont.boldSystemFont(ofSize: 28.0)
         listTitleLabel.textColor = #colorLiteral(red: 0.9490196078, green: 0.9607843137, blue: 0.9725490196, alpha: 1)
-        subtotalLabel.text = "Subtotal"
+        subtotalLabel.text = self.viewModel.getTotalValue()
         subtotalLabel.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
         valueSubtotalLabel.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
     }

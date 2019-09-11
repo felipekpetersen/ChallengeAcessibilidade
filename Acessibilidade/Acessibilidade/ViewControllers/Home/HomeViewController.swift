@@ -40,6 +40,11 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.viewModel.cleanCategories()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         setupLabels()
 
@@ -165,8 +170,8 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = NearRestaurantViewController()
-        var categories = self.viewModel.restaurants 
-        vc.restaurants = self.viewModel.restaurants
+        
+        vc.restaurants = self.viewModel.didChooseCategory(category: self.viewModel.getCategoriesForRow(index: indexPath.row))
         vc.categoryName = self.viewModel.getCategoriesForRow(index: indexPath.row)
         self.navigationController?.pushViewController(vc, animated: true)
 //        let vc = SelectPlateModalViewController()
