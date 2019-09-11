@@ -28,7 +28,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bOH-hp-uAj" userLabel="SearchView" customClass="RoundedView" customModule="Acessibilidade" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="136"/>
                     <subviews>
-                        <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="wW6-Fd-Tkt">
+                        <searchBar hidden="YES" contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="wW6-Fd-Tkt">
                             <rect key="frame" x="24" y="52" width="300" height="56"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
