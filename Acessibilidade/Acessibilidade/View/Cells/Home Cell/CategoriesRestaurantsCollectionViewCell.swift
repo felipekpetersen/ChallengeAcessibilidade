@@ -10,16 +10,12 @@
 import UIKit
 
 class CategoriesRestaurantsCollectionViewCell: UICollectionViewCell {
-
-    
-
     @IBOutlet weak var backCategoriaView: UIView!
     @IBOutlet weak var iconeCategoriaImage: UIImageView!
     @IBOutlet weak var nomeCategoriaLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     func setup(color:UIColor, titulo: String) {
