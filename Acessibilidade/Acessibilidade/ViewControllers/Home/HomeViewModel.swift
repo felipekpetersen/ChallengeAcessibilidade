@@ -13,6 +13,7 @@ class HomeViewModel {
     var restaurants: [RestaurantCodable] = []
     var restaurant = RestaurantCodable()
     var categories: [String] = []
+    var restaurantsByCategory = [RestaurantCodable]()
     
     func getRestaurants() {
         restaurants = InternRestaurant.getRestaurant()
@@ -46,5 +47,20 @@ class HomeViewModel {
                 }
             }
         }
+    }
+    
+    func didChooseCategory(category: String) -> [RestaurantCodable] {
+        for restaurant in restaurants {
+            for restaurantCategory in restaurant.category ?? []{
+                if category == restaurantCategory {
+                    restaurantsByCategory.append(restaurant)
+                }
+            }
+        }
+        return restaurantsByCategory
+    }
+    
+    func cleanCategories() {
+        restaurantsByCategory.removeAll()
     }
 }
