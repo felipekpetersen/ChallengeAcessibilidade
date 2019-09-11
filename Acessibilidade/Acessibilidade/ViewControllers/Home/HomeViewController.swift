@@ -132,9 +132,18 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = RestaurantDetailsViewController()
-        vc.restaurant = self.viewModel.getRestaurantForRow(row: indexPath.row)
-        
-        self.navigationController?.pushViewController(vc, animated: true)
+        let menuVC = MenuViewController()
+        let restaurant = self.viewModel.getRestaurantForRow(row: indexPath.row)
+        let menu = self.viewModel.getMenu(restaurant: restaurant, row: 0)
+        guard let numberOfMenus = restaurant.menus?.count else {return}
+        if numberOfMenus == 1{
+            menuVC.menu = menu
+            menuVC.restaurant  = restaurant
+            self.navigationController?.pushViewController(menuVC, animated: true)
+        }else{
+            vc.restaurant = restaurant
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }
 

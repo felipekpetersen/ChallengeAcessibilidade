@@ -16,6 +16,7 @@
                 <outlet property="cornerView" destination="BOR-Ks-iCN" id="3KK-4r-QhW"/>
                 <outlet property="defaultCategoryLabel" destination="bKo-ty-H6H" id="dWf-e3-gMo"/>
                 <outlet property="descriptionLabel" destination="d9h-lJ-rVH" id="Stc-Mr-ZnN"/>
+                <outlet property="openMapLabel" destination="ia5-E4-Koq" id="zi7-r5-icH"/>
                 <outlet property="restaurantMap" destination="PM5-ZD-UkZ" id="FhA-e2-X9D"/>
                 <outlet property="restaurantNameLabel" destination="h7k-S5-B4p" id="tW1-Ed-oaF"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -65,7 +66,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l8I-bh-bNp">
                     <rect key="frame" x="20" y="694.5" width="374" height="71.5"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ver o Mapa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ia5-E4-Koq">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Abrir Mapa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ia5-E4-Koq">
                             <rect key="frame" x="141.5" y="25" width="91" height="21"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                             <nil key="textColor"/>

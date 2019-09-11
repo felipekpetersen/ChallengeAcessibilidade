@@ -17,6 +17,8 @@ struct RestaurantCodable: Codable {
     var _id: String?
     var name: String?
     var place: String?
+    var latitude: String?
+    var longitude: String?
     var description: String?
     var category: [String]?
     var phone: String?
@@ -38,6 +40,7 @@ struct PlateCodable:Codable {
     var name: String?
     var description: String?
     var price: String?
+    var priceDouble: Double?
     var tag: [String]?
     var tagIlustration: String?
 }

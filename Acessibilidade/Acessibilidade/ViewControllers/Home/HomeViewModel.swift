@@ -18,7 +18,7 @@ class HomeViewModel {
         restaurants = InternRestaurant.getRestaurant()
     }
     
-    func getMenu(row: Int) -> MenuCodable{
+    func getMenu(restaurant: RestaurantCodable, row: Int) -> MenuCodable{
         return restaurant.menus?[row] ?? MenuCodable()
     }
     
