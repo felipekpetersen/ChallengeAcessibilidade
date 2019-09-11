@@ -24,12 +24,21 @@ class NearRestaurantTableViewCell: UITableViewCell {
     var restaurant: RestaurantCodable?
     var delegate: NearRestaurantCellDelegate?
     
+    override var accessibilityTraits: UIAccessibilityTraits {
+        get { return UIAccessibilityTraits.none }
+        set {}
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setupTapGesture()
+//        setupTapGesture()
     }
 
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        setupTapGesture()
+    }
+    
     func setup(restaurant: RestaurantCodable) {
         self.restaurantNameLabel.text = restaurant.name
         self.restaurant = restaurant
@@ -41,20 +50,40 @@ class NearRestaurantTableViewCell: UITableViewCell {
     }
     
     func setupTapGesture() {
+        setupAccessibility()
+        
         let menuTap = UITapGestureRecognizer(target: self, action: #selector(openMenu))
         openMenuView.addGestureRecognizer(menuTap)
+//        openMenuView.accessibilityTraits = .button
+        
         let detailTap = UITapGestureRecognizer(target: self, action: #selector(openDetails))
         openDetailsView.addGestureRecognizer(detailTap)
+//        openDetailsView.accessibilityTraits = .button
+        
+        
+    }
+    
+    func setupAccessibility() {
+
+        self.restaurantNameLabel.isAccessibilityElement = true
+        self.restaurantNameLabel.accessibilityTraits = .staticText
+        self.restaurantNameLabel.accessibilityLabel = self.restaurantNameLabel.text
+        
+        self.openMenuView.isAccessibilityElement = true
+        self.openMenuView.accessibilityTraits = .button
+        self.openMenuView.accessibilityLabel = "Entrar no restaurante"
+        
+        self.openDetailsView.isAccessibilityElement = true
+        self.openDetailsView.accessibilityTraits = .button
+        self.openDetailsView.accessibilityLabel = "Acessar localização"
     }
     
     @objc func openMenu() {
         guard let restaurant = restaurant else {return}
         delegate?.receiveMenu(restaurant: restaurant)
     }
-    
     @objc func openDetails() {
         guard let restaurant = restaurant else {return}
         delegate?.receiveDetail(restaurant: restaurant)
     }
-    
 }
