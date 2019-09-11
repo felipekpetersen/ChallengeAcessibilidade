@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "asiatica.png",
+      "filename" : "Pizzaria.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "asiatica@2x.png",
+      "filename" : "Frame 4@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "asiatica@3x.png",
+      "filename" : "Frame 4@3x.png",
       "scale" : "3x"
     }
   ],

@@ -21,6 +21,7 @@ class CategoriesRestaurantsCollectionViewCell: UICollectionViewCell {
     func setup(color:UIColor, titulo: String) {
         self.backCategoriaView.backgroundColor = color
         self.nomeCategoriaLabel.text = titulo
+        self.iconeCategoriaImage.image = UIImage(named: "\(titulo).png")
     }
 
 }
