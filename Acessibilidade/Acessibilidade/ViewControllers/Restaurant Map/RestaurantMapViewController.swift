@@ -17,6 +17,7 @@ class RestaurantMapViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var cornerView: UIView!
     @IBOutlet weak var buttonCornerView: UIView!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var openMapLabel: UILabel!
     @IBOutlet weak var restaurantMap: MKMapView!
     public var restaurantCodable: RestaurantCodable?
     var locationManager = CLLocationManager()
@@ -27,13 +28,24 @@ class RestaurantMapViewController: UIViewController, MKMapViewDelegate {
         setupCornerView()
         setupShadow()
         tabBarButton()
+        setupMapLabel()
         setupMap()
+        setupTapGesture()
     }
     
     func setupCategoryLabels() {
-        defaultCategoryLabel.text = "Como chegar no"
+        defaultCategoryLabel.text = "Como chegar no restaurante"
+        defaultCategoryLabel.isAccessibilityElement = true
+        defaultCategoryLabel.accessibilityTraits = .staticText
         restaurantNameLabel.text = restaurantCodable?.name
+        restaurantNameLabel.isAccessibilityElement = false
         descriptionLabel.text = restaurantCodable?.description
+    }
+    
+    func setupMapLabel() {
+        openMapLabel.isAccessibilityElement = true
+        openMapLabel.accessibilityTraits = .button
+        openMapLabel.accessibilityHint = "Ira abrir o aplicativo mapas"
     }
     
     func setupCornerView() {
@@ -49,10 +61,15 @@ class RestaurantMapViewController: UIViewController, MKMapViewDelegate {
     
     func setupMap() {
         let annotation = MKPointAnnotation()
-        annotation.coordinate = CLLocationCoordinate2D(latitude: -23.547432, longitude: -46.651825)
+        let latitude = (restaurantCodable?.latitude as NSString?)?.doubleValue
+        let longitude = (restaurantCodable?.longitude as NSString?)?.doubleValue
+        annotation.coordinate = CLLocationCoordinate2D(latitude: latitude ?? 0, longitude: longitude ?? 0)
         restaurantMap.addAnnotation(annotation)
         let region = MKCoordinateRegion(center: annotation.coordinate, latitudinalMeters: CLLocationDistance(exactly: 700)!, longitudinalMeters: CLLocationDistance(exactly: 700)!)
         restaurantMap.region = region
+        restaurantMap.isAccessibilityElement = false
+        restaurantMap.accessibilityElementsHidden = true
+        
 //        restaurantMap.setRegion(mapView.regionThatFits(region), animated: true)
     }
     
@@ -69,6 +86,29 @@ class RestaurantMapViewController: UIViewController, MKMapViewDelegate {
         self.navigationItem.rightBarButtonItem = myListButton
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
 
+    }
+    
+    func setupTapGesture() {
+        let openMapTap = UITapGestureRecognizer(target: self, action: #selector(openMap))
+        buttonCornerView.addGestureRecognizer(openMapTap)
+    }
+    
+    @objc func openMap() {
+        let latitude = (restaurantCodable?.latitude as NSString?)?.doubleValue
+        let longitude = (restaurantCodable?.longitude as NSString?)?.doubleValue
+        let coordinates = CLLocationCoordinate2D(latitude: latitude ?? 0, longitude: longitude ?? 0)
+        let regionDistance: CLLocationDistance = 700
+        let region = MKCoordinateRegion(center: coordinates, latitudinalMeters: CLLocationDistance(exactly: 700)!, longitudinalMeters: CLLocationDistance(exactly: 700)!)
+        let options = [
+            MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: region.center),
+            MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: region.span)
+        ]
+        
+        let placeMark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
+        let mapItem = MKMapItem(placemark: placeMark)
+        guard let restaurantName = restaurantCodable?.name else {return}
+        mapItem.name = "\(restaurantName)"
+        mapItem.openInMaps(launchOptions: options)
     }
     
     @objc func myListSender() {
