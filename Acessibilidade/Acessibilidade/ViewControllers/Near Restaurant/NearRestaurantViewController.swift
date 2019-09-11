@@ -59,6 +59,7 @@ class NearRestaurantViewController: UIViewController {
     }
     
     func setupCategoryPhoto() {
+        categoryPhoto.image = UIImage(named: "\(self.viewModel.getRestaurantsCategory(index: 0))-1")
     }
     
     func setupCornerView() {

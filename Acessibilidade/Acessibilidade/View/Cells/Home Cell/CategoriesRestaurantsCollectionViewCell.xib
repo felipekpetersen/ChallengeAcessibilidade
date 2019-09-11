@@ -26,15 +26,15 @@
                                 <rect key="frame" x="10" y="10" width="134" height="112"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XQd-9A-xhq">
-                                        <rect key="frame" x="16" y="16" width="102" height="80"/>
+                                        <rect key="frame" x="8" y="8" width="118" height="96"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="XQd-9A-xhq" firstAttribute="top" secondItem="nzu-08-zLI" secondAttribute="top" constant="16" id="2Ms-98-efS"/>
-                                    <constraint firstAttribute="trailing" secondItem="XQd-9A-xhq" secondAttribute="trailing" constant="16" id="F1U-6p-hOt"/>
-                                    <constraint firstItem="XQd-9A-xhq" firstAttribute="leading" secondItem="nzu-08-zLI" secondAttribute="leading" constant="16" id="jk0-eZ-SJp"/>
-                                    <constraint firstAttribute="bottom" secondItem="XQd-9A-xhq" secondAttribute="bottom" constant="16" id="miY-XL-JqP"/>
+                                    <constraint firstItem="XQd-9A-xhq" firstAttribute="top" secondItem="nzu-08-zLI" secondAttribute="top" constant="8" id="2Ms-98-efS"/>
+                                    <constraint firstAttribute="trailing" secondItem="XQd-9A-xhq" secondAttribute="trailing" constant="8" id="F1U-6p-hOt"/>
+                                    <constraint firstItem="XQd-9A-xhq" firstAttribute="leading" secondItem="nzu-08-zLI" secondAttribute="leading" constant="8" id="jk0-eZ-SJp"/>
+                                    <constraint firstAttribute="bottom" secondItem="XQd-9A-xhq" secondAttribute="bottom" constant="8" id="miY-XL-JqP"/>
                                     <constraint firstAttribute="height" constant="112" id="s3b-u9-HJP"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
