@@ -69,6 +69,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         self.collectionView.dataSource = self
         self.collectionView.isAccessibilityElement = true
         collectionView.register(UINib(nibName: categoriesCell, bundle: nil), forCellWithReuseIdentifier: categoriesCell)
+        self.collectionView.isAccessibilityElement = false 
     }
     
     func setupLabels() {
