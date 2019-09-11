@@ -49,7 +49,11 @@ class MenuViewController: UIViewController {
         restaurantNameLabel.text = restaurant.name
         categoryNameLabel.text = menu.name
         guard let numberOfCategorys = restaurant.menus?.count else {return}
-        numberOfCategorysLabel.text = "Há \(numberOfCategorys) categorias de pratos"
+        if numberOfCategorys == 1{
+            numberOfCategorysLabel.text = "Há \(numberOfCategorys) categoria de pratos"
+        } else{
+            numberOfCategorysLabel.text = "Há \(numberOfCategorys) categorias de pratos"
+        }
     }
     
     func setViews() {
