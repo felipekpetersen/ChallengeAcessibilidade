@@ -72,4 +72,15 @@ public class MyListManager {
     func getOrder() -> [MyListDecodable] {
         return _myLists
     }
+    
+    func cleanOrder() {
+        self._myLists.removeAll()
+    }
+    
+    func deleteItemAt(indexPath: IndexPath) {
+        self._myLists[indexPath.section].plateCodable?.remove(at: indexPath.row)
+        if self._myLists[indexPath.section].plateCodable?.isEmpty ?? false {
+            self._myLists.remove(at: indexPath.section)
+        }
+    }
 }
