@@ -25,6 +25,7 @@ class MyListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setTableView()
+        self.viewModel.getRestaurants()
         setViews()
         setLabels()
     }
@@ -48,10 +49,27 @@ class MyListViewController: UIViewController {
         listTitleLabel.text = "Lista de compras"
         listTitleLabel.font = UIFont.boldSystemFont(ofSize: 28.0)
         listTitleLabel.textColor = #colorLiteral(red: 0.9490196078, green: 0.9607843137, blue: 0.9725490196, alpha: 1)
-        subtotalLabel.text = self.viewModel.getTotalValue()
+        valueSubtotalLabel.text = self.viewModel.getTotalValue()
         subtotalLabel.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
         valueSubtotalLabel.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
     }
+    
+    //MARK:- Actions
+    @IBAction func didTapTrash(_ sender: Any) {
+        let alert = UIAlertController(title: "Deseja excluir todos os itens?", message: "Tem certeza que deseja remover todos os itens da sua lista?", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Sim", style: .destructive, handler: { action in
+            self.viewModel.cleanAllOrders()
+            self.dismiss(animated: true, completion: nil)
+            self.myListTableView.reloadData()
+            self.setLabels()
+        }))
+        alert.addAction(UIAlertAction(title: "Não", style: .default, handler: { action in
+            self.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert, animated: true)
+    }
+    
 }
 
 extension MyListViewController: UITableViewDelegate, UITableViewDataSource{
@@ -62,7 +80,7 @@ extension MyListViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        var restaurants = MyListManager.shared().getOrder()
+        let restaurants = MyListManager.shared().getOrder()
         return restaurants.count
     }
     
@@ -95,4 +113,18 @@ extension MyListViewController: UITableViewDelegate, UITableViewDataSource{
         
         return cell ?? UITableViewCell()
     }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCell.EditingStyle.delete) {
+            self.viewModel.deleteItemAt(indexPath: indexPath)
+            self.myListTableView.reloadData()
+            setLabels()
+        }
+    
+    }
+    
 }
