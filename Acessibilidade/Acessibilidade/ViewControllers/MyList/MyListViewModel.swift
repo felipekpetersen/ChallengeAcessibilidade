@@ -29,7 +29,7 @@ class MyListViewModel{
     func getTotalValue() -> String{
         var total: Double = 0
         for plate in plates {
-            total += plate.priceInt ?? 0
+            total += Double(plate.priceDouble ?? "0") ?? 0
         }
         return String(total)
     }
