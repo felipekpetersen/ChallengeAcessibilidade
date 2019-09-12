@@ -41,7 +41,7 @@ struct PlateCodable:Codable {
     var name: String?
     var description: String?
     var price: String?
-    var priceDouble: Double?
+    var priceDouble: String?
     var tag: [String]?
     var tagIlustration: String?
 }
