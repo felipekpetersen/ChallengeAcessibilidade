@@ -19,6 +19,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     @IBOutlet weak var restaurantesProximosTeste: UILabel!
     
     var locationManager : CLLocationManager = CLLocationManager()
+    var currentLocation: CLLocation?
     //@IBOutlet weak var myListButton: UIButton!
     //    private let itemsPerRow
     
@@ -34,9 +35,9 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         setupCollectionView()
         setupShadow()
         tabBarButton()
-        self.locationManager.requestWhenInUseAuthorization()
-        self.locationManager.delegate = self
+        setupLocationManager()
         self.getRestaurants()
+        
         // Do any additional setup after loading the view.
     }
     
@@ -96,27 +97,31 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     }
     
     // MARK: - Location
-    func setupGeoFence() {
-        let geofenceRegionCenter = CLLocationCoordinate2DMake(-38.028308, -57.531508);
-        let geofenceRegion = CLCircularRegion(center: geofenceRegionCenter, radius: 400, identifier: "CurrentLocation");
-        geofenceRegion.notifyOnExit = true;
-        geofenceRegion.notifyOnEntry = true;
+    func setupLocationManager() {
+        locationManager.delegate = self
+        locationManager.requestAlwaysAuthorization()
         
-        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+    }
+    
+    func setupGeoFence() {
+        currentLocation = locationManager.location
         locationManager.startUpdatingLocation()
+        let latitude = -23.662791
+        let longitude = -46.528841
+        let myLocation = CLLocation(latitude: latitude, longitude: longitude)
+        guard let currentLocation = currentLocation else {return}
+        viewModel.getNearRestaurants(currentLocation: myLocation)
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if (status == CLAuthorizationStatus.authorizedWhenInUse) {
             setupGeoFence()
+            self.collectionView.reloadData()
+            self.tableView.reloadData()
+            self.setupLabels()
         }
     }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
-        print("locations = \(locValue.latitude) \(locValue.longitude)")
-    }
-
 }
 
 // MARK: - Table View Delegate
