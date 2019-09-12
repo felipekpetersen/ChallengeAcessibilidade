@@ -94,21 +94,24 @@ class RestaurantMapViewController: UIViewController, MKMapViewDelegate {
     }
     
     @objc func openMap() {
-        let latitude = (restaurantCodable?.latitude as NSString?)?.doubleValue
-        let longitude = (restaurantCodable?.longitude as NSString?)?.doubleValue
-        let coordinates = CLLocationCoordinate2D(latitude: latitude ?? 0, longitude: longitude ?? 0)
-        let regionDistance: CLLocationDistance = 700
-        let region = MKCoordinateRegion(center: coordinates, latitudinalMeters: CLLocationDistance(exactly: 700)!, longitudinalMeters: CLLocationDistance(exactly: 700)!)
-        let options = [
-            MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: region.center),
-            MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: region.span)
-        ]
-        
-        let placeMark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
-        let mapItem = MKMapItem(placemark: placeMark)
-        guard let restaurantName = restaurantCodable?.name else {return}
-        mapItem.name = "\(restaurantName)"
-        mapItem.openInMaps(launchOptions: options)
+        guard let latitude = restaurantCodable?.latitude else {return}
+        guard let longitude = restaurantCodable?.longitude else {return}
+        if let url = URL(string: "http://maps.apple.com/?ll=\(latitude),\(longitude)"){
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+//        let coordinates = CLLocationCoordinate2D(latitude: latitude ?? 0, longitude: longitude ?? 0)
+//        let regionDistance: CLLocationDistance = 700
+//        let region = MKCoordinateRegion(center: coordinates, latitudinalMeters: CLLocationDistance(exactly: 700)!, longitudinalMeters: CLLocationDistance(exactly: 700)!)
+//        let options = [
+//            MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: region.center),
+//            MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: region.span)
+//        ]
+//
+//        let placeMark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
+//        let mapItem = MKMapItem(placemark: placeMark)
+//        guard let restaurantName = restaurantCodable?.name else {return}
+//        mapItem.name = "\(restaurantName)"
+//        mapItem.openInMaps(launchOptions: options)
     }
     
     @objc func myListSender() {

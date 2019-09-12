@@ -7,10 +7,12 @@
 //  swiftlint:disable trailing_whitespace
 
 import Foundation
+import CoreLocation
 
 class HomeViewModel {
     
     var restaurants: [RestaurantCodable] = []
+    var nearRestaurants: [RestaurantCodable] = []
     var restaurant = RestaurantCodable()
     var categories: [String] = []
     var restaurantsByCategory = [RestaurantCodable]()
@@ -19,19 +21,38 @@ class HomeViewModel {
         restaurants = InternRestaurant.getRestaurant()
     }
     
+    func getNearRestaurants(currentLocation: CLLocation) {
+        for i in restaurants{
+            guard let latitude = (i.latitude as NSString?)?.doubleValue else {return}
+            guard let longitude = (i.longitude as NSString?)?.doubleValue else {return}
+            let restaurantCoordinate = CLLocation(latitude: latitude, longitude: longitude)
+            let distanceInMeters = restaurantCoordinate.distance(from: currentLocation)
+            if distanceInMeters <= 1000{
+                nearRestaurants.append(i)
+            }
+        }
+    }
+    
     func getMenu(restaurant: RestaurantCodable, row: Int) -> MenuCodable{
         return restaurant.menus?[row] ?? MenuCodable()
     }
     
     func numberOfRows() -> Int {
-        return restaurants.count
+        return nearRestaurants.count
     }
     
     func getRestaurantForRow(row: Int) -> RestaurantCodable {
-        return restaurants[row]
+        return nearRestaurants[row]
     }
     
     func getCategoriesNumberOfRows() -> Int {
+        self.categories.removeAll()
+        for i in nearRestaurants{
+            guard let categories = i.category else {return 0}
+            for i in 0..<categories.count{
+                self.categories.append(categories[i])
+            }
+        }
         return categories.count
     }
     
@@ -40,7 +61,7 @@ class HomeViewModel {
     }
 
     func separateCategories() {
-        for restaurant in restaurants {
+        for restaurant in nearRestaurants {
             for category in restaurant.category ?? [] {
                 if categories.contains(category) == false{
                     categories.append(category)
@@ -50,7 +71,7 @@ class HomeViewModel {
     }
     
     func didChooseCategory(category: String) -> [RestaurantCodable] {
-        for restaurant in restaurants {
+        for restaurant in nearRestaurants {
             for restaurantCategory in restaurant.category ?? []{
                 if category == restaurantCategory {
                     restaurantsByCategory.append(restaurant)
