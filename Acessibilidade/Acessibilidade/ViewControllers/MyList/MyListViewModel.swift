@@ -31,7 +31,9 @@ class MyListViewModel{
         for plate in plates {
             total += Double(plate.priceDouble ?? "0") ?? 0
         }
-        return String(total)
+        let formatedTotal = String(total).replacingOccurrences(of: ".", with: ",")
+        let formatedString = "R$ \(formatedTotal)0"
+        return String(formatedString)
     }
     
     func cleanAllOrders() {
