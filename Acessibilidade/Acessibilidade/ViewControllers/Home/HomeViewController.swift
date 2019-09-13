@@ -74,8 +74,13 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     }
     
     func setupLabels() {
-        self.categoriasTeste.text = "\(self.viewModel.getCategoriesNumberOfRows()) Categorias perto de você"
-        self.restaurantesProximosTeste.text = "\(self.viewModel.numberOfRows()) restaurantes próximos a você"
+        if self.viewModel.categories.count > 1 {
+            self.categoriasTeste.text = "\(self.viewModel.getCategoriesNumberOfRows()) Categorias perto de você"
+            self.restaurantesProximosTeste.text = "\(self.viewModel.numberOfRows()) restaurantes próximos a você"
+        } else {
+            self.categoriasTeste.text = "\(self.viewModel.getCategoriesNumberOfRows()) Categoria perto de você"
+            self.restaurantesProximosTeste.text = "\(self.viewModel.numberOfRows()) Restaurante próximo a você"
+        }
     }
     
     func setupShadow() {
@@ -88,7 +93,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         myListButton.tintColor = .white
         self.navigationItem.rightBarButtonItem = myListButton
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
-
+        myListButton.accessibilityLabel = "Acessar lista de compras"
     }
     
     @objc func myListSender() {
@@ -99,7 +104,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     // MARK: - Location
     func setupLocationManager() {
         locationManager.delegate = self
-        locationManager.requestAlwaysAuthorization()
+        locationManager.requestWhenInUseAuthorization()
         
     }
     

@@ -67,7 +67,7 @@ class MenuViewController: UIViewController {
         myListButton.tintColor = .white
         self.navigationItem.rightBarButtonItem = myListButton
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
-
+        myListButton.accessibilityLabel = "Acessar lista de compras"
     }
     
     @objc func myListSender() {

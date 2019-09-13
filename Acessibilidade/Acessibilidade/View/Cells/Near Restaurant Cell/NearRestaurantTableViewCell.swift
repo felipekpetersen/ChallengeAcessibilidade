@@ -59,8 +59,6 @@ class NearRestaurantTableViewCell: UITableViewCell {
         let detailTap = UITapGestureRecognizer(target: self, action: #selector(openDetails))
         openDetailsView.addGestureRecognizer(detailTap)
 //        openDetailsView.accessibilityTraits = .button
-        
-        
     }
     
     func setupAccessibility() {
