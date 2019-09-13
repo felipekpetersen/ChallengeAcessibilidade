@@ -26,6 +26,7 @@ class MyListViewController: UIViewController {
         super.viewDidLoad()
         setTableView()
         self.viewModel.getRestaurants()
+        tabBarButton()
         setViews()
         setLabels()
     }
@@ -53,8 +54,16 @@ class MyListViewController: UIViewController {
         valueSubtotalLabel.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
     }
     
-    // MARK: - Actions
-    @IBAction func didTapTrash(_ sender: Any) {
+    func tabBarButton() {
+        let trashButton = UIBarButtonItem(image: UIImage(named: "trash.png"), style: .plain, target: self, action: #selector(didTapTrash))
+        trashButton.tintColor = .white
+        self.navigationItem.rightBarButtonItem = trashButton
+        trashButton.accessibilityLabel = "Lixo"
+        trashButton.accessibilityHint = "Clique para deletar todos os itens de sua lista"
+        // mudar nome do botao
+    }
+
+    @objc func didTapTrash() {
         let alert = UIAlertController(title: "Deseja excluir todos os itens?", message: "Tem certeza que deseja remover todos os itens da sua lista?", preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Sim", style: .destructive, handler: { action in
@@ -68,13 +77,11 @@ class MyListViewController: UIViewController {
         }))
         self.present(alert, animated: true)
     }
-    
 }
 
-extension MyListViewController: UITableViewDelegate, UITableViewDataSource{
+extension MyListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return MyListManager.shared().getOrder()[section].plateCodable?.count ?? 0
     }
     
