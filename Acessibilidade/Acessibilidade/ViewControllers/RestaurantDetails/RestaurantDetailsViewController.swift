@@ -57,7 +57,11 @@ class RestaurantDetailsViewController: UIViewController{
         smallTitleLabel.textColor = #colorLiteral(red: 0.9058823529, green: 0.9137254902, blue: 0.9215686275, alpha: 1)
         smallTitleLabel.font = UIFont.boldSystemFont(ofSize: 15.0)
         guard let restaurantsCount = restaurant.menus?.count else {return}
-        numberOfMenusLabel.text = "Há \(restaurantsCount) tipos de cárdapios"
+        if restaurantsCount > 1 {
+            numberOfMenusLabel.text = "Há \(restaurantsCount) tipos de cárdapios"
+        } else {
+            numberOfMenusLabel.text = "Há \(restaurantsCount) tipo de cárdapio"
+        }
         numberOfMenusLabel.font = UIFont.boldSystemFont(ofSize: 20)
     }
     
@@ -66,7 +70,7 @@ class RestaurantDetailsViewController: UIViewController{
         myListButton.tintColor = .white
         self.navigationItem.rightBarButtonItem = myListButton
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
-
+        myListButton.accessibilityLabel = "Acessar lista de compras"
     }
     
     @objc func myListSender() {

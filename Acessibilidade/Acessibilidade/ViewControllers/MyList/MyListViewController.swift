@@ -30,22 +30,21 @@ class MyListViewController: UIViewController {
         setLabels()
     }
     
-    func setTableView(){
+    func setTableView() {
         self.myListTableView.delegate = self
         self.myListTableView.dataSource = self
         myListTableView.register(UINib(nibName: listaCell, bundle:  nil), forCellReuseIdentifier: listaCell)
         myListTableView.separatorStyle = .none
     }
     
-    func setViews(){
-//        subtotalView.addShadowWithBezier(color: .black, opacity: 1, offSet: .zero, radius: 30)
+    func setViews() {
         degradeView.backgroundColor = #colorLiteral(red: 0.05490196078, green: 0.1254901961, blue: 0.2705882353, alpha: 1)
         degradeView.degrade(view: degradeView)
         myListImageView.image = UIImage(named: "pizzaPlaceholder")
         subtotalView.backgroundColor = #colorLiteral(red: 0.7529411765, green: 0.831372549, blue: 0.9098039216, alpha: 1)
     }
     
-    func setLabels(){
+    func setLabels() {
         listTitleLabel.text = "Lista de compras"
         listTitleLabel.font = UIFont.boldSystemFont(ofSize: 28.0)
         listTitleLabel.textColor = #colorLiteral(red: 0.9490196078, green: 0.9607843137, blue: 0.9725490196, alpha: 1)
@@ -54,7 +53,7 @@ class MyListViewController: UIViewController {
         valueSubtotalLabel.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
     }
     
-    //MARK:- Actions
+    // MARK: - Actions
     @IBAction func didTapTrash(_ sender: Any) {
         let alert = UIAlertController(title: "Deseja excluir todos os itens?", message: "Tem certeza que deseja remover todos os itens da sua lista?", preferredStyle: .alert)
         

@@ -50,7 +50,11 @@ class NearRestaurantViewController: UIViewController {
     func setUpLabels() {
         categoryLabel.text = self.viewModel.getRestaurantsCategory(index: 0)
         defaultCategoryLabel.text = "Categoria"
-        nearRestaurantLabel.text = "\(self.viewModel.restaurants.count) restaurantes próximos"
+        if self.viewModel.restaurants.count > 1 {
+            nearRestaurantLabel.text = "\(self.viewModel.restaurants.count) restaurantes próximos"
+        } else {
+            nearRestaurantLabel.text = "\(self.viewModel.restaurants.count) restaurante próximo"
+        }
     }
     
     func setUpViews() {
@@ -71,7 +75,7 @@ class NearRestaurantViewController: UIViewController {
         myListButton.tintColor = .white
         self.navigationItem.rightBarButtonItem = myListButton
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
-
+        myListButton.accessibilityLabel = "Acessar lista de compras"
     }
     
     @objc func myListSender() {
