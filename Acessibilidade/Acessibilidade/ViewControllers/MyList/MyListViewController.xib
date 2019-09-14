@@ -50,7 +50,7 @@
                             <rect key="frame" x="0.0" y="65" width="414" height="555"/>
                             <color key="backgroundColor" red="0.94901960784313721" green="0.96078431372549022" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </tableView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KSV-o3-C7j">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KSV-o3-C7j">
                             <rect key="frame" x="350" y="24" width="48" height="17"/>
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <nil key="textColor"/>
@@ -93,6 +93,7 @@
                 <constraint firstItem="Vrq-lq-gyA" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="276" id="CNW-pJ-Ls1"/>
                 <constraint firstItem="yGH-zi-UG4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="EJj-pq-j0V"/>
                 <constraint firstItem="DZZ-2R-yVy" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Ijz-IL-VIf"/>
+                <constraint firstItem="Vrq-lq-gyA" firstAttribute="top" secondItem="DZZ-2R-yVy" secondAttribute="bottom" constant="-24" id="QY1-fe-cVp"/>
                 <constraint firstItem="ca2-gm-bIC" firstAttribute="top" secondItem="DZZ-2R-yVy" secondAttribute="top" id="TSg-zR-vN7"/>
                 <constraint firstItem="DZZ-2R-yVy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="XnZ-eq-Y0q"/>
                 <constraint firstItem="ca2-gm-bIC" firstAttribute="width" secondItem="DZZ-2R-yVy" secondAttribute="width" id="a52-oO-gXb"/>

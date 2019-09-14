@@ -49,6 +49,8 @@ class NearRestaurantViewController: UIViewController {
 
     func setUpLabels() {
         categoryLabel.text = self.viewModel.getRestaurantsCategory(index: 0)
+        self.defaultCategoryLabel.accessibilityLabel = "Categoria \(self.categoryName)"
+        self.categoryLabel.isAccessibilityElement = false
         defaultCategoryLabel.text = "Categoria"
         if self.viewModel.restaurants.count > 1 {
             nearRestaurantLabel.text = "\(self.viewModel.restaurants.count) restaurantes próximos"
