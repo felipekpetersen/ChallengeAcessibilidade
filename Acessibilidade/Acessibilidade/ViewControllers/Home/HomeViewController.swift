@@ -94,6 +94,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         self.navigationItem.rightBarButtonItem = myListButton
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
         myListButton.accessibilityLabel = "Acessar lista de compras"
+        myListButton.accessibilityTraits = .none
     }
     
     @objc func myListSender() {
@@ -105,7 +106,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     func setupLocationManager() {
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
-        
     }
     
     func setupGeoFence() {
@@ -126,7 +126,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
             self.setupLabels()
         }
     }
-    
 }
 
 // MARK: - Table View Delegate

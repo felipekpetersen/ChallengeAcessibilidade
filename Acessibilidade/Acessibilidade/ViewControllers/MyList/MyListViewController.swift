@@ -41,7 +41,7 @@ class MyListViewController: UIViewController {
     func setViews() {
         degradeView.backgroundColor = #colorLiteral(red: 0.05490196078, green: 0.1254901961, blue: 0.2705882353, alpha: 1)
         degradeView.degrade(view: degradeView)
-        myListImageView.image = UIImage(named: "pizzaPlaceholder")
+        myListImageView.image = UIImage(named: "myWishList2.jpg")
         subtotalView.backgroundColor = #colorLiteral(red: 0.7529411765, green: 0.831372549, blue: 0.9098039216, alpha: 1)
     }
     
@@ -53,6 +53,8 @@ class MyListViewController: UIViewController {
         subtotalLabel.text = "Subtotal"
         subtotalLabel.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
         valueSubtotalLabel.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
+//        guard let valor = valueSubtotalLabel.text else { return }
+//        valueSubtotalLabel.accessibilityLabel = "\(valor) reais"
     }
     
     func tabBarButton() {
@@ -61,7 +63,7 @@ class MyListViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = trashButton
         trashButton.accessibilityLabel = "Lixo"
         trashButton.accessibilityHint = "Clique para deletar todos os itens de sua lista"
-        // mudar nome do botao
+        // mudar nome do bota
     }
 
     @objc func didTapTrash() {

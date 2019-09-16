@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationController.navigationBar.shadowImage = UIImage()
         navigationController.navigationBar.isTranslucent = true
         navigationController.viewControllers = [homeVC]
+        UINavigationBar.appearance().tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
 //        navigationController.navigationItem.backBarButtonItem = UIBarButtonItem(title: "voltar", style: .plain, target: nil, action: nil)
         let bounds = UIScreen.main.bounds
         self.window = UIWindow(frame: bounds)
