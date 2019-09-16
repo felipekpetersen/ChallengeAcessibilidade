@@ -28,7 +28,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Back" translatesAutoresizingMaskIntoConstraints="NO" id="OMJ-da-LTb">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="OMJ-da-LTb">
                                 <rect key="frame" x="255" y="20" width="55" height="27.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="55" id="p3H-4K-fPV"/>
@@ -71,6 +71,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="Back" width="12.5" height="21"/>
+        <image name="right_arrow" width="13" height="21"/>
     </resources>
 </document>
