@@ -40,6 +40,12 @@ class MenuTableViewCell: UITableViewCell {
         categoryNameLabel.text = category.name
         self.category = category
         self.restaurantName = restaurantName
+        guard let name = categoryNameLabel.text else {return}
+        if self.isOpen == false{
+            self.accessibilityLabel = "Clique para abrir as opções de \(name))"
+        } else {
+            self.accessibilityLabel = "Clique para fechar as opções de \(name)"
+        }
     }
     
     func setupCornerView(cornerRadius: CGFloat) {

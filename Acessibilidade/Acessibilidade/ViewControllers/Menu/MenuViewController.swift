@@ -107,12 +107,12 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension MenuViewController:  MenuTableViewCellDelegate {
     func receivePlate(restaurantName: String, plate: PlateCodable) {
-        let vc = SelectPlateModalViewController()
-        vc.delegate = self
-        vc.restaurantName = restaurantName
-        vc.plate = plate
-        vc.modalPresentationStyle = .overCurrentContext
-        present(vc, animated: true, completion: nil)
+        let selectPlateMVC = SelectPlateModalViewController()
+        selectPlateMVC.delegate = self
+        selectPlateMVC.restaurantName = restaurantName
+        selectPlateMVC.plate = plate
+        selectPlateMVC.modalPresentationStyle = .overCurrentContext
+        present(selectPlateMVC, animated: true, completion: nil)
     }
 }
 
