@@ -18,6 +18,12 @@ class PlateTableViewCell: UITableViewCell {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var addPlateView: UIView!
     
+    @IBOutlet weak var apimentadoView: UIView!
+    @IBOutlet weak var glutenView: UIView!
+    @IBOutlet weak var lactoseView: UIView!
+    @IBOutlet weak var veganoView: UIView!
+    @IBOutlet weak var vegetarianoView: UIView!
+    
     var delegate: PlateTableViewCellDelegate?
     var restaurant: RestaurantCodable?
     var restaurantName: String?
@@ -25,7 +31,8 @@ class PlateTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setupTapGesture()
+        self.setupTapGesture()
+//        self.hideAllRestricoes()
     }
     
     override func layoutSubviews() {
@@ -38,6 +45,33 @@ class PlateTableViewCell: UITableViewCell {
         self.priceLabel.text = plate.price
         self.plate = plate
         self.restaurantName = restaurantName
+//        self.setupRestricoes(tag: plate.tag)
+    }
+    
+    func hideAllRestricoes() {
+        self.apimentadoView.isHidden = true
+        self.glutenView.isHidden = true
+        self.lactoseView.isHidden = true
+        self.veganoView.isHidden = true
+        self.vegetarianoView.isHidden = true
+    }
+    
+    func setupRestricoes(tag: [String]?) {
+        if let tags = tag, tags.isEmpty == false {
+            for tag in tags {
+                if tag == "Apimentado" {
+                    self.apimentadoView.isHidden = false
+                } else if tag == "Gluten" {
+                    self.glutenView.isHidden = false
+                } else if tag == "Lactose" {
+                    self.lactoseView.isHidden = false
+                } else if tag == "Vegano" {
+                    self.veganoView.isHidden = false
+                } else if tag == "Vegetariano" {
+                    self.vegetarianoView.isHidden = false
+                }
+            }
+        }
     }
     
     func setupTapGesture() {
