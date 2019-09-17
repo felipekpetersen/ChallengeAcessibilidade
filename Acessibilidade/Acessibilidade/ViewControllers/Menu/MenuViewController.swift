@@ -86,7 +86,7 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
         let category = self.viewModel.getCategory(row: indexPath.row)
         cell?.setupCell(category: category, isOpen: self.selectedIndex == indexPath.row ? true : false, restaurantName: restaurant.name ?? String())
         cell?.setupCornerView(cornerRadius: 5)
-        cell?.layoutSubviews()
+//        cell?.layoutSubviews()
         cell?.layoutIfNeeded()
         cell?.selectionStyle = .none
         cell?.delegate = self
@@ -99,9 +99,10 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             self.selectedIndex = indexPath.row
         }
-        self.tableView.beginUpdates()
+//        self.tableView.beginUpdates()
         self.tableView.reloadRows(at: [indexPath], with: .fade)
-        self.tableView.endUpdates()
+//        self.tableView.reloadData()
+//        self.tableView.endUpdates()
     }
 }
 
