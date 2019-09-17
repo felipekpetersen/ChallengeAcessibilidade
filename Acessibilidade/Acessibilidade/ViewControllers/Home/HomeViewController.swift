@@ -111,8 +111,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     func setupGeoFence() {
         currentLocation = locationManager.location
         locationManager.startUpdatingLocation()
-        let latitude = -23.662791
-        let longitude = -46.528841
+        let latitude = -23.547110
+        let longitude = -46.649900
         let myLocation = CLLocation(latitude: latitude, longitude: longitude)
         guard let currentLocation = currentLocation else {return}
         viewModel.getNearRestaurants(currentLocation: myLocation)

@@ -32,6 +32,7 @@ class MenuTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         self.tableView.layoutIfNeeded()
+        self.tableView.reloadData()
         setupTableView()
         guard let name = categoryNameLabel.text else {return}
         if self.isOpen == false{
