@@ -33,6 +33,13 @@ class MenuTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         self.tableView.layoutIfNeeded()
         setupTableView()
+        guard let name = categoryNameLabel.text else {return}
+        if self.isOpen == false{
+            self.accessibilityLabel = "Clique para abrir as opções de \(name))"
+        } else {
+            self.accessibilityLabel = "Clique para fechar as opções de \(name)"
+        }
+        print(self.accessibilityElements)
     }
     
     func setupCell(category: CategoryCodable, isOpen: Bool, restaurantName: String) {
@@ -40,12 +47,6 @@ class MenuTableViewCell: UITableViewCell {
         categoryNameLabel.text = category.name
         self.category = category
         self.restaurantName = restaurantName
-        guard let name = categoryNameLabel.text else {return}
-        if self.isOpen == false{
-            self.accessibilityLabel = "Clique para abrir as opções de \(name))"
-        } else {
-            self.accessibilityLabel = "Clique para fechar as opções de \(name)"
-        }
     }
     
     func setupCornerView(cornerRadius: CGFloat) {
@@ -61,7 +62,7 @@ class MenuTableViewCell: UITableViewCell {
         self.tableView.separatorStyle = .none
         if self.isOpen ?? false {
             self.tableView.isHidden = false
-            self.tableViewHeight.constant = CGFloat((self.category.plates?.count ?? 0)) * 82
+            self.tableViewHeight.constant = CGFloat((self.category.plates?.count ?? 0)) * 90
         } else {
             self.tableView.isHidden = true
             self.tableViewHeight.constant = 0
@@ -85,7 +86,7 @@ extension MenuTableViewCell: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 82
+        return 90
     }
 }
 

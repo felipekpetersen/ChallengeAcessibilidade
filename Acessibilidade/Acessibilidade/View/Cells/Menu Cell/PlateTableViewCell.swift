@@ -32,7 +32,7 @@ class PlateTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.setupTapGesture()
-//        self.hideAllRestricoes()
+        self.hideAllRestricoes()
     }
     
     override func layoutSubviews() {
@@ -45,7 +45,7 @@ class PlateTableViewCell: UITableViewCell {
         self.priceLabel.text = plate.price
         self.plate = plate
         self.restaurantName = restaurantName
-//        self.setupRestricoes(tag: plate.tag)
+        self.setupRestricoes(tag: plate.tag)
     }
     
     func hideAllRestricoes() {

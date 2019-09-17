@@ -42,6 +42,10 @@ class NearRestaurantTableViewCell: UITableViewCell {
     func setup(restaurant: RestaurantCodable) {
         self.restaurantNameLabel.text = restaurant.name
         self.restaurant = restaurant
+        if let id = restaurant._id {
+            let url = "https:guekavi-app.herokuapp.com/images/" + id + "Logo.jpeg"
+            self.restaurantImage.imageFromServerURL(urlString: url )
+        }
     }
     
     func setupCorner(cornerRadius: CGFloat) {

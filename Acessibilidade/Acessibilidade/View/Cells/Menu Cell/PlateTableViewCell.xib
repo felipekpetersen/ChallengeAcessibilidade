@@ -12,15 +12,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="83" id="KGk-i7-Jjw" customClass="PlateTableViewCell" customModule="Acessibilidade" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="83"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="107" id="KGk-i7-Jjw" customClass="PlateTableViewCell" customModule="Acessibilidade" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="94"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="82.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="93.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MNy-QK-MqS" customClass="RoundedView" customModule="Acessibilidade" customModuleProvider="target">
-                        <rect key="frame" x="280" y="29.5" width="24" height="24"/>
+                        <rect key="frame" x="280" y="35" width="24" height="24"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sxQ-vi-dsB">
                                 <rect key="frame" x="6.5" y="1.5" width="11" height="20.5"/>
@@ -43,24 +43,27 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Q7H-rT-AHM">
-                        <rect key="frame" x="8" y="16" width="248" height="12.5"/>
+                        <rect key="frame" x="8" y="16" width="248" height="18"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="soidhaowi d ashdodihsdohsasoidhaowi d ashdodihsdohsa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ots-57-GXh">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="12.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="18"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="249" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LzR-Qt-vuk">
-                                <rect key="frame" x="248" y="0.0" width="0.0" height="12.5"/>
+                                <rect key="frame" x="248" y="0.0" width="0.0" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="gmo-VK-D6w"/>
+                        </constraints>
                     </stackView>
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="MuD-PH-FkZ">
-                        <rect key="frame" x="8" y="44.5" width="170" height="30"/>
+                        <rect key="frame" x="8" y="50" width="170" height="30"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kAL-eT-FKf" customClass="RoundedView" customModule="Acessibilidade" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
@@ -191,7 +194,6 @@
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="MNy-QK-MqS" secondAttribute="trailing" constant="16" id="6do-oq-3pn"/>
                     <constraint firstItem="Q7H-rT-AHM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="9He-TH-DgX"/>
-                    <constraint firstAttribute="bottom" secondItem="MuD-PH-FkZ" secondAttribute="bottom" constant="8" id="DcJ-t8-nmj"/>
                     <constraint firstItem="MNy-QK-MqS" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="RtY-9d-Eah"/>
                     <constraint firstAttribute="trailing" secondItem="Q7H-rT-AHM" secondAttribute="trailing" constant="64" id="Xfz-P8-g3x"/>
                     <constraint firstItem="MuD-PH-FkZ" firstAttribute="top" secondItem="Q7H-rT-AHM" secondAttribute="bottom" constant="16" id="rzG-Jx-SeL"/>
@@ -211,7 +213,7 @@
                 <outlet property="veganoView" destination="taT-zr-HMk" id="m9b-cR-bJu"/>
                 <outlet property="vegetarianoView" destination="ff7-bA-wFZ" id="728-KS-ljZ"/>
             </connections>
-            <point key="canvasLocation" x="137.68115942028987" y="166.40625"/>
+            <point key="canvasLocation" x="137.68115942028987" y="170.08928571428569"/>
         </tableViewCell>
     </objects>
     <resources>
